@@ -1,0 +1,7 @@
+/data
+/inputs
+/output
+/__pycache__
+*.xlsx
+*.csv
+

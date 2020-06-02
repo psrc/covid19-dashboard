@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16pt;
+  color: black;
+}
+
+h1 {
+  color: #00A7A0;
+  font-size: 36pt;
+}
+
+h2 {
+  color: #91268F;
+  font-size: 24pt;
+}
+
+h3 {
+  color: #8CC63E;
+  font-size: 18pt;
+}
+
+h4 {
+  color: #F05A28;
+  font-size: 12pt;
+}
+
+.datatables {
+  font-size: 12pt; 
+}
+
+#TSA_March {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#TSA_April {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#TSA_May {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#TSA_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#TSABackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#TSABackground2 {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#TransitBackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#FerryBackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#RailBackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#ct_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#et_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#kcm_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#kt_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#pt_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#st_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#bi_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#brem_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#faunt_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#king_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#muki_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#ptdef_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#rail_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#esdBackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#unemployment_March {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#unemployment_April {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#unemployment_May {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#unemployment_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#volumes_March {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#volumes_April {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#volumes_May {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#volumes_Latest {
+  font-size: 14pt;
+  color: #91268F;
+}
+
+#VolumeBackground {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+
+.nav-tabs {
+  padding-top: 20px;
+}
+.navbar {
+  font-size: 20pt;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0;
+}
