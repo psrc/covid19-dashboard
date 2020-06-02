@@ -20,13 +20,13 @@ library('rvest')
 #setwd("C:/coding/covid19-dashboard/shiny")
 
 # Shiny Server Working Directory
-setwd("/home/shiny/apps/covid19-dashboard/shiny")
+wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
 
-transit_file <- file.path(getwd(),"data/TransitTable_crosstab.csv")
-ferry_file <- file.path(getwd(),"data/FerriesTable_crosstab.csv")
-rail_file <- file.path(getwd(),"data/RailTable_crosstab.csv")
-unemployment_file <- file.path(getwd(),"data/unemployment.csv")
-volume_file <- file.path(getwd(),"data/VolumeNumTableCountLocation_data.csv")
+transit_file <- file.path(wrkdir,"data/TransitTable_crosstab.csv")
+ferry_file <- file.path(wrkdir,"data/FerriesTable_crosstab.csv")
+rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
+unemployment_file <- file.path(wrkdir,"data/unemployment.csv")
+volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 
 #################################################################################################################
 #################################################################################################################
