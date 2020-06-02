@@ -16,7 +16,12 @@ library('rvest')
 ### Input Files
 #################################################################################################################
 #################################################################################################################
-setwd("C:/coding/covid19-dashboard")
+# Local Working Directory
+setwd("C:/coding/covid19-dashboard/shiny")
+
+# Shiny Server Working Directory
+# setwd("/home/shiny/apps/covid19-dashboard/shiny")
+
 transit_file <- file.path(getwd(),"data/TransitTable_crosstab.csv")
 ferry_file <- file.path(getwd(),"data/FerriesTable_crosstab.csv")
 rail_file <- file.path(getwd(),"data/RailTable_crosstab.csv")
