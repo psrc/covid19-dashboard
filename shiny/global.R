@@ -23,7 +23,7 @@ wrkdir <-"C:/coding/covid19-dashboard/shiny"
 #wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
 
 transit_file <- file.path(wrkdir,"data/TransitTable_data.csv")
-ferry_file <- file.path(wrkdir,"data/FerriesTable_crosstab.csv")
+ferry_file <- file.path(wrkdir,"data/FerriesTable_data.csv")
 rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
 unemployment_file <- file.path(wrkdir,"data/unemployment.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
@@ -218,18 +218,13 @@ st_latest_day <- max(day(st_only_latest$day))
 #################################################################################################################
 #################################################################################################################
 ferry_data <- setDT(read.csv(ferry_file,stringsAsFactors=FALSE))
-cols <- c("Current","Bainbridge","Bremerton","Fauntleroy","Kingston","Mukilteo","Point_Defiance")
-ferry_data <- ferry_data[,..cols]
-nms <- c("day","Bainbridge","Bremerton","Fauntleroy","Kingston","Mukilteo","Point Defiance")
+nms <- c("day","variable","metric","value")
 setnames(ferry_data,nms)
 ferry_data$day <- mdy(ferry_data$day)
+ferry_data$date <- ferry_data$day
 
-# Convert to Long Form for use in graphic creation
-ferry <- melt(ferry_data,id.vars=c("day"))
-ferry$value <- gsub("%","",ferry$value)
-ferry$value <- as.numeric(ferry$value)
-ferry$value <- ferry$value / 100
-ferry$date <- ferry$day
+psrc_ferry <- c("Edmonds -  Kingston","Fauntleroy - Vashon - Southworth","Mukilteo - Clinton","Point Defiance - Tahlequah","Seattle - Bainbridge Island","Seattle - Bremerton")
+ferry <- ferry_data[variable %in% psrc_ferry & metric %in% "Percentage Change"]
 
 ferry_latest_month <- max(month(ferry$day))
 ferry_only_latest <- ferry[month(day) %in% ferry_latest_month]

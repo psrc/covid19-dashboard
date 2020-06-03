@@ -86,12 +86,12 @@ shinyServer(function(input, output) {
 
     # Ferry Data
     output$chart_ferry <- renderPlotly({create_line_chart(ferry, "% of 2019 Daily Passengers", scales::percent, 1, c('#91268F','#F05A28',"#8CC63E","#00A7A0","#76787A","#BBBDC0"), "variable",100,"%")})
-    output$bi_Latest <- renderText({paste("Bainbridge Island (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Bainbridge"),1), nsmall = 0, big.mark = ","),"%")})
-    output$brem_Latest <- renderText({paste("Bremerton (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Bremerton"),1), nsmall = 0, big.mark = ","),"%")})
-    output$faunt_Latest <- renderText({paste("Fauntleroy (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Fauntleroy"),1), nsmall = 0, big.mark = ","),"%")})    
-    output$king_Latest <- renderText({paste("Kingston (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Kingston"),1), nsmall = 0, big.mark = ","),"%")})
-    output$muki_Latest <- renderText({paste("Mukilteo (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Mukilteo"),1), nsmall = 0, big.mark = ","),"%")})
-    output$ptdef_Latest <- renderText({paste("Pt Defiance (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Point Defiance"),1), nsmall = 0, big.mark = ","),"%")})
+    output$bi_Latest <- renderText({paste("Bainbridge Island (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Seattle - Bainbridge Island"),1), nsmall = 0, big.mark = ","),"%")})
+    output$brem_Latest <- renderText({paste("Bremerton (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Seattle - Bremerton"),1), nsmall = 0, big.mark = ","),"%")})
+    output$faunt_Latest <- renderText({paste("Fauntleroy (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Fauntleroy - Vashon - Southworth"),1), nsmall = 0, big.mark = ","),"%")})    
+    output$king_Latest <- renderText({paste("Edmonds (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Edmonds -  Kingston"),1), nsmall = 0, big.mark = ","),"%")})
+    output$muki_Latest <- renderText({paste("Mukilteo (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Mukilteo - Clinton"),1), nsmall = 0, big.mark = ","),"%")})
+    output$ptdef_Latest <- renderText({paste("Pt Defiance (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Point Defiance - Tahlequah"),1), nsmall = 0, big.mark = ","),"%")})
     
     # Rail Data
     output$chart_rail <- renderPlotly({create_line_chart(rail, "% of 2019 Daily Passengers", scales::percent, 1, c('#91268F','#F05A28',"#8CC63E","#00A7A0","#76787A","#BBBDC0"), "variable",100,"%")})
