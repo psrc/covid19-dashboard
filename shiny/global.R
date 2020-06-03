@@ -17,12 +17,12 @@ library('rvest')
 #################################################################################################################
 #################################################################################################################
 # Local Working Directory
-#setwd("C:/coding/covid19-dashboard/shiny")
+wrkdir <-"C:/coding/covid19-dashboard/shiny"
 
 # Shiny Server Working Directory
-wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
+#wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
 
-transit_file <- file.path(wrkdir,"data/TransitTable_crosstab.csv")
+transit_file <- file.path(wrkdir,"data/TransitTable_data.csv")
 ferry_file <- file.path(wrkdir,"data/FerriesTable_crosstab.csv")
 rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
 unemployment_file <- file.path(wrkdir,"data/unemployment.csv")
@@ -145,47 +145,71 @@ max_tsa <- max(passengers$value)
 #################################################################################################################
 #################################################################################################################
 transit_data <- setDT(read.csv(transit_file,stringsAsFactors=FALSE))
-cols <- c("Current","Community.Transit","Everett.Transit","King.County.Metro","Kitsap.Transit..Excludes.Fast.Foot.Ferry.","Pierce.Transit","Sound.Transit")
-transit_data <- transit_data[,..cols]
-nms <- c("day","Community Transit", "Everett Transit", "King County Metro", "Kitsap Transit", "Pierce Transit","Sound Transit")
+nms <- c("day","variable","value","agency_id")
 setnames(transit_data,nms)
+
+# Clean up data
+transit_data$day <- gsub("Sun, ","",transit_data$day)
+transit_data$day <- gsub("Mon, ","",transit_data$day)
+transit_data$day <- gsub("Tue, ","",transit_data$day)
+transit_data$day <- gsub("Wed, ","",transit_data$day)
+transit_data$day <- gsub("Thu, ","",transit_data$day)
+transit_data$day <- gsub("Fri, ","",transit_data$day)
+transit_data$day <- gsub("Sat, ","",transit_data$day)
 transit_data$day <- mdy(transit_data$day)
+transit_data$date <- transit_data$day
 
-# Convert to Long Form for use in graphic creation
-transit <- melt(transit_data,id.vars=c("day"))
-transit$value <- gsub("%","",transit$value)
-transit$value <- as.numeric(transit$value)
-transit$value <- transit$value / 100
-transit$date <- transit$day
+transit_data$value <- gsub("%","",transit_data$value)
+transit_data$value <- as.numeric(transit_data$value)
+transit_data$value <- transit_data$value / 100
 
-ct_latest_month <- max(month(transit$day))
-ct_only_latest <- transit[month(day) %in% ct_latest_month & `variable` %in% c("Community Transit")]
-ct_only_latest <- ct_only_latest[!is.na(ct_only_latest$value),]
+transit_data$variable <- gsub("Kitsap Transit \\(Excludes Fast Foot Ferry\\)","Kitsap Transit",transit_data$variable)
+transit_data$variable <- gsub("Kitsap Transit - Fast Foot Ferry only","Kitsap Fast Ferry",transit_data$variable)
+
+psrc_agencies <- c("Community Transit","Everett Transit","King County Metro","Kitsap Transit", "Kitsap Fast Ferry", "Pierce Transit", "Sound Transit")
+transit <- transit_data[variable %in% psrc_agencies]
+
+# Latest Data by Operator
+working <- na.omit(transit)
+working <- working[variable %in% c("Community Transit")]
+ct_latest_month <- max(month(working$day))
+ct_only_latest <- working[month(day) %in% ct_latest_month]
 ct_latest_day <- max(day(ct_only_latest$day))
 
-et_latest_month <- max(month(transit$day))
-et_only_latest <- transit[month(day) %in% et_latest_month & `variable` %in% c("Everett Transit")]
-et_only_latest <- et_only_latest[!is.na(et_only_latest$value),]
+working <- na.omit(transit)
+working <- working[variable %in% c("Everett Transit")]
+et_latest_month <- max(month(working$day))
+et_only_latest <- working[month(day) %in% et_latest_month]
 et_latest_day <- max(day(et_only_latest$day))
 
-kcm_latest_month <- max(month(transit$day))
-kcm_only_latest <- transit[month(day) %in% kcm_latest_month & `variable` %in% c("King County Metro")]
-kcm_only_latest <- kcm_only_latest[!is.na(kcm_only_latest$value),]
+working <- na.omit(transit)
+working <- working[variable %in% c("King County Metro")]
+kcm_latest_month <- max(month(working$day))
+kcm_only_latest <- working[month(day) %in% kcm_latest_month]
 kcm_latest_day <- max(day(kcm_only_latest$day))
 
-kt_latest_month <- max(month(transit$day))
-kt_only_latest <- transit[month(day) %in% kt_latest_month & `variable` %in% c("Kitsap Transit")]
-kt_only_latest <- kt_only_latest[!is.na(kt_only_latest$value),]
+working <- na.omit(transit)
+working <- working[variable %in% c("Kitsap Transit")]
+kt_latest_month <- max(month(working$day))
+kt_only_latest <- working[month(day) %in% kt_latest_month]
 kt_latest_day <- max(day(kt_only_latest$day))
 
-pt_latest_month <- max(month(transit$day))
-pt_only_latest <- transit[month(day) %in% pt_latest_month & `variable` %in% c("Pierce Transit")]
-pt_only_latest <- pt_only_latest[!is.na(pt_only_latest$value),]
+working <- na.omit(transit)
+working <- working[variable %in% c("Kitsap Fast Ferry")]
+ktf_latest_month <- max(month(working$day))
+ktf_only_latest <- working[month(day) %in% ktf_latest_month]
+ktf_latest_day <- max(day(ktf_only_latest$day))
+
+working <- na.omit(transit)
+working <- working[variable %in% c("Pierce Transit")]
+pt_latest_month <- max(month(working$day))
+pt_only_latest <- working[month(day) %in% pt_latest_month]
 pt_latest_day <- max(day(pt_only_latest$day))
 
-st_latest_month <- max(month(transit$day))
-st_only_latest <- transit[month(day) %in% st_latest_month & `variable` %in% c("Sound Transit")]
-st_only_latest <- st_only_latest[!is.na(st_only_latest$value),]
+working <- na.omit(transit)
+working <- working[variable %in% c("Sound Transit")]
+st_latest_month <- max(month(working$day))
+st_only_latest <- working[month(day) %in% st_latest_month]
 st_latest_day <- max(day(st_only_latest$day))
 
 #################################################################################################################

@@ -185,6 +185,8 @@ SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Sun. 06/02/19,Sun. 05/31/20,2020 Vol
 SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,64702,64702
 SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,65723,88712
 SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,88712,88712
+SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,67343,91020
+SR 14,Clark,SR 14 at Jct. I-205 (Vancouver),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,91020,91020
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,82572,80172
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,80172,80172
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,92938,94092
@@ -371,6 +373,8 @@ I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Sun. 06/02/19,Sun. 05/31/20,2020 
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,86184,86184
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,79162,99767
 I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,99767,99767
+I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,81055,102794
+I-205,Clark,I-205 at Jct. SR 14 (WA/OR border),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,102794,102794
 I-5,Clark,I-5 at SR 502 (Battle Ground),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,84868,85182
 I-5,Clark,I-5 at SR 14 (WA/OR border,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,92850,93683
 I-5,Clark,I-5 at SR 502 (Battle Ground),Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,85182,85182
@@ -743,6 +747,10 @@ I-5,Clark,I-5 at SR 502 (Battle Ground),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes
 I-5,Clark,I-5 at SR 14 (WA/OR border,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,90684,112760
 I-5,Clark,I-5 at SR 502 (Battle Ground),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,98862,98862
 I-5,Clark,I-5 at SR 14 (WA/OR border,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,112760,112760
+I-5,Clark,I-5 at SR 502 (Battle Ground),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,82519,98717
+I-5,Clark,I-5 at SR 14 (WA/OR border,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,92401,114526
+I-5,Clark,I-5 at SR 502 (Battle Ground),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,98717,98717
+I-5,Clark,I-5 at SR 14 (WA/OR border,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,114526,114526
 I-5,King,I-5 at SODO (Holden),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,202132,204747
 I-5,King,I-5 at Seattle/SLU (Boylston),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,165849,162861
 I-5,King,I-5 at Northgate,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,174302,182318
@@ -1673,6 +1681,16 @@ I-5,King,I-5 at Seattle/SLU (Boylston),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,
 I-5,King,I-5 at Northgate,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,207908,207908
 I-5,King,I-5 at King/Snohomish county line,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,216570,216570
 I-5,King,I-5 at Federal Way (Enchanted Pkwy),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,154187,154187
+I-5,King,I-5 at SODO (Holden),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,158681,237577
+I-5,King,I-5 at Seattle/SLU (Boylston),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,131055,183382
+I-5,King,I-5 at Northgate,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,142400,214710
+I-5,King,I-5 at King/Snohomish county line,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,154806,221765
+I-5,King,I-5 at Federal Way (Enchanted Pkwy),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,116847,155379
+I-5,King,I-5 at SODO (Holden),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,237577,237577
+I-5,King,I-5 at Seattle/SLU (Boylston),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,183382,183382
+I-5,King,I-5 at Northgate,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,214710,214710
+I-5,King,I-5 at King/Snohomish county line,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,221765,221765
+I-5,King,I-5 at Federal Way (Enchanted Pkwy),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,155379,155379
 I-5,Lewis,I-5 at Centralia,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,65469,65589
 I-5,Lewis,I-5 at Centralia,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,65589,65589
 I-5,Lewis,I-5 at Centralia,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,66946,68256
@@ -1859,6 +1877,8 @@ I-5,Lewis,I-5 at Centralia,Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,Sunday,48300
 I-5,Lewis,I-5 at Centralia,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,74488,74488
 I-5,Lewis,I-5 at Centralia,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,61311,75975
 I-5,Lewis,I-5 at Centralia,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,75975,75975
+I-5,Lewis,I-5 at Centralia,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,60084,74695
+I-5,Lewis,I-5 at Centralia,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,74695,74695
 I-5,Pierce,I-5 at Pierce/King county line,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,127159,132269
 I-5,Pierce,I-5 at Lakewood,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,109777,116999
 I-5,Pierce,I-5 at Pierce/King county line,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,132269,132269
@@ -2231,6 +2251,10 @@ I-5,Pierce,I-5 at Pierce/King county line,Mon. 06/03/19,Mon. 06/01/20,2020 Volum
 I-5,Pierce,I-5 at Lakewood,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,108368,137023
 I-5,Pierce,I-5 at Pierce/King county line,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,153964,153964
 I-5,Pierce,I-5 at Lakewood,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,137023,137023
+I-5,Pierce,I-5 at Pierce/King county line,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,123230,156965
+I-5,Pierce,I-5 at Lakewood,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,107730,137482
+I-5,Pierce,I-5 at Pierce/King county line,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,156965,156965
+I-5,Pierce,I-5 at Lakewood,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,137482,137482
 I-5,Snohomish,I-5 at Lynnwood (156th),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,155733,186605
 I-5,Snohomish,I-5 at Everett (Marine View Drive),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,119446,126274
 I-5,Snohomish,I-5 at Lynnwood (156th),Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,186605,186605
@@ -2603,6 +2627,10 @@ I-5,Snohomish,I-5 at Lynnwood (156th),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,M
 I-5,Snohomish,I-5 at Everett (Marine View Drive),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,110855,140115
 I-5,Snohomish,I-5 at Lynnwood (156th),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,218680,218680
 I-5,Snohomish,I-5 at Everett (Marine View Drive),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,140115,140115
+I-5,Snohomish,I-5 at Lynnwood (156th),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,166088,223726
+I-5,Snohomish,I-5 at Everett (Marine View Drive),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,111008,141105
+I-5,Snohomish,I-5 at Lynnwood (156th),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,223726,223726
+I-5,Snohomish,I-5 at Everett (Marine View Drive),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,141105,141105
 I-5,Thurston,I-5 at Tumwater Blvd.,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,72699,71591
 I-5,Thurston,I-5 at Meridian Road (Lacey),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,97172,100747
 I-5,Thurston,I-5 at Tumwater Blvd.,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,71591,71591
@@ -2975,6 +3003,10 @@ I-5,Thurston,I-5 at Tumwater Blvd.,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Mond
 I-5,Thurston,I-5 at Meridian Road (Lacey),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,47644,60353
 I-5,Thurston,I-5 at Tumwater Blvd.,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,94834,94834
 I-5,Thurston,I-5 at Meridian Road (Lacey),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,60353,60353
+I-5,Thurston,I-5 at Tumwater Blvd.,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,73350,94138
+I-5,Thurston,I-5 at Meridian Road (Lacey),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,94584,122086
+I-5,Thurston,I-5 at Tumwater Blvd.,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,94138,94138
+I-5,Thurston,I-5 at Meridian Road (Lacey),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,122086,122086
 SR 167,King,SR 167 at Kent (196th),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,105679,98466
 SR 167,King,SR 167 at Kent (196th),Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,98466,98466
 SR 167,King,SR 167 at Kent (196th),Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,127248,115699
@@ -3161,6 +3193,8 @@ SR 167,King,SR 167 at Kent (196th),Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,Sund
 SR 167,King,SR 167 at Kent (196th),Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,102490,102490
 SR 167,King,SR 167 at Kent (196th),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,112369,117016
 SR 167,King,SR 167 at Kent (196th),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,117016,117016
+SR 167,King,SR 167 at Kent (196th),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,114414,122368
+SR 167,King,SR 167 at Kent (196th),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,122368,122368
 I-405,King,I-405 at Tukwila (Longacres),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,154270,160525
 I-405,King,I-405 at Renton (37th),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,114465,122485
 I-405,King,I-405 at Kirkland (NE 132nd Street),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,125985,139399
@@ -4091,6 +4125,16 @@ I-405,King,I-405 at Renton (37th),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monda
 I-405,King,I-405 at Kirkland (NE 132nd Street),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,181133,181133
 I-405,King,I-405 at Bothell (Filbert),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,126000,126000
 I-405,King,I-405 at Bellevue (NE 8th Street),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,169702,169702
+I-405,King,I-405 at Tukwila (Longacres),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,132612,184464
+I-405,King,I-405 at Renton (37th),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,106107,136919
+I-405,King,I-405 at Kirkland (NE 132nd Street),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,129031,187958
+I-405,King,I-405 at Bothell (Filbert),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,97855,129870
+I-405,King,I-405 at Bellevue (NE 8th Street),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,124538,172082
+I-405,King,I-405 at Tukwila (Longacres),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,184464,184464
+I-405,King,I-405 at Renton (37th),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,136919,136919
+I-405,King,I-405 at Kirkland (NE 132nd Street),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,187958,187958
+I-405,King,I-405 at Bothell (Filbert),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,129870,129870
+I-405,King,I-405 at Bellevue (NE 8th Street),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,172082,172082
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,54740,56390
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,56390,56390
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,72241,75073
@@ -4277,6 +4321,8 @@ SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Sun. 06/02/19,Sun. 05/31/20,2020 Vol
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,59532,59532
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,65111,77145
 SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,77145,77145
+SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,65691,79881
+SR 512,Pierce,SR 512 at Pacific Ave. (SR 7),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,79881,79881
 SR 16,Pierce,SR 16 at Tacoma Narrows,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,46497,51968
 SR 16,Pierce,SR 16 at Tacoma Narrows,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,51968,51968
 SR 16,Pierce,SR 16 at Tacoma Narrows,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,66289,70756
@@ -4463,6 +4509,8 @@ SR 16,Pierce,SR 16 at Tacoma Narrows,Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,Su
 SR 16,Pierce,SR 16 at Tacoma Narrows,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,62421,62421
 SR 16,Pierce,SR 16 at Tacoma Narrows,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,,
 SR 16,Pierce,SR 16 at Tacoma Narrows,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,,
+SR 16,Pierce,SR 16 at Tacoma Narrows,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,61798,81759
+SR 16,Pierce,SR 16 at Tacoma Narrows,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,81759,81759
 SR 410,Pierce,SR 410 at Sumner,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,39907,40528
 SR 410,Pierce,SR 410 at Sumner,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,40528,40528
 SR 410,Pierce,SR 410 at Sumner,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,51250,51494
@@ -4649,6 +4697,8 @@ SR 410,Pierce,SR 410 at Sumner,Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,Sunday,3
 SR 410,Pierce,SR 410 at Sumner,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,40497,40497
 SR 410,Pierce,SR 410 at Sumner,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,45105,49225
 SR 410,Pierce,SR 410 at Sumner,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,49225,49225
+SR 410,Pierce,SR 410 at Sumner,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,45236,51001
+SR 410,Pierce,SR 410 at Sumner,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,51001,51001
 SR 520,King,SR 520 at SR 520 Floating Bridge,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,45136,50567
 SR 520,King,SR 520 at SR 520 Floating Bridge,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,50567,50567
 SR 520,King,SR 520 at SR 520 Floating Bridge,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,71704,78704
@@ -4835,6 +4885,8 @@ SR 520,King,SR 520 at SR 520 Floating Bridge,Sun. 06/02/19,Sun. 05/31/20,2020 Vo
 SR 520,King,SR 520 at SR 520 Floating Bridge,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,55164,55164
 SR 520,King,SR 520 at SR 520 Floating Bridge,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,32638,83675
 SR 520,King,SR 520 at SR 520 Floating Bridge,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,83675,83675
+SR 520,King,SR 520 at SR 520 Floating Bridge,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,34298,90270
+SR 520,King,SR 520 at SR 520 Floating Bridge,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,90270,90270
 I-90,King,I-90 at I-90 Floating Bridge,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,112285,112798
 I-90,King,I-90 at I-90 Floating Bridge,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,112798,112798
 I-90,King,I-90 at I-90 Floating Bridge,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,149352,153197
@@ -5021,6 +5073,8 @@ I-90,King,I-90 at I-90 Floating Bridge,Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,
 I-90,King,I-90 at I-90 Floating Bridge,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,123030,123030
 I-90,King,I-90 at I-90 Floating Bridge,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,85430,163521
 I-90,King,I-90 at I-90 Floating Bridge,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,163521,163521
+I-90,King,I-90 at I-90 Floating Bridge,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,87576,171313
+I-90,King,I-90 at I-90 Floating Bridge,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,171313,171313
 I-90,Spokane,I-90 at US 2 West,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,34831,21565
 I-90,Spokane,I-90 at Sprague,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,48211,46336
 I-90,Spokane,I-90 at Pines Road (SR 27),Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,65097,58594
@@ -5579,6 +5633,12 @@ I-90,Spokane,I-90 at Pines Road (SR 27),Mon. 06/03/19,Mon. 06/01/20,2020 Volumes
 I-90,Spokane,I-90 at US 2 West,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,32870,32870
 I-90,Spokane,I-90 at Sprague,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,77788,77788
 I-90,Spokane,I-90 at Pines Road (SR 27),Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,98370,98370
+I-90,Spokane,I-90 at US 2 West,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,44406,32078
+I-90,Spokane,I-90 at Sprague,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,97117,79427
+I-90,Spokane,I-90 at Pines Road (SR 27),Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,87807,100516
+I-90,Spokane,I-90 at US 2 West,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,32078,32078
+I-90,Spokane,I-90 at Sprague,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,79427,79427
+I-90,Spokane,I-90 at Pines Road (SR 27),Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,100516,100516
 US 195,Spokane,US 195 at 16th Ave,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,16797,15875
 US 195,Spokane,US 195 at 16th Ave,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,15875,15875
 US 195,Spokane,US 195 at 16th Ave,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,20679,20910
@@ -5765,6 +5825,8 @@ US 195,Spokane,US 195 at 16th Ave,Sun. 06/02/19,Sun. 05/31/20,2020 Volumes,Sunda
 US 195,Spokane,US 195 at 16th Ave,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,19020,19020
 US 195,Spokane,US 195 at 16th Ave,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,19018,23792
 US 195,Spokane,US 195 at 16th Ave,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,23792,23792
+US 195,Spokane,US 195 at 16th Ave,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,19647,24455
+US 195,Spokane,US 195 at 16th Ave,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,24455,24455
 US 395,Spokane,US 395 at Parksmith Drive,Sun. 03/03/19,Sun. 03/01/20,2020 Volumes,Sunday,14738,13077
 US 395,Spokane,US 395 at Parksmith Drive,Sun. 03/03/19,Sun. 03/01/20,2019 Volumes,Sunday,13077,13077
 US 395,Spokane,US 395 at Parksmith Drive,Mon. 03/04/19,Mon. 03/02/20,2020 Volumes,Monday,22855,21626
@@ -5951,3 +6013,5 @@ US 395,Spokane,US 395 at Parksmith Drive,Sun. 06/02/19,Sun. 05/31/20,2020 Volume
 US 395,Spokane,US 395 at Parksmith Drive,Sun. 06/02/19,Sun. 05/31/20,2019 Volumes,Sunday,16724,16724
 US 395,Spokane,US 395 at Parksmith Drive,Mon. 06/03/19,Mon. 06/01/20,2020 Volumes,Monday,21054,24724
 US 395,Spokane,US 395 at Parksmith Drive,Mon. 06/03/19,Mon. 06/01/20,2019 Volumes,Monday,24724,24724
+US 395,Spokane,US 395 at Parksmith Drive,Tue. 06/04/19,Tue. 06/02/20,2020 Volumes,Tuesday,21416,24990
+US 395,Spokane,US 395 at Parksmith Drive,Tue. 06/04/19,Tue. 06/02/20,2019 Volumes,Tuesday,24990,24990
