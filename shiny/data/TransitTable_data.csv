@@ -1,8 +1,9 @@
 ﻿Day of Date 2020,Transit Agency,Avg. PercentNorm%,Sum of Agency Order ID
-"Tue, 06/02/20",Average,-72%,12
-"Mon, 06/01/20",Average,-69%,12
+"Wed, 06/03/20",Average,-66%,12
+"Tue, 06/02/20",Average,-71%,12
+"Mon, 06/01/20",Average,-68%,12
 "Sun, 05/31/20",Average,-52%,12
-"Sat, 05/30/20",Average,-67%,12
+"Sat, 05/30/20",Average,-66%,12
 "Fri, 05/29/20",Average,-67%,12
 "Thu, 05/28/20",Average,-69%,12
 "Wed, 05/27/20",Average,-69%,12
@@ -93,6 +94,7 @@
 "Tue, 03/03/20",Average,0%,12
 "Mon, 03/02/20",Average,-5%,12
 "Sun, 03/01/20",Average,-5%,12
+"Wed, 06/03/20",Whatcom Transit,,11
 "Tue, 06/02/20",Whatcom Transit,-89%,11
 "Mon, 06/01/20",Whatcom Transit,-80%,11
 "Sun, 05/31/20",Whatcom Transit,-69%,11
@@ -187,6 +189,7 @@
 "Tue, 03/03/20",Whatcom Transit,-1%,11
 "Mon, 03/02/20",Whatcom Transit,-8%,11
 "Sun, 03/01/20",Whatcom Transit,4%,11
+"Wed, 06/03/20",Everett Transit,-60%,10
 "Tue, 06/02/20",Everett Transit,-67%,10
 "Mon, 06/01/20",Everett Transit,-64%,10
 "Sun, 05/31/20",Everett Transit,,10
@@ -281,6 +284,7 @@
 "Tue, 03/03/20",Everett Transit,-1%,10
 "Mon, 03/02/20",Everett Transit,-21%,10
 "Sun, 03/01/20",Everett Transit,-14%,10
+"Wed, 06/03/20",Intercity Transit,-96%,9
 "Tue, 06/02/20",Intercity Transit,-97%,9
 "Mon, 06/01/20",Intercity Transit,-97%,9
 "Sun, 05/31/20",Intercity Transit,-98%,9
@@ -375,6 +379,7 @@
 "Tue, 03/03/20",Intercity Transit,1%,9
 "Mon, 03/02/20",Intercity Transit,-9%,9
 "Sun, 03/01/20",Intercity Transit,-8%,9
+"Wed, 06/03/20",Kitsap Transit - Fast Foot Ferry only,-67%,8
 "Tue, 06/02/20",Kitsap Transit - Fast Foot Ferry only,-69%,8
 "Mon, 06/01/20",Kitsap Transit - Fast Foot Ferry only,-69%,8
 "Sun, 05/31/20",Kitsap Transit - Fast Foot Ferry only,,8
@@ -469,10 +474,11 @@
 "Tue, 03/03/20",Kitsap Transit - Fast Foot Ferry only,20%,8
 "Mon, 03/02/20",Kitsap Transit - Fast Foot Ferry only,19%,8
 "Sun, 03/01/20",Kitsap Transit - Fast Foot Ferry only,,8
+"Wed, 06/03/20",Kitsap Transit (Excludes Fast Foot Ferry),-69%,7
 "Tue, 06/02/20",Kitsap Transit (Excludes Fast Foot Ferry),-71%,7
-"Mon, 06/01/20",Kitsap Transit (Excludes Fast Foot Ferry),-73%,7
+"Mon, 06/01/20",Kitsap Transit (Excludes Fast Foot Ferry),-67%,7
 "Sun, 05/31/20",Kitsap Transit (Excludes Fast Foot Ferry),,7
-"Sat, 05/30/20",Kitsap Transit (Excludes Fast Foot Ferry),-63%,7
+"Sat, 05/30/20",Kitsap Transit (Excludes Fast Foot Ferry),-58%,7
 "Fri, 05/29/20",Kitsap Transit (Excludes Fast Foot Ferry),-68%,7
 "Thu, 05/28/20",Kitsap Transit (Excludes Fast Foot Ferry),-70%,7
 "Wed, 05/27/20",Kitsap Transit (Excludes Fast Foot Ferry),-69%,7
@@ -563,6 +569,7 @@
 "Tue, 03/03/20",Kitsap Transit (Excludes Fast Foot Ferry),1%,7
 "Mon, 03/02/20",Kitsap Transit (Excludes Fast Foot Ferry),4%,7
 "Sun, 03/01/20",Kitsap Transit (Excludes Fast Foot Ferry),,7
+"Wed, 06/03/20",C-TRAN,-47%,6
 "Tue, 06/02/20",C-TRAN,-52%,6
 "Mon, 06/01/20",C-TRAN,-50%,6
 "Sun, 05/31/20",C-TRAN,-35%,6
@@ -657,8 +664,9 @@
 "Tue, 03/03/20",C-TRAN,5%,6
 "Mon, 03/02/20",C-TRAN,-4%,6
 "Sun, 03/01/20",C-TRAN,5%,6
-"Tue, 06/02/20",Spokane Transit,-58%,5
-"Mon, 06/01/20",Spokane Transit,-57%,5
+"Wed, 06/03/20",Spokane Transit,-54%,5
+"Tue, 06/02/20",Spokane Transit,-57%,5
+"Mon, 06/01/20",Spokane Transit,-58%,5
 "Sun, 05/31/20",Spokane Transit,-45%,5
 "Sat, 05/30/20",Spokane Transit,-41%,5
 "Fri, 05/29/20",Spokane Transit,-56%,5
@@ -751,6 +759,7 @@
 "Tue, 03/03/20",Spokane Transit,2%,5
 "Mon, 03/02/20",Spokane Transit,-2%,5
 "Sun, 03/01/20",Spokane Transit,11%,5
+"Wed, 06/03/20",Pierce Transit,,4
 "Tue, 06/02/20",Pierce Transit,,4
 "Mon, 06/01/20",Pierce Transit,-60%,4
 "Sun, 05/31/20",Pierce Transit,-39%,4
@@ -845,6 +854,7 @@
 "Tue, 03/03/20",Pierce Transit,-7%,4
 "Mon, 03/02/20",Pierce Transit,-11%,4
 "Sun, 03/01/20",Pierce Transit,-2%,4
+"Wed, 06/03/20",Community Transit,-67%,3
 "Tue, 06/02/20",Community Transit,-70%,3
 "Mon, 06/01/20",Community Transit,-68%,3
 "Sun, 05/31/20",Community Transit,-25%,3
@@ -939,6 +949,7 @@
 "Tue, 03/03/20",Community Transit,-1%,3
 "Mon, 03/02/20",Community Transit,-5%,3
 "Sun, 03/01/20",Community Transit,12%,3
+"Wed, 06/03/20",Sound Transit,,2
 "Tue, 06/02/20",Sound Transit,,2
 "Mon, 06/01/20",Sound Transit,,2
 "Sun, 05/31/20",Sound Transit,,2
@@ -1033,6 +1044,7 @@
 "Tue, 03/03/20",Sound Transit,-14%,2
 "Mon, 03/02/20",Sound Transit,-8%,2
 "Sun, 03/01/20",Sound Transit,,2
+"Wed, 06/03/20",King County Metro,,1
 "Tue, 06/02/20",King County Metro,-71%,1
 "Mon, 06/01/20",King County Metro,-70%,1
 "Sun, 05/31/20",King County Metro,-56%,1

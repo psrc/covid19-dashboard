@@ -17,7 +17,7 @@ library(rvest)
 #################################################################################################################
 #################################################################################################################
 # Local Working Directory
-#wrkdir <-"C:/coding/covid19-dashboard/shiny"
+# wrkdir <-"C:/coding/covid19-dashboard/shiny"
 
 # Shiny Server Working Directory
 wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
@@ -26,6 +26,7 @@ transit_file <- file.path(wrkdir,"data/TransitTable_data.csv")
 ferry_file <- file.path(wrkdir,"data/FerriesTable_data.csv")
 rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
+freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 esd_file <- file.path(wrkdir,"data/unemployment_claims.csv")
   
 #################################################################################################################
@@ -309,4 +310,31 @@ count_locations <- sort(unique(volumes$Location))
 volumes_latest_month <- max(month(volumes$day))
 volumes_only_latest <- volumes[month(day) %in% volumes_latest_month]
 volumes_latest_day <- max(day(volumes_only_latest$day))
+
+#################################################################################################################
+#################################################################################################################
+### Truck Volume Data
+#################################################################################################################
+#################################################################################################################
+truck_data <- setDT(read.csv(freight_file,stringsAsFactors=FALSE))
+nms <- c("Highway","County","Location","date","value")
+setnames(truck_data,nms)
+
+# Trim to PSRC Region and cleanup
+truck_data <- truck_data[County %in% c("King","Kitsap","Pierce","Snohomish")]
+truck_data$date <- mdy(truck_data$date)
+truck_data$day <- truck_data$date
+cols <- c("date","day","Location","value")
+trucks <- truck_data[,..cols]
+trucks$year <- year(trucks$date)
+trucks$value <- gsub("%","",trucks$value)
+trucks$value <- as.numeric(trucks$value)
+trucks$value <- trucks$value / 100
+
+# create list for drop down of count locations
+truck_count_locations <- sort(unique(trucks$Location))
+
+trucks_latest_month <- max(month(trucks$day))
+trucks_only_latest <- trucks[month(day) %in% trucks_latest_month]
+trucks_latest_day <- max(day(trucks_only_latest$day))
 
