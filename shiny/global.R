@@ -9,7 +9,7 @@ library(scales)
 library(plotly)
 
 # Web scraping
-library('rvest')
+library(rvest)
 
 #################################################################################################################
 #################################################################################################################
@@ -25,9 +25,9 @@ wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
 transit_file <- file.path(wrkdir,"data/TransitTable_data.csv")
 ferry_file <- file.path(wrkdir,"data/FerriesTable_data.csv")
 rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
-unemployment_file <- file.path(wrkdir,"data/unemployment.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
-
+esd_file <- file.path(wrkdir,"data/unemployment_claims.csv")
+  
 #################################################################################################################
 #################################################################################################################
 ### Custom Colors
@@ -267,17 +267,9 @@ rail_latest_day <- max(day(rail_only_latest$day))
 ### Unemployment Data
 #################################################################################################################
 #################################################################################################################
-unemployment <- setDT(read.csv(unemployment_file,stringsAsFactors=FALSE))
-nms <- c("date","day","value","variable")
-setnames(unemployment,nms)
-
-# Clean for use in graphic creation
-unemployment$date <- mdy(unemployment$date)
-unemployment$day <- mdy(unemployment$day)
-unemployment$value <- gsub(",","",unemployment$value)
-unemployment <- unemployment[variable %in% c("Initial Claims")]
-unemployment$value <- as.numeric(unemployment$value)
-unemployment$year <- year(unemployment$date)
+unemployment <- setDT(read.csv(esd_file,stringsAsFactors=FALSE))
+unemployment$date <- ymd(unemployment$date)
+unemployment$day <- ymd(unemployment$day)
 
 # Current Year
 esd_current <- unemployment[year(date) %in% c(2020)]
