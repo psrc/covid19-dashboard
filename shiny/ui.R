@@ -1,9 +1,48 @@
 shinyUI(
-navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
+navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = ("padding-bottom: 30px"))),
+           windowTitle = "COVID-19 Data Dashboard", 
+           theme = "styles.css",
+
+           tabPanel("Overview",
+                    sidebarLayout(
+                      sidebarPanel(
+                        h2("Summary of Impacts:"),
+                        "(compared to same time period in 2019)",
+                        hr(),
+                        h3("Unemployment Claims"),
+                        textOutput("unemployment_summary"),
+                        h3("Airport Usage"),
+                        textOutput("screenings_summary"),
+                        h3("Transit Usage"),
+                        textOutput("transit_summary"),
+                        h3("Ferry Usage"),
+                        textOutput("ferry_summary"),
+                        h3("Passsenger Rail Usage"),
+                        textOutput("rail_summary"),
+                        h3("Highway Usage"),
+                        textOutput("volume_summary"),
+                        br(),
+                        width=3),
+                      mainPanel(
+                        h1("Economic and Travel Impacts of COVID-19"),
+                        fluidRow(column(6,div(img(src="southlakeunionseattle_0.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
+                                  column(6,div(img(src="bellevuelakewashington_3.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
+                        ),
+                        br(),
+                        "Travel in Washington state has declined significantly since mid-March as the citizens of Washington have responded to various COVID-19 related initiatives such as closing schools, restricting gatherings to fewer than 50 people and the Stay Home - Stay Healthy Executive Order on March 25. This dashboard compiles data from numerous sources daily to help summarize travel and economic impacts for the Central Puge Sound region.",
+                        "Many of the data sources on these pages are updated daily - a direct response from many levels of government to provide timely information on impacts of this pandemic. Data is continually updated by these agencies and as such caution should be used when using the information on these pages as it can change as issues are discovered.",
+                        br(),
+                        br(),
+                        "Many of the travel impacts reported here have been summarized from the amazing data that the Washington State Department of Transportation has gathered and processed from numerous agencies across the state. Each source is documented on the specific dashboard page with a direct link to the data but if you wish to see more detailed information, we recommend that you check out WSDOT's COVID-19 Multimodal Transportation System Performance Dashboard at https://www.wsdot.wa.gov/about/covid-19-transportation-report/",
+                        br(),
+                      ) # End of Overview Panel
+                    ) # End of Sidebar of Overview Panel
+           ),# End of Tab Panel of Overview Panel
+           
            tabPanel(icon("briefcase"),
                     sidebarLayout(
                       sidebarPanel(
-                        div(img(src="esd.jpg", width = 190, height = 67, style = "padding-top: 5px")),
+                        div(img(src="esd.jpg", width = "50%", height = "50%", style = "padding-top: 5px")),
                         hr(),
                         strong("Weekly Initial Jobless Claims:"),
                         strong("(2019 / 2020 / Ratio)"),
@@ -24,7 +63,7 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                         ),
                         br(),
                         fluidRow(column(12,plotlyOutput("chart_unemployment"))),
-                        fluidRow(br(),column(width = 12, h4(textOutput("esdLink"))))
+                        fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/newsroom/unemployment-statistics", "Source: https://esd.wa.gov/newsroom/unemployment-statistics")))
                       ) # End of Main Panel of Passenger Screening
                     ) # End of Sidebar of Passenger Screening
            ),# End of Tab Panel of Passenger Screening
@@ -57,7 +96,7 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                   br(),
                   textOutput("TSASummary"),
                   fluidRow(column(12,plotlyOutput("chart_tsa"))),
-                  fluidRow(br(),column(width = 12, h4(textOutput("TSALink"))))
+                  fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.tsa.gov/coronavirus/passenger-throughput", "Source: https://www.tsa.gov/coronavirus/passenger-throughput")))
            ) # End of Main Panel of Passenger Screening
           ) # End of Sidebar of Passenger Screening
         ),# End of Tab Panel of Passenger Screening
@@ -96,7 +135,7 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                       br(),
                       textOutput("TransitSummary"),
                       fluidRow(column(12,plotlyOutput("chart_transit"))),
-                      fluidRow(br(),column(width = 12, h4(textOutput("TransitLink"))))
+                      fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/transit/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/transit/default.htm")))
                     ) #End of Main Panel
                  ) # End of Sidebar Layout for Transit
         ), # End of Transit Tab Panel
@@ -127,7 +166,7 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                      ),
                      br(),
                      fluidRow(column(12,plotlyOutput("chart_ferry"))),
-                     fluidRow(br(),column(width = 12, h4(textOutput("FerryLink"))))
+                     fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/ferries/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/ferries/default.htm")))
                    ) #End of Main Panel
                  ) # End of Sidebar Layout for Ferry
         ), # End of Ferry Tab Panel
@@ -153,7 +192,7 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                      ),
                      br(),
                      fluidRow(column(12,plotlyOutput("chart_rail"))),
-                     fluidRow(br(),column(width = 12, h4(textOutput("RailLink"))))
+                     fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/rail/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/rail/default.htm")))
                    ) #End of Main Panel
                  ) # End of Sidebar Layout for Rail
         ), # End of Rail Tab Panel        
@@ -184,10 +223,22 @@ navbarPage("COVID-19 Data Dashboard", theme = "styles.css",
                      ),
                      br(),
                      fluidRow(column(12,plotlyOutput("chart_volumes"))),
-                     fluidRow(br(),column(width = 12, h4(textOutput("VolumeLink"))))
+                     fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/highway/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/highway/default.htm")))
                    ) # End of Main Panel of Traffic Volumes
                  ) # End of Sidebar of Traffic Volumes
-        )# End of Tab Panel of Traffic Volumes
-        
+        ),# End of Tab Panel of Traffic Volumes
+
+        tabPanel(icon("info-circle"),
+                 h1("Data Sources"),
+                 "The data in this portal comes from a few key sources:",
+                 hr(),
+                 h2("Initial Unemployment Claims "),
+                 "from ESD",
+                 br(),
+                 h2("Airport Passenger Screenings:"),
+                 "from TSA",
+                 br()
+        )# End of Tab Panel of Information        
+                
   ) # End of NavBar Page
 ) # End of Shiny App

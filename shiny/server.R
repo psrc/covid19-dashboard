@@ -5,10 +5,6 @@ shinyServer(function(input, output) {
         paste("Daily Passenger Screenings at our Nation's Airports")
     })
     
-    output$TSALink <- renderText({
-        paste("Source: https://www.tsa.gov/coronavirus/passenger-throughput")
-    })
-    
     output$TSASummary <- renderText({
         paste("Daily passenger screenings by the Transportation Security Adminstration have ranged from a maximum of ", format(round(max_tsa,-2), nsmall = 0, big.mark = ",")," to a minimum of ",format(round(min_tsa,-2), nsmall = 0, big.mark = ","), " since March 1st. At it's lowest point on April 14th, daily passenger screenings in 2020 were only ", round((return_estimate(passengers,"2020-04-14")/return_estimate(passengers,"2019-04-14"))*100,1),"% of the total passenger screenings from 2019. Passenger volumes at our nation's airports have been gradually increasing since late April and as of ",latest_month,"-",latest_day," passsenger screenings were ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,1),"% of 2019 screenings.")
     })
@@ -25,26 +21,6 @@ shinyServer(function(input, output) {
         paste("Initial unemployment claims are reported for each week based on the last day of the work week and are generally available early in the next week. Due to the high volume of claims and issues of fraud, over 20,000 calls are going into their phone center each day and wait times are very long, making it difficult for people to reach ESD at this time.")
     })
 
-    output$esdLink <- renderText({
-        paste("Source: https://esd.wa.gov/newsroom/unemployment-statistics")
-    })
-        
-    output$TransitLink <- renderText({
-        paste("Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/")
-    })
-    
-    output$FerryLink <- renderText({
-        paste("Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/")
-    })
-    
-    output$RailLink <- renderText({
-        paste("Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/")
-    })
-    
-    output$VolumeLink <- renderText({
-        paste("Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/")
-    })
-    
     output$TransitBackground <- renderText({
         paste("This data is provided to the Washington State Department of Transportation by regional transit agencies. Transit agencies that do not offer weekend service will show these days as gaps in their data. Normal is average daily ridership for the same day of week in the same month of the prior year - 2019. In order to meet the unprecedented need for near-real time information, almost no quality control is occurring relative to this data. Use with caution.")
     })
@@ -65,7 +41,6 @@ shinyServer(function(input, output) {
         paste("Daily weekday transit boardings continue to be less than half of the daily transit boardings from 2019 for all operators in the region. One interesting item to note is that weekend boarding levels have averaged closer to 2019 levels than weekdays, likely reflecting the higher percentage of non-work transit trips that occur on weekends.")
     })
     
-        
     # TSA Data
     output$chart_tsa <- renderPlotly({create_line_chart(passengers,"Daily Passenger Screenings",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"")})
     
@@ -112,6 +87,12 @@ shinyServer(function(input, output) {
     output$volumes_May <- renderText({paste("May 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2019))*100,1),"%")})    
     output$volumes_Latest <- renderText({paste("Latest Data (",volumes_latest_month,"-",volumes_latest_day,"): ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019))*100,1),"%")})
     
+    # Summary Statistics for Initial Page
+    output$screenings_summary <- renderText({paste("Nationwide Airport Screenings: ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,0)-100,"%")})
+    output$unemployment_summary <- renderText({paste("Initial Jobless Claims Statewide: ", round((return_estimate(unemployment,ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current)))/return_estimate(unemployment,ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))))*100,0),"%")})
+    output$transit_summary <- renderText({paste("Major Transit Operators Statewide: ", format(round(return_single_estimate(transit_data,ydm(paste("2020-",all_tran_latest_day,"-",all_tran_latest_month)),"Average"),1), nsmall = 0, big.mark = ","),"%")})
+    output$rail_summary <- renderText({paste("Amtrak Cascades: ", format(round(return_single_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)),"Amtrak"),1), nsmall = 0, big.mark = ","),"%")})
+    output$ferry_summary <- renderText({paste("Central Puget Sound Ferry Routes: ", format(round((round(return_single_estimate(ferry_ridership_2020,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0) - round(return_single_estimate(ferry_ridership_2019,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0))/ round(return_single_estimate(ferry_ridership_2019,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0)*100,0), nsmall = 0, big.mark = ","),"%")})
+    output$volume_summary <- renderText({paste("Central Puget Sound Highways: ", format(round(((round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2020),-2)-round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019),-2))/round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019),-2))*100,0), nsmall = 0, big.mark = ","),"%")})
     
-            
 })    

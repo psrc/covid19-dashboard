@@ -212,6 +212,12 @@ st_latest_month <- max(month(working$day))
 st_only_latest <- working[month(day) %in% st_latest_month]
 st_latest_day <- max(day(st_only_latest$day))
 
+working <- na.omit(transit_data)
+working <- working[variable %in% c("Average")]
+all_tran_latest_month <- max(month(working$day))
+all_tran_only_latest <- working[month(day) %in% all_tran_latest_month]
+all_tran_latest_day <- max(day(all_tran_only_latest$day))
+
 #################################################################################################################
 #################################################################################################################
 ### Ferry Data
@@ -229,6 +235,9 @@ ferry <- ferry_data[variable %in% psrc_ferry & metric %in% "Percentage Change"]
 ferry_latest_month <- max(month(ferry$day))
 ferry_only_latest <- ferry[month(day) %in% ferry_latest_month]
 ferry_latest_day <- max(day(ferry_only_latest$day))
+
+ferry_ridership_2020 <- ferry_data[variable %in% psrc_ferry & metric %in% "2020 Ridership"]
+ferry_ridership_2019 <- ferry_data[variable %in% psrc_ferry & metric %in% "2019     Ridership"]
 
 #################################################################################################################
 #################################################################################################################

@@ -26,6 +26,18 @@ h4 {
   font-size: 12pt;
 }
 
+i {
+  color: #76787A;
+  font-size: 20pt;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.source_url {
+  color: #91268F;
+  font-size: 14pt;
+}
+
 .datatables {
   font-size: 12pt; 
 }
@@ -195,14 +207,47 @@ h4 {
   color: #76787A;
 }
 
+#screenings_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#unemployment_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#transit_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#rail_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#ferry_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
+
+#volume_summary {
+  font-size: 14pt;
+  color: #76787A;
+}
 
 .nav-tabs {
   padding-top: 20px;
+}
+
+.navbar img {
+  padding-right: 50px;
 }
 .navbar {
   font-size: 20pt;
   background-color: white;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 0;
+  padding-left: 50px;
 }
