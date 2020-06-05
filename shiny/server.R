@@ -40,7 +40,12 @@ shinyServer(function(input, output) {
     output$TruckBackground <- renderText({
         paste("This data is provided by Washington State Department of Transportation. Normal is average daily traffic for the same day of week in the same month of the prior year - 2019. In order to meet the unprecedented need for near-real time information, almost no quality control is occurring relative to this data. Use with caution.")
     })
+
+    output$NonMotorBackground <- renderText({
+        paste("This data is provided by Washington State Department of Transportation. Normal is the average for the same day of week in the same month of the prior year - 2019. In order to meet the unprecedented need for near-real time information, almost no quality control is occurring relative to this data. Use with caution.")
+    })
     
+        
     output$TransitSummary <- renderText({
         paste("Daily weekday transit boardings continue to be less than half of the daily transit boardings from 2019 for all operators in the region. One interesting item to note is that weekend boarding levels have averaged closer to 2019 levels than weekdays, likely reflecting the higher percentage of non-work transit trips that occur on weekends.")
     })
@@ -99,6 +104,14 @@ shinyServer(function(input, output) {
     output$trucks_June <- renderText({paste("June 1st: ", format(round(return_matching_day(w_tbl=trucks[Location %in% input$TruckLocations],"2020-06-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
     output$trucks_Latest <- renderText({paste("Latest Data (",trucks_latest_month,"-",trucks_latest_day,"): ", format(round(return_matching_day(w_tbl=trucks[Location %in% input$TruckLocations],w_day=ydm(paste("2020-",trucks_latest_day,"-",trucks_latest_month)),2020),2)*100, nsmall = 0, big.mark = ","),"%")})
 
+    # Non-Motorized Data
+    output$chart_nonmotor <- renderPlotly({create_line_chart(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"% of 2019 Daily Non-Motorized Counts",scales::percent, 1, c('#91268F','#F05A28'),"year",100,"%")})
+    output$nonmotor_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-03-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-04-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_May <- renderText({paste("May 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-05-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_June <- renderText({paste("June 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-06-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_Latest <- renderText({paste("Latest Data (",nonmotor_latest_month,"-",nonmotor_latest_day,"): ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],w_day=ydm(paste("2020-",nonmotor_latest_day,"-",nonmotor_latest_month)),2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    
     # Summary Statistics for Initial Page
     output$screenings_summary <- renderText({paste("Nationwide Airport Screenings: ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,0)-100,"%")})
     output$unemployment_summary <- renderText({paste("Initial Jobless Claims Statewide: ", round((return_estimate(unemployment,ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current)))/return_estimate(unemployment,ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))))*100,0),"%")})

@@ -38,6 +38,11 @@ i {
   font-size: 14pt;
 }
 
+.sidebar_headings {
+  font-size: 18pt;
+  color: #8CC63E;
+}
+
 .sidebar_notes {
   font-size: 14pt;
   color: #76787A;

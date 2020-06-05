@@ -28,6 +28,7 @@ rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 esd_file <- file.path(wrkdir,"data/unemployment_claims.csv")
+nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
   
 #################################################################################################################
 #################################################################################################################
@@ -269,8 +270,8 @@ rail_latest_day <- max(day(rail_only_latest$day))
 #################################################################################################################
 #################################################################################################################
 unemployment <- setDT(read.csv(esd_file,stringsAsFactors=FALSE))
-unemployment$date <- ymd(unemployment$date)
-unemployment$day <- ymd(unemployment$day)
+unemployment$date <- mdy(unemployment$date)
+unemployment$day <- mdy(unemployment$day)
 
 # Current Year
 esd_current <- unemployment[year(date) %in% c(2020)]
@@ -338,3 +339,29 @@ trucks_latest_month <- max(month(trucks$day))
 trucks_only_latest <- trucks[month(day) %in% trucks_latest_month]
 trucks_latest_day <- max(day(trucks_only_latest$day))
 
+#################################################################################################################
+#################################################################################################################
+### Nonmotorized Data
+#################################################################################################################
+#################################################################################################################
+nonmotor_data <- setDT(read.csv(nonmotorized_file,stringsAsFactors=FALSE))
+nms <- c("County","City","Location","Type","date","value")
+setnames(nonmotor_data,nms)
+
+# Trim to PSRC Region and cleanup
+nonmotor_data <- nonmotor_data[County %in% c("King","Kitsap","Pierce","Snohomish")]
+nonmotor_data$date <- mdy(nonmotor_data$date)
+nonmotor_data$day <- nonmotor_data$date
+cols <- c("date","day","Location","value")
+nonmotor <- nonmotor_data[,..cols]
+nonmotor$year <- year(nonmotor$date)
+nonmotor$value <- gsub("%","",nonmotor$value)
+nonmotor$value <- as.numeric(nonmotor$value)
+nonmotor$value <- nonmotor$value / 100
+
+# create list for drop down of count locations
+nonmotor_count_locations <- sort(unique(nonmotor$Location))
+
+nonmotor_latest_month <- max(month(nonmotor$day))
+nonmotor_only_latest <- nonmotor[month(day) %in% nonmotor_latest_month]
+nonmotor_latest_day <- max(day(nonmotor_only_latest$day))
