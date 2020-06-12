@@ -11,7 +11,6 @@ library(plotly)
 
 # Web scraping
 library(rvest)
-library(RSocrata)
 
 #################################################################################################################
 #################################################################################################################
@@ -19,7 +18,7 @@ library(RSocrata)
 #################################################################################################################
 #################################################################################################################
 # Local Working Directory
-#wrkdir <-"C:/Users/pbutrina/Documents/GitHub/covid19-dashboard/shiny"
+#wrkdir <-"C:/coding/covid19-dashboard/shiny"
 
 # Shiny Server Working Directory
 wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
@@ -376,6 +375,7 @@ nonmotor_Seattle <- setDT(read.csv(nonmotorized_file_SDOT,stringsAsFactors=FALSE
 nonmotor_Seattle$date = mdy(nonmotor_Seattle$date)
 nonmotor_Seattle$day = nonmotor_Seattle$date
 nonmotor_Seattle$year <- year(nonmotor_Seattle$date)
+
 #change 2019 'day' dates to 2020 - this will help to plot 2019 and 2020 bike counts on the same chart
 for (row in 1:nrow(nonmotor_Seattle)){
   if (nonmotor_Seattle$year[row] == 2019){
@@ -394,7 +394,7 @@ nonmotor_SDOT_trail_list <- sort(unique(nonmotor_Seattle$dataSource))
 nonmotor = rbind(nonmotor_wsdot,nonmotor_Seattle)
 
 # create list for drop down of count locations
-nonmotor_SDOT_trail_list <- sort(unique(nonmotor_SDOT$Location))
+nonmotor_SDOT_trail_list <- sort(unique(nonmotor_Seattle$Location))
 nonmotor_WSDOT_trail_list <- sort(unique(nonmotor_wsdot$Location))
 
 place_choices = list('SDOT' = nonmotor_SDOT_trail_list,
