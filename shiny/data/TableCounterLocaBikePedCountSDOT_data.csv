@@ -1,0 +1,833 @@
+County,City,Location,Type,date,value,roll_mean
+King,Seattle,7th Ave and Blanchard,Bicycle,3/1/2020,28,NA
+King,Seattle,Burk Gilman,Bicycle,3/1/2020,900,NA
+King,Seattle,Elliot Bay,Bicycle,3/1/2020,782,NA
+King,Seattle,Fremont Bridge,Bicycle,3/1/2020,1310,NA
+King,Seattle,Spokane Bridge,Bicycle,3/1/2020,453,NA
+King,Seattle,7th Ave and Blanchard,Bicycle,3/2/2020,67,NA
+King,Seattle,Burk Gilman,Bicycle,3/2/2020,380,NA
+King,Seattle,Elliot Bay,Bicycle,3/2/2020,885,NA
+King,Seattle,Fremont Bridge,Bicycle,3/2/2020,2972,NA
+King,Seattle,Spokane Bridge,Bicycle,3/2/2020,740,NA
+King,Seattle,7th Ave and Blanchard,Bicycle,3/3/2020,81,NA
+King,Seattle,Burk Gilman,Bicycle,3/3/2020,618,NA
+King,Seattle,Elliot Bay,Bicycle,3/3/2020,1074,NA
+King,Seattle,Fremont Bridge,Bicycle,3/3/2020,3582,NA
+King,Seattle,Spokane Bridge,Bicycle,3/3/2020,842,NA
+King,Seattle,7th Ave and Blanchard,Bicycle,3/4/2020,88,50.42857143
+King,Seattle,Burk Gilman,Bicycle,3/4/2020,884,610.2857143
+King,Seattle,Elliot Bay,Bicycle,3/4/2020,1436,887.2857143
+King,Seattle,Fremont Bridge,Bicycle,3/4/2020,3715,2381.857143
+King,Seattle,Spokane Bridge,Bicycle,3/4/2020,936,614.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/5/2020,39,49.14285714
+King,Seattle,Burk Gilman,Bicycle,3/5/2020,568,636
+King,Seattle,Elliot Bay,Bicycle,3/5/2020,975,884
+King,Seattle,Fremont Bridge,Bicycle,3/5/2020,2634,2379.571429
+King,Seattle,Spokane Bridge,Bicycle,3/5/2020,701,613.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,3/6/2020,31,43.42857143
+King,Seattle,Burk Gilman,Bicycle,3/6/2020,374,697.5714286
+King,Seattle,Elliot Bay,Bicycle,3/6/2020,569,917.2857143
+King,Seattle,Fremont Bridge,Bicycle,3/6/2020,1451,2309.142857
+King,Seattle,Spokane Bridge,Bicycle,3/6/2020,365,598.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,3/7/2020,19,36
+King,Seattle,Burk Gilman,Bicycle,3/7/2020,548,686.8571429
+King,Seattle,Elliot Bay,Bicycle,3/7/2020,490,896.1428571
+King,Seattle,Fremont Bridge,Bicycle,3/7/2020,1009,2107.857143
+King,Seattle,Spokane Bridge,Bicycle,3/7/2020,267,564.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/8/2020,19,27.85714286
+King,Seattle,Burk Gilman,Bicycle,3/8/2020,1080,659.8571429
+King,Seattle,Elliot Bay,Bicycle,3/8/2020,759,815.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/8/2020,1294,1901.428571
+King,Seattle,Spokane Bridge,Bicycle,3/8/2020,441,513.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/9/2020,27,27
+King,Seattle,Burk Gilman,Bicycle,3/9/2020,811,666.7142857
+King,Seattle,Elliot Bay,Bicycle,3/9/2020,1118,797.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/9/2020,2479,1801.857143
+King,Seattle,Spokane Bridge,Bicycle,3/9/2020,636,500.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,3/10/2020,29,25.71428571
+King,Seattle,Burk Gilman,Bicycle,3/10/2020,543,635.8571429
+King,Seattle,Elliot Bay,Bicycle,3/10/2020,926,759.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/10/2020,2173,1714.285714
+King,Seattle,Spokane Bridge,Bicycle,3/10/2020,606,485.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,3/11/2020,31,25.42857143
+King,Seattle,Burk Gilman,Bicycle,3/11/2020,695,679.5714286
+King,Seattle,Elliot Bay,Bicycle,3/11/2020,874,762.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/11/2020,2270,1719.285714
+King,Seattle,Spokane Bridge,Bicycle,3/11/2020,581,485.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,3/12/2020,33,25
+King,Seattle,Burk Gilman,Bicycle,3/12/2020,616,721.5714286
+King,Seattle,Elliot Bay,Bicycle,3/12/2020,849,778
+King,Seattle,Fremont Bridge,Bicycle,3/12/2020,1937,1714.857143
+King,Seattle,Spokane Bridge,Bicycle,3/12/2020,609,484.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,3/13/2020,22,23.85714286
+King,Seattle,Burk Gilman,Bicycle,3/13/2020,158,745.1428571
+King,Seattle,Elliot Bay,Bicycle,3/13/2020,303,758.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/13/2020,838,1637.142857
+King,Seattle,Spokane Bridge,Bicycle,3/13/2020,256,465.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,3/14/2020,17,21.14285714
+King,Seattle,Burk Gilman,Bicycle,3/14/2020,854,820
+King,Seattle,Elliot Bay,Bicycle,3/14/2020,508,757.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/14/2020,1044,1604.142857
+King,Seattle,Spokane Bridge,Bicycle,3/14/2020,268,451.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,3/15/2020,16,20.28571429
+King,Seattle,Burk Gilman,Bicycle,3/15/2020,1374,924.4285714
+King,Seattle,Elliot Bay,Bicycle,3/15/2020,868,810.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/15/2020,1263,1616.571429
+King,Seattle,Spokane Bridge,Bicycle,3/15/2020,433,469.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,3/16/2020,19,20
+King,Seattle,Burk Gilman,Bicycle,3/16/2020,976,1074.142857
+King,Seattle,Elliot Bay,Bicycle,3/16/2020,981,886
+King,Seattle,Fremont Bridge,Bicycle,3/16/2020,1935,1675.142857
+King,Seattle,Spokane Bridge,Bicycle,3/16/2020,507,475
+King,Seattle,7th Ave and Blanchard,Bicycle,3/17/2020,10,19.28571429
+King,Seattle,Burk Gilman,Bicycle,3/17/2020,1067,1293
+King,Seattle,Elliot Bay,Bicycle,3/17/2020,920,1050.428571
+King,Seattle,Fremont Bridge,Bicycle,3/17/2020,1942,1906.428571
+King,Seattle,Spokane Bridge,Bicycle,3/17/2020,505,535.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/18/2020,25,20.14285714
+King,Seattle,Burk Gilman,Bicycle,3/18/2020,1426,1521.571429
+King,Seattle,Elliot Bay,Bicycle,3/18/2020,1244,1229.571429
+King,Seattle,Fremont Bridge,Bicycle,3/18/2020,2357,2139.857143
+King,Seattle,Spokane Bridge,Bicycle,3/18/2020,706,626.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/19/2020,31,19
+King,Seattle,Burk Gilman,Bicycle,3/19/2020,1664,1624.428571
+King,Seattle,Elliot Bay,Bicycle,3/19/2020,1378,1286.571429
+King,Seattle,Fremont Bridge,Bicycle,3/19/2020,2347,2260.857143
+King,Seattle,Spokane Bridge,Bicycle,3/19/2020,650,660.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,3/20/2020,17,18.71428571
+King,Seattle,Burk Gilman,Bicycle,3/20/2020,1690,1586.571429
+King,Seattle,Elliot Bay,Bicycle,3/20/2020,1454,1217.428571
+King,Seattle,Fremont Bridge,Bicycle,3/20/2020,2457,2169.285714
+King,Seattle,Spokane Bridge,Bicycle,3/20/2020,682,635.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/21/2020,23,19.28571429
+King,Seattle,Burk Gilman,Bicycle,3/21/2020,2454,1524
+King,Seattle,Elliot Bay,Bicycle,3/21/2020,1762,1158.142857
+King,Seattle,Fremont Bridge,Bicycle,3/21/2020,2678,2055.857143
+King,Seattle,Spokane Bridge,Bicycle,3/21/2020,903,615.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/22/2020,8,17.85714286
+King,Seattle,Burk Gilman,Bicycle,3/22/2020,2094,1448
+King,Seattle,Elliot Bay,Bicycle,3/22/2020,1267,1089.571429
+King,Seattle,Fremont Bridge,Bicycle,3/22/2020,2110,1917.714286
+King,Seattle,Spokane Bridge,Bicycle,3/22/2020,670,577.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,3/23/2020,17,16.42857143
+King,Seattle,Burk Gilman,Bicycle,3/23/2020,711,1323.142857
+King,Seattle,Elliot Bay,Bicycle,3/23/2020,497,962.7142857
+King,Seattle,Fremont Bridge,Bicycle,3/23/2020,1294,1750.714286
+King,Seattle,Spokane Bridge,Bicycle,3/23/2020,335,549.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/24/2020,14,16
+King,Seattle,Burk Gilman,Bicycle,3/24/2020,629,1168.571429
+King,Seattle,Elliot Bay,Bicycle,3/24/2020,505,823.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/24/2020,1148,1540.428571
+King,Seattle,Spokane Bridge,Bicycle,3/24/2020,363,504.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/25/2020,15,15.85714286
+King,Seattle,Burk Gilman,Bicycle,3/25/2020,894,983.8571429
+King,Seattle,Elliot Bay,Bicycle,3/25/2020,764,680.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/25/2020,1390,1366.142857
+King,Seattle,Spokane Bridge,Bicycle,3/25/2020,438,434.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/26/2020,21,16.57142857
+King,Seattle,Burk Gilman,Bicycle,3/26/2020,790,1051.142857
+King,Seattle,Elliot Bay,Bicycle,3/26/2020,490,767.2857143
+King,Seattle,Fremont Bridge,Bicycle,3/26/2020,1178,1474.285714
+King,Seattle,Spokane Bridge,Bicycle,3/26/2020,456,484.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,3/27/2020,14,16
+King,Seattle,Burk Gilman,Bicycle,3/27/2020,608,1007.857143
+King,Seattle,Elliot Bay,Bicycle,3/27/2020,479,733.2857143
+King,Seattle,Fremont Bridge,Bicycle,3/27/2020,985,1391.714286
+King,Seattle,Spokane Bridge,Bicycle,3/27/2020,367,463.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/28/2020,22,15.71428571
+King,Seattle,Burk Gilman,Bicycle,3/28/2020,1161,1014.857143
+King,Seattle,Elliot Bay,Bicycle,3/28/2020,762,738.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/28/2020,1458,1379.714286
+King,Seattle,Spokane Bridge,Bicycle,3/28/2020,415,455.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,3/29/2020,13,16.42857143
+King,Seattle,Burk Gilman,Bicycle,3/29/2020,2565,1046
+King,Seattle,Elliot Bay,Bicycle,3/29/2020,1874,773.1428571
+King,Seattle,Fremont Bridge,Bicycle,3/29/2020,2867,1434.857143
+King,Seattle,Spokane Bridge,Bicycle,3/29/2020,1019,475.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,3/30/2020,13,16
+King,Seattle,Burk Gilman,Bicycle,3/30/2020,408,1075.571429
+King,Seattle,Elliot Bay,Bicycle,3/30/2020,259,816.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/30/2020,716,1472.285714
+King,Seattle,Spokane Bridge,Bicycle,3/30/2020,187,484.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,3/31/2020,12,16.42857143
+King,Seattle,Burk Gilman,Bicycle,3/31/2020,678,1082.857143
+King,Seattle,Elliot Bay,Bicycle,3/31/2020,544,816
+King,Seattle,Fremont Bridge,Bicycle,3/31/2020,1064,1473.571429
+King,Seattle,Spokane Bridge,Bicycle,3/31/2020,309,490.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/1/2020,20,15.71428571
+King,Seattle,Burk Gilman,Bicycle,4/1/2020,1112,1281.714286
+King,Seattle,Elliot Bay,Bicycle,4/1/2020,1004,955
+King,Seattle,Fremont Bridge,Bicycle,4/1/2020,1776,1654.142857
+King,Seattle,Spokane Bridge,Bicycle,4/1/2020,574,582.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/2/2020,18,16.42857143
+King,Seattle,Burk Gilman,Bicycle,4/2/2020,997,1197.142857
+King,Seattle,Elliot Bay,Bicycle,4/2/2020,796,897.8571429
+King,Seattle,Fremont Bridge,Bicycle,4/2/2020,1440,1588.285714
+King,Seattle,Spokane Bridge,Bicycle,4/2/2020,521,552.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,4/3/2020,17,16.71428571
+King,Seattle,Burk Gilman,Bicycle,4/3/2020,659,1362.571429
+King,Seattle,Elliot Bay,Bicycle,4/3/2020,473,1057.142857
+King,Seattle,Fremont Bridge,Bicycle,4/3/2020,994,1800.571429
+King,Seattle,Spokane Bridge,Bicycle,4/3/2020,407,630.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/4/2020,17,19.14285714
+King,Seattle,Burk Gilman,Bicycle,4/4/2020,2553,1432.285714
+King,Seattle,Elliot Bay,Bicycle,4/4/2020,1735,1142.285714
+King,Seattle,Fremont Bridge,Bicycle,4/4/2020,2722,1919.285714
+King,Seattle,Spokane Bridge,Bicycle,4/4/2020,1059,679.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,4/5/2020,18,20.57142857
+King,Seattle,Burk Gilman,Bicycle,4/5/2020,1973,1513.857143
+King,Seattle,Elliot Bay,Bicycle,4/5/2020,1474,1222.571429
+King,Seattle,Fremont Bridge,Bicycle,4/5/2020,2406,1986
+King,Seattle,Spokane Bridge,Bicycle,4/5/2020,811,714.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/6/2020,15,21.57142857
+King,Seattle,Burk Gilman,Bicycle,4/6/2020,1566,1655.571429
+King,Seattle,Elliot Bay,Bicycle,4/6/2020,1374,1342.714286
+King,Seattle,Fremont Bridge,Bicycle,4/6/2020,2202,2177.142857
+King,Seattle,Spokane Bridge,Bicycle,4/6/2020,732,780
+King,Seattle,7th Ave and Blanchard,Bicycle,4/7/2020,29,22.42857143
+King,Seattle,Burk Gilman,Bicycle,4/7/2020,1166,1785.285714
+King,Seattle,Elliot Bay,Bicycle,4/7/2020,1140,1479.428571
+King,Seattle,Fremont Bridge,Bicycle,4/7/2020,1895,2403
+King,Seattle,Spokane Bridge,Bicycle,4/7/2020,655,842.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/8/2020,30,23.14285714
+King,Seattle,Burk Gilman,Bicycle,4/8/2020,1683,1688.142857
+King,Seattle,Elliot Bay,Bicycle,4/8/2020,1566,1460.428571
+King,Seattle,Fremont Bridge,Bicycle,4/8/2020,2243,2372.142857
+King,Seattle,Spokane Bridge,Bicycle,4/8/2020,816,830.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,4/9/2020,25,23.14285714
+King,Seattle,Burk Gilman,Bicycle,4/9/2020,1989,1741.714286
+King,Seattle,Elliot Bay,Bicycle,4/9/2020,1637,1548.428571
+King,Seattle,Fremont Bridge,Bicycle,4/9/2020,2778,2459.571429
+King,Seattle,Spokane Bridge,Bicycle,4/9/2020,980,902.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,4/10/2020,23,25.14285714
+King,Seattle,Burk Gilman,Bicycle,4/10/2020,1567,1728.714286
+King,Seattle,Elliot Bay,Bicycle,4/10/2020,1430,1541
+King,Seattle,Fremont Bridge,Bicycle,4/10/2020,2575,2445.714286
+King,Seattle,Spokane Bridge,Bicycle,4/10/2020,843,904.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,4/11/2020,22,25.42857143
+King,Seattle,Burk Gilman,Bicycle,4/11/2020,1873,1792.285714
+King,Seattle,Elliot Bay,Bicycle,4/11/2020,1602,1588.285714
+King,Seattle,Fremont Bridge,Bicycle,4/11/2020,2506,2514.142857
+King,Seattle,Spokane Bridge,Bicycle,4/11/2020,977,926.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,4/12/2020,18,23.14285714
+King,Seattle,Burk Gilman,Bicycle,4/12/2020,2348,1777.142857
+King,Seattle,Elliot Bay,Bicycle,4/12/2020,2090,1548.142857
+King,Seattle,Fremont Bridge,Bicycle,4/12/2020,3018,2507.142857
+King,Seattle,Spokane Bridge,Bicycle,4/12/2020,1316,923.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/13/2020,29,23.42857143
+King,Seattle,Burk Gilman,Bicycle,4/13/2020,1475,1780.428571
+King,Seattle,Elliot Bay,Bicycle,4/13/2020,1322,1593.714286
+King,Seattle,Fremont Bridge,Bicycle,4/13/2020,2105,2523.571429
+King,Seattle,Spokane Bridge,Bicycle,4/13/2020,747,948.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,4/14/2020,31,25
+King,Seattle,Burk Gilman,Bicycle,4/14/2020,1611,1809.571429
+King,Seattle,Elliot Bay,Bicycle,4/14/2020,1471,1614.428571
+King,Seattle,Fremont Bridge,Bicycle,4/14/2020,2374,2503
+King,Seattle,Spokane Bridge,Bicycle,4/14/2020,809,968.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,4/15/2020,14,24.71428571
+King,Seattle,Burk Gilman,Bicycle,4/15/2020,1577,1700.142857
+King,Seattle,Elliot Bay,Bicycle,4/15/2020,1285,1523.571429
+King,Seattle,Fremont Bridge,Bicycle,4/15/2020,2194,2385.857143
+King,Seattle,Spokane Bridge,Bicycle,4/15/2020,791,913.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,4/16/2020,27,27
+King,Seattle,Burk Gilman,Bicycle,4/16/2020,2012,1829.428571
+King,Seattle,Elliot Bay,Bicycle,4/16/2020,1956,1589.714286
+King,Seattle,Fremont Bridge,Bicycle,4/16/2020,2893,2472.857143
+King,Seattle,Spokane Bridge,Bicycle,4/16/2020,1154,957.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,4/17/2020,34,30.71428571
+King,Seattle,Burk Gilman,Bicycle,4/17/2020,1771,1862.857143
+King,Seattle,Elliot Bay,Bicycle,4/17/2020,1575,1640
+King,Seattle,Fremont Bridge,Bicycle,4/17/2020,2431,2563
+King,Seattle,Spokane Bridge,Bicycle,4/17/2020,986,994.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/18/2020,20,29.14285714
+King,Seattle,Burk Gilman,Bicycle,4/18/2020,1107,1777.571429
+King,Seattle,Elliot Bay,Bicycle,4/18/2020,966,1530
+King,Seattle,Fremont Bridge,Bicycle,4/18/2020,1686,2452.285714
+King,Seattle,Spokane Bridge,Bicycle,4/18/2020,594,957.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/19/2020,34,28.71428571
+King,Seattle,Burk Gilman,Bicycle,4/19/2020,3253,1593.428571
+King,Seattle,Elliot Bay,Bicycle,4/19/2020,2553,1377.857143
+King,Seattle,Fremont Bridge,Bicycle,4/19/2020,3627,2215.428571
+King,Seattle,Spokane Bridge,Bicycle,4/19/2020,1622,879
+King,Seattle,7th Ave and Blanchard,Bicycle,4/20/2020,55,28.42857143
+King,Seattle,Burk Gilman,Bicycle,4/20/2020,1709,1398.714286
+King,Seattle,Elliot Bay,Bicycle,4/20/2020,1674,1187.142857
+King,Seattle,Fremont Bridge,Bicycle,4/20/2020,2736,1965.857143
+King,Seattle,Spokane Bridge,Bicycle,4/20/2020,1004,782.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,4/21/2020,20,26.42857143
+King,Seattle,Burk Gilman,Bicycle,4/21/2020,1014,1385
+King,Seattle,Elliot Bay,Bicycle,4/21/2020,701,1152.285714
+King,Seattle,Fremont Bridge,Bicycle,4/21/2020,1599,1956.714286
+King,Seattle,Spokane Bridge,Bicycle,4/21/2020,551,761
+King,Seattle,7th Ave and Blanchard,Bicycle,4/22/2020,11,27.42857143
+King,Seattle,Burk Gilman,Bicycle,4/22/2020,288,1447.857143
+King,Seattle,Elliot Bay,Bicycle,4/22/2020,220,1190.714286
+King,Seattle,Fremont Bridge,Bicycle,4/22/2020,536,2019
+King,Seattle,Spokane Bridge,Bicycle,4/22/2020,242,784.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/23/2020,25,26.28571429
+King,Seattle,Burk Gilman,Bicycle,4/23/2020,649,1380.428571
+King,Seattle,Elliot Bay,Bicycle,4/23/2020,621,1163.857143
+King,Seattle,Fremont Bridge,Bicycle,4/23/2020,1146,1953.142857
+King,Seattle,Spokane Bridge,Bicycle,4/23/2020,480,767.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,4/24/2020,20,21.71428571
+King,Seattle,Burk Gilman,Bicycle,4/24/2020,1675,1309.571429
+King,Seattle,Elliot Bay,Bicycle,4/24/2020,1331,1080.857143
+King,Seattle,Fremont Bridge,Bicycle,4/24/2020,2367,1839.142857
+King,Seattle,Spokane Bridge,Bicycle,4/24/2020,834,718.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,4/25/2020,27,22.28571429
+King,Seattle,Burk Gilman,Bicycle,4/25/2020,1547,1334.428571
+King,Seattle,Elliot Bay,Bicycle,4/25/2020,1235,1121.714286
+King,Seattle,Fremont Bridge,Bicycle,4/25/2020,2122,1875.428571
+King,Seattle,Spokane Bridge,Bicycle,4/25/2020,757,743.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/26/2020,26,22.85714286
+King,Seattle,Burk Gilman,Bicycle,4/26/2020,2781,1487.571429
+King,Seattle,Elliot Bay,Bicycle,4/26/2020,2365,1257.571429
+King,Seattle,Fremont Bridge,Bicycle,4/26/2020,3166,2092.285714
+King,Seattle,Spokane Bridge,Bicycle,4/26/2020,1505,819.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/27/2020,23,24.42857143
+King,Seattle,Burk Gilman,Bicycle,4/27/2020,1213,1550.714286
+King,Seattle,Elliot Bay,Bicycle,4/27/2020,1093,1316
+King,Seattle,Fremont Bridge,Bicycle,4/27/2020,1938,2213.285714
+King,Seattle,Spokane Bridge,Bicycle,4/27/2020,659,853.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,4/28/2020,24,25.85714286
+King,Seattle,Burk Gilman,Bicycle,4/28/2020,1188,1630.142857
+King,Seattle,Elliot Bay,Bicycle,4/28/2020,987,1380.857143
+King,Seattle,Fremont Bridge,Bicycle,4/28/2020,1853,2325.428571
+King,Seattle,Spokane Bridge,Bicycle,4/28/2020,727,906
+King,Seattle,7th Ave and Blanchard,Bicycle,4/29/2020,15,23.14285714
+King,Seattle,Burk Gilman,Bicycle,4/29/2020,1360,1492.142857
+King,Seattle,Elliot Bay,Bicycle,4/29/2020,1171,1282.714286
+King,Seattle,Fremont Bridge,Bicycle,4/29/2020,2054,2148.428571
+King,Seattle,Spokane Bridge,Bicycle,4/29/2020,774,842.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,4/30/2020,36,22.14285714
+King,Seattle,Burk Gilman,Bicycle,4/30/2020,1091,1397.285714
+King,Seattle,Elliot Bay,Bicycle,4/30/2020,1030,1215
+King,Seattle,Fremont Bridge,Bicycle,4/30/2020,1993,2126.142857
+King,Seattle,Spokane Bridge,Bicycle,4/30/2020,718,800.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,5/1/2020,30,21
+King,Seattle,Burk Gilman,Bicycle,5/1/2020,2231,1415.142857
+King,Seattle,Elliot Bay,Bicycle,5/1/2020,1785,1220.571429
+King,Seattle,Fremont Bridge,Bicycle,5/1/2020,3152,2130.857143
+King,Seattle,Spokane Bridge,Bicycle,5/1/2020,1202,819.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,5/2/2020,8,22.28571429
+King,Seattle,Burk Gilman,Bicycle,5/2/2020,581,1500.857143
+King,Seattle,Elliot Bay,Bicycle,5/2/2020,548,1332.571429
+King,Seattle,Fremont Bridge,Bicycle,5/2/2020,883,2248.142857
+King,Seattle,Spokane Bridge,Bicycle,5/2/2020,310,855.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,5/3/2020,19,22.85714286
+King,Seattle,Burk Gilman,Bicycle,5/3/2020,2117,1411.142857
+King,Seattle,Elliot Bay,Bicycle,5/3/2020,1891,1289.285714
+King,Seattle,Fremont Bridge,Bicycle,5/3/2020,3010,2162.428571
+King,Seattle,Spokane Bridge,Bicycle,5/3/2020,1215,822
+King,Seattle,7th Ave and Blanchard,Bicycle,5/4/2020,15,21.28571429
+King,Seattle,Burk Gilman,Bicycle,5/4/2020,1338,1550.714286
+King,Seattle,Elliot Bay,Bicycle,5/4/2020,1132,1402.857143
+King,Seattle,Fremont Bridge,Bicycle,5/4/2020,1971,2283
+King,Seattle,Spokane Bridge,Bicycle,5/4/2020,793,900.5714286
+King,Seattle,7th Ave and Blanchard,Bicycle,5/5/2020,33,21.28571429
+King,Seattle,Burk Gilman,Bicycle,5/5/2020,1788,1551
+King,Seattle,Elliot Bay,Bicycle,5/5/2020,1771,1412.714286
+King,Seattle,Fremont Bridge,Bicycle,5/5/2020,2674,2293.857143
+King,Seattle,Spokane Bridge,Bicycle,5/5/2020,979,926.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/6/2020,19,24.57142857
+King,Seattle,Burk Gilman,Bicycle,5/6/2020,732,1922.285714
+King,Seattle,Elliot Bay,Bicycle,5/6/2020,868,1698.428571
+King,Seattle,Fremont Bridge,Bicycle,5/6/2020,1454,2681.428571
+King,Seattle,Spokane Bridge,Bicycle,5/6/2020,537,1132
+King,Seattle,7th Ave and Blanchard,Bicycle,5/7/2020,25,25
+King,Seattle,Burk Gilman,Bicycle,5/7/2020,2068,1978.714286
+King,Seattle,Elliot Bay,Bicycle,5/7/2020,1825,1739.571429
+King,Seattle,Fremont Bridge,Bicycle,5/7/2020,2837,2687
+King,Seattle,Spokane Bridge,Bicycle,5/7/2020,1268,1143.428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/8/2020,30,26.14285714
+King,Seattle,Burk Gilman,Bicycle,5/8/2020,2233,1972.428571
+King,Seattle,Elliot Bay,Bicycle,5/8/2020,1854,1720
+King,Seattle,Fremont Bridge,Bicycle,5/8/2020,3228,2665.857143
+King,Seattle,Spokane Bridge,Bicycle,5/8/2020,1381,1149.857143
+King,Seattle,7th Ave and Blanchard,Bicycle,5/9/2020,31,24.28571429
+King,Seattle,Burk Gilman,Bicycle,5/9/2020,3180,1850.285714
+King,Seattle,Elliot Bay,Bicycle,5/9/2020,2548,1575.142857
+King,Seattle,Fremont Bridge,Bicycle,5/9/2020,3596,2504.428571
+King,Seattle,Spokane Bridge,Bicycle,5/9/2020,1751,1084.285714
+King,Seattle,7th Ave and Blanchard,Bicycle,5/10/2020,22,24.28571429
+King,Seattle,Burk Gilman,Bicycle,5/10/2020,2512,1951.428571
+King,Seattle,Elliot Bay,Bicycle,5/10/2020,2179,1637.571429
+King,Seattle,Fremont Bridge,Bicycle,5/10/2020,3049,2639.571429
+King,Seattle,Spokane Bridge,Bicycle,5/10/2020,1295,1132.714286
+King,Seattle,7th Ave and Blanchard,Bicycle,5/11/2020,23,25.14285714
+King,Seattle,Burk Gilman,Bicycle,5/11/2020,1294,1820.857143
+King,Seattle,Elliot Bay,Bicycle,5/11/2020,995,1555.142857
+King,Seattle,Fremont Bridge,Bicycle,5/11/2020,1823,2516.571429
+King,Seattle,Spokane Bridge,Bicycle,5/11/2020,838,1066.857143
+King,Seattle,7th Ave and Blanchard,Bicycle,5/12/2020,20,25.85714286
+King,Seattle,Burk Gilman,Bicycle,5/12/2020,933,1834.428571
+King,Seattle,Elliot Bay,Bicycle,5/12/2020,757,1580.285714
+King,Seattle,Fremont Bridge,Bicycle,5/12/2020,1544,2514.142857
+King,Seattle,Spokane Bridge,Bicycle,5/12/2020,520,1066.571429
+King,Seattle,7th Ave and Blanchard,Bicycle,5/13/2020,19,23.71428571
+King,Seattle,Burk Gilman,Bicycle,5/13/2020,1440,1502.428571
+King,Seattle,Elliot Bay,Bicycle,5/13/2020,1305,1287.571429
+King,Seattle,Fremont Bridge,Bicycle,5/13/2020,2400,2139.285714
+King,Seattle,Spokane Bridge,Bicycle,5/13/2020,876,869.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,5/14/2020,31,25.57142857
+King,Seattle,Burk Gilman,Bicycle,5/14/2020,1154,1544.857143
+King,Seattle,Elliot Bay,Bicycle,5/14/2020,1248,1302.714286
+King,Seattle,Fremont Bridge,Bicycle,5/14/2020,1976,2182.857143
+King,Seattle,Spokane Bridge,Bicycle,5/14/2020,807,889.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,5/15/2020,35,26.28571429
+King,Seattle,Burk Gilman,Bicycle,5/15/2020,2328,1592.285714
+King,Seattle,Elliot Bay,Bicycle,5/15/2020,2030,1345.428571
+King,Seattle,Fremont Bridge,Bicycle,5/15/2020,3211,2269.571429
+King,Seattle,Spokane Bridge,Bicycle,5/15/2020,1379,890.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,5/16/2020,16,27.57142857
+King,Seattle,Burk Gilman,Bicycle,5/16/2020,856,1652.142857
+King,Seattle,Elliot Bay,Bicycle,5/16/2020,499,1434.571429
+King,Seattle,Fremont Bridge,Bicycle,5/16/2020,972,2412.571429
+King,Seattle,Spokane Bridge,Bicycle,5/16/2020,371,954.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/17/2020,35,29.28571429
+King,Seattle,Burk Gilman,Bicycle,5/17/2020,2809,1555.142857
+King,Seattle,Elliot Bay,Bicycle,5/17/2020,2285,1338
+King,Seattle,Fremont Bridge,Bicycle,5/17/2020,3354,2287.285714
+King,Seattle,Spokane Bridge,Bicycle,5/17/2020,1435,924.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,5/18/2020,28,27.28571429
+King,Seattle,Burk Gilman,Bicycle,5/18/2020,1626,1461.285714
+King,Seattle,Elliot Bay,Bicycle,5/18/2020,1294,1227
+King,Seattle,Fremont Bridge,Bicycle,5/18/2020,2430,2155.857143
+King,Seattle,Spokane Bridge,Bicycle,5/18/2020,845,862.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,5/19/2020,29,25.85714286
+King,Seattle,Burk Gilman,Bicycle,5/19/2020,1352,1318.857143
+King,Seattle,Elliot Bay,Bicycle,5/19/2020,1381,1087
+King,Seattle,Fremont Bridge,Bicycle,5/19/2020,2545,2004.857143
+King,Seattle,Spokane Bridge,Bicycle,5/19/2020,966,798
+King,Seattle,7th Ave and Blanchard,Bicycle,5/20/2020,31,27.14285714
+King,Seattle,Burk Gilman,Bicycle,5/20/2020,761,1545.714286
+King,Seattle,Elliot Bay,Bicycle,5/20/2020,629,1317.714286
+King,Seattle,Fremont Bridge,Bicycle,5/20/2020,1523,2308.142857
+King,Seattle,Spokane Bridge,Bicycle,5/20/2020,670,919.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/21/2020,17,25.71428571
+King,Seattle,Burk Gilman,Bicycle,5/21/2020,497,1558.142857
+King,Seattle,Elliot Bay,Bicycle,5/21/2020,471,1326.571429
+King,Seattle,Fremont Bridge,Bicycle,5/21/2020,1056,2331.142857
+King,Seattle,Spokane Bridge,Bicycle,5/21/2020,373,901.7142857
+King,Seattle,7th Ave and Blanchard,Bicycle,5/22/2020,25,23.57142857
+King,Seattle,Burk Gilman,Bicycle,5/22/2020,1331,1408.714286
+King,Seattle,Elliot Bay,Bicycle,5/22/2020,1050,1216
+King,Seattle,Fremont Bridge,Bicycle,5/22/2020,2154,2094.285714
+King,Seattle,Spokane Bridge,Bicycle,5/22/2020,926,824.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/23/2020,25,22.14285714
+King,Seattle,Burk Gilman,Bicycle,5/23/2020,2444,1424.714286
+King,Seattle,Elliot Bay,Bicycle,5/23/2020,2114,1216.285714
+King,Seattle,Fremont Bridge,Bicycle,5/23/2020,3095,2077.285714
+King,Seattle,Spokane Bridge,Bicycle,5/23/2020,1219,814.2857143
+King,Seattle,7th Ave and Blanchard,Bicycle,5/24/2020,25,22.42857143
+King,Seattle,Burk Gilman,Bicycle,5/24/2020,2896,1634.285714
+King,Seattle,Elliot Bay,Bicycle,5/24/2020,2347,1389.285714
+King,Seattle,Fremont Bridge,Bicycle,5/24/2020,3515,2352.142857
+King,Seattle,Spokane Bridge,Bicycle,5/24/2020,1313,902.8571429
+King,Seattle,7th Ave and Blanchard,Bicycle,5/25/2020,13,24.28571429
+King,Seattle,Burk Gilman,Bicycle,5/25/2020,580,1822.857143
+King,Seattle,Elliot Bay,Bicycle,5/25/2020,520,1549
+King,Seattle,Fremont Bridge,Bicycle,5/25/2020,772,2602
+King,Seattle,Spokane Bridge,Bicycle,5/25/2020,302,1037
+King,Seattle,7th Ave and Blanchard,Bicycle,5/26/2020,19,26.57142857
+King,Seattle,Burk Gilman,Bicycle,5/26/2020,1464,1972.857143
+King,Seattle,Elliot Bay,Bicycle,5/26/2020,1383,1677.857143
+King,Seattle,Fremont Bridge,Bicycle,5/26/2020,2426,2779.857143
+King,Seattle,Spokane Bridge,Bicycle,5/26/2020,897,1098.857143
+King,Seattle,7th Ave and Blanchard,Bicycle,5/27/2020,33,26.71428571
+King,Seattle,Burk Gilman,Bicycle,5/27/2020,2228,1673.142857
+King,Seattle,Elliot Bay,Bicycle,5/27/2020,1840,1415.571429
+King,Seattle,Fremont Bridge,Bicycle,5/27/2020,3447,2454.714286
+King,Seattle,Spokane Bridge,Bicycle,5/27/2020,1290,962.4285714
+King,Seattle,7th Ave and Blanchard,Bicycle,5/28/2020,30,27.28571429
+King,Seattle,Burk Gilman,Bicycle,5/28/2020,1817,1427.714286
+King,Seattle,Elliot Bay,Bicycle,5/28/2020,1589,1190.428571
+King,Seattle,Fremont Bridge,Bicycle,5/28/2020,2805,2173.714286
+King,Seattle,Spokane Bridge,Bicycle,5/28/2020,1312,849.1428571
+King,Seattle,7th Ave and Blanchard,Bicycle,5/29/2020,41,NA
+King,Seattle,Burk Gilman,Bicycle,5/29/2020,2381,NA
+King,Seattle,Elliot Bay,Bicycle,5/29/2020,1952,NA
+King,Seattle,Fremont Bridge,Bicycle,5/29/2020,3399,NA
+King,Seattle,Spokane Bridge,Bicycle,5/29/2020,1359,NA
+King,Seattle,7th Ave and Blanchard,Bicycle,5/30/2020,26,NA
+King,Seattle,Burk Gilman,Bicycle,5/30/2020,346,NA
+King,Seattle,Elliot Bay,Bicycle,5/30/2020,278,NA
+King,Seattle,Fremont Bridge,Bicycle,5/30/2020,819,NA
+King,Seattle,Spokane Bridge,Bicycle,5/30/2020,264,NA
+King,Seattle,7th Ave and Blanchard,Bicycle,5/31/2020,29,NA
+King,Seattle,Burk Gilman,Bicycle,5/31/2020,1178,NA
+King,Seattle,Elliot Bay,Bicycle,5/31/2020,771,NA
+King,Seattle,Fremont Bridge,Bicycle,5/31/2020,1548,NA
+King,Seattle,Spokane Bridge,Bicycle,5/31/2020,520,NA
+King,Seattle,Burk Gilman,Bicycle,3/1/2019,570,NA
+King,Seattle,Elliot Bay,Bicycle,3/1/2019,961,NA
+King,Seattle,Fremont Bridge,Bicycle,3/1/2019,2657,NA
+King,Seattle,Spokane Bridge,Bicycle,3/1/2019,692,NA
+King,Seattle,Burk Gilman,Bicycle,3/2/2019,1138,NA
+King,Seattle,Elliot Bay,Bicycle,3/2/2019,880,NA
+King,Seattle,Fremont Bridge,Bicycle,3/2/2019,1481,NA
+King,Seattle,Spokane Bridge,Bicycle,3/2/2019,542,NA
+King,Seattle,Burk Gilman,Bicycle,3/3/2019,1022,NA
+King,Seattle,Elliot Bay,Bicycle,3/3/2019,785,NA
+King,Seattle,Fremont Bridge,Bicycle,3/3/2019,1273,NA
+King,Seattle,Spokane Bridge,Bicycle,3/3/2019,463,NA
+King,Seattle,Burk Gilman,Bicycle,3/4/2019,573,650.1428571
+King,Seattle,Elliot Bay,Bicycle,3/4/2019,1001,835.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/4/2019,2953,2167.142857
+King,Seattle,Spokane Bridge,Bicycle,3/4/2019,810,620.1428571
+King,Seattle,Burk Gilman,Bicycle,3/5/2019,668,611.1428571
+King,Seattle,Elliot Bay,Bicycle,3/5/2019,1066,789.2857143
+King,Seattle,Fremont Bridge,Bicycle,3/5/2019,3054,2055.571429
+King,Seattle,Spokane Bridge,Bicycle,3/5/2019,874,591.8571429
+King,Seattle,Burk Gilman,Bicycle,3/6/2019,393,579.5714286
+King,Seattle,Elliot Bay,Bicycle,3/6/2019,639,776.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/6/2019,2247,2033.857143
+King,Seattle,Spokane Bridge,Bicycle,3/6/2019,595,578.2857143
+King,Seattle,Burk Gilman,Bicycle,3/7/2019,187,603.2857143
+King,Seattle,Elliot Bay,Bicycle,3/7/2019,517,790.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/7/2019,1505,2061.714286
+King,Seattle,Spokane Bridge,Bicycle,3/7/2019,365,585.1428571
+King,Seattle,Burk Gilman,Bicycle,3/8/2019,297,594.5714286
+King,Seattle,Elliot Bay,Bicycle,3/8/2019,637,776.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/8/2019,1876,2035.142857
+King,Seattle,Spokane Bridge,Bicycle,3/8/2019,494,585
+King,Seattle,Burk Gilman,Bicycle,3/9/2019,917,546.5714286
+King,Seattle,Elliot Bay,Bicycle,3/9/2019,790,721.8571429
+King,Seattle,Fremont Bridge,Bicycle,3/9/2019,1329,1914.428571
+King,Seattle,Spokane Bridge,Bicycle,3/9/2019,447,550.1428571
+King,Seattle,Burk Gilman,Bicycle,3/10/2019,1188,588.5714286
+King,Seattle,Elliot Bay,Bicycle,3/10/2019,886,795.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/10/2019,1468,2027.571429
+King,Seattle,Spokane Bridge,Bicycle,3/10/2019,511,594
+King,Seattle,Burk Gilman,Bicycle,3/11/2019,512,655.8571429
+King,Seattle,Elliot Bay,Bicycle,3/11/2019,901,873.5714286
+King,Seattle,Fremont Bridge,Bicycle,3/11/2019,2767,2252.571429
+King,Seattle,Spokane Bridge,Bicycle,3/11/2019,809,665.7142857
+King,Seattle,Burk Gilman,Bicycle,3/12/2019,332,732.1428571
+King,Seattle,Elliot Bay,Bicycle,3/12/2019,683,951.1428571
+King,Seattle,Fremont Bridge,Bicycle,3/12/2019,2209,2416.142857
+King,Seattle,Spokane Bridge,Bicycle,3/12/2019,630,714.1428571
+King,Seattle,Burk Gilman,Bicycle,3/13/2019,687,813.1428571
+King,Seattle,Elliot Bay,Bicycle,3/13/2019,1155,986.4285714
+King,Seattle,Fremont Bridge,Bicycle,3/13/2019,3039,2489.142857
+King,Seattle,Spokane Bridge,Bicycle,3/13/2019,902,731.4285714
+King,Seattle,Burk Gilman,Bicycle,3/14/2019,658,946.2857143
+King,Seattle,Elliot Bay,Bicycle,3/14/2019,1063,1058.714286
+King,Seattle,Fremont Bridge,Bicycle,3/14/2019,3080,2598.571429
+King,Seattle,Spokane Bridge,Bicycle,3/14/2019,867,760.2857143
+King,Seattle,Burk Gilman,Bicycle,3/15/2019,831,1062.142857
+King,Seattle,Elliot Bay,Bicycle,3/15/2019,1180,1179.857143
+King,Seattle,Fremont Bridge,Bicycle,3/15/2019,3021,2819.857143
+King,Seattle,Spokane Bridge,Bicycle,3/15/2019,833,827.7142857
+King,Seattle,Burk Gilman,Bicycle,3/16/2019,1484,1213.285714
+King,Seattle,Elliot Bay,Bicycle,3/16/2019,1037,1383.428571
+King,Seattle,Fremont Bridge,Bicycle,3/16/2019,1840,3211.428571
+King,Seattle,Spokane Bridge,Bicycle,3/16/2019,568,943.1428571
+King,Seattle,Burk Gilman,Bicycle,3/17/2019,2120,1323.285714
+King,Seattle,Elliot Bay,Bicycle,3/17/2019,1392,1490.428571
+King,Seattle,Fremont Bridge,Bicycle,3/17/2019,2234,3467.428571
+King,Seattle,Spokane Bridge,Bicycle,3/17/2019,713,1012.428571
+King,Seattle,Burk Gilman,Bicycle,3/18/2019,1323,1365.857143
+King,Seattle,Elliot Bay,Bicycle,3/18/2019,1749,1541.428571
+King,Seattle,Fremont Bridge,Bicycle,3/18/2019,4316,3595.857143
+King,Seattle,Spokane Bridge,Bicycle,3/18/2019,1281,1044.285714
+King,Seattle,Burk Gilman,Bicycle,3/19/2019,1390,1352.857143
+King,Seattle,Elliot Bay,Bicycle,3/19/2019,2108,1521.571429
+King,Seattle,Fremont Bridge,Bicycle,3/19/2019,4950,3600.714286
+King,Seattle,Spokane Bridge,Bicycle,3/19/2019,1438,1038.857143
+King,Seattle,Burk Gilman,Bicycle,3/20/2019,1457,1344.142857
+King,Seattle,Elliot Bay,Bicycle,3/20/2019,1904,1524.857143
+King,Seattle,Fremont Bridge,Bicycle,3/20/2019,4831,3597.714286
+King,Seattle,Spokane Bridge,Bicycle,3/20/2019,1387,1043.714286
+King,Seattle,Burk Gilman,Bicycle,3/21/2019,956,1261.857143
+King,Seattle,Elliot Bay,Bicycle,3/21/2019,1420,1449.285714
+King,Seattle,Fremont Bridge,Bicycle,3/21/2019,3979,3522.285714
+King,Seattle,Spokane Bridge,Bicycle,3/21/2019,1090,1016
+King,Seattle,Burk Gilman,Bicycle,3/22/2019,740,1165.285714
+King,Seattle,Elliot Bay,Bicycle,3/22/2019,1041,1350.857143
+King,Seattle,Fremont Bridge,Bicycle,3/22/2019,3055,3328.142857
+King,Seattle,Spokane Bridge,Bicycle,3/22/2019,795,957
+King,Seattle,Burk Gilman,Bicycle,3/23/2019,1423,1107.714286
+King,Seattle,Elliot Bay,Bicycle,3/23/2019,1060,1257.285714
+King,Seattle,Fremont Bridge,Bicycle,3/23/2019,1819,3155.571429
+King,Seattle,Spokane Bridge,Bicycle,3/23/2019,602,905
+King,Seattle,Burk Gilman,Bicycle,3/24/2019,1544,1052.142857
+King,Seattle,Elliot Bay,Bicycle,3/24/2019,863,1183.714286
+King,Seattle,Fremont Bridge,Bicycle,3/24/2019,1706,3006.857143
+King,Seattle,Spokane Bridge,Bicycle,3/24/2019,519,869.4285714
+King,Seattle,Burk Gilman,Bicycle,3/25/2019,647,1049.285714
+King,Seattle,Elliot Bay,Bicycle,3/25/2019,1060,1196.142857
+King,Seattle,Fremont Bridge,Bicycle,3/25/2019,2957,2979.857143
+King,Seattle,Spokane Bridge,Bicycle,3/25/2019,868,869.4285714
+King,Seattle,Burk Gilman,Bicycle,3/26/2019,987,1097
+King,Seattle,Elliot Bay,Bicycle,3/26/2019,1453,1244.285714
+King,Seattle,Fremont Bridge,Bicycle,3/26/2019,3742,3056
+King,Seattle,Spokane Bridge,Bicycle,3/26/2019,1074,893.1428571
+King,Seattle,Burk Gilman,Bicycle,3/27/2019,1068,1237.571429
+King,Seattle,Elliot Bay,Bicycle,3/27/2019,1389,1289.571429
+King,Seattle,Fremont Bridge,Bicycle,3/27/2019,3790,3158.571429
+King,Seattle,Spokane Bridge,Bicycle,3/27/2019,1138,929.4285714
+King,Seattle,Burk Gilman,Bicycle,3/28/2019,936,1342.714286
+King,Seattle,Elliot Bay,Bicycle,3/28/2019,1507,1369.857143
+King,Seattle,Fremont Bridge,Bicycle,3/28/2019,3790,3252.571429
+King,Seattle,Spokane Bridge,Bicycle,3/28/2019,1090,954
+King,Seattle,Burk Gilman,Bicycle,3/29/2019,1074,1410.428571
+King,Seattle,Elliot Bay,Bicycle,3/29/2019,1378,1441.428571
+King,Seattle,Fremont Bridge,Bicycle,3/29/2019,3588,3448.857143
+King,Seattle,Spokane Bridge,Bicycle,3/29/2019,961,1004.428571
+King,Seattle,Burk Gilman,Bicycle,3/30/2019,2407,1431.714286
+King,Seattle,Elliot Bay,Bicycle,3/30/2019,1377,1443.571429
+King,Seattle,Fremont Bridge,Bicycle,3/30/2019,2537,3551.571429
+King,Seattle,Spokane Bridge,Bicycle,3/30/2019,856,1029.714286
+King,Seattle,Burk Gilman,Bicycle,3/31/2019,2280,1368.714286
+King,Seattle,Elliot Bay,Bicycle,3/31/2019,1425,1405.428571
+King,Seattle,Fremont Bridge,Bicycle,3/31/2019,2364,3465
+King,Seattle,Spokane Bridge,Bicycle,3/31/2019,691,988.4285714
+King,Seattle,Burk Gilman,Bicycle,4/1/2019,1121,1402.714286
+King,Seattle,Elliot Bay,Bicycle,4/1/2019,1561,1397.857143
+King,Seattle,Fremont Bridge,Bicycle,4/1/2019,4331,3503
+King,Seattle,Spokane Bridge,Bicycle,4/1/2019,1221,1000
+King,Seattle,Burk Gilman,Bicycle,4/2/2019,1136,1312.142857
+King,Seattle,Elliot Bay,Bicycle,4/2/2019,1468,1315.142857
+King,Seattle,Fremont Bridge,Bicycle,4/2/2019,4461,3331.285714
+King,Seattle,Spokane Bridge,Bicycle,4/2/2019,1251,942.2857143
+King,Seattle,Burk Gilman,Bicycle,4/3/2019,627,1042.714286
+King,Seattle,Elliot Bay,Bicycle,4/3/2019,1122,1161.571429
+King,Seattle,Fremont Bridge,Bicycle,4/3/2019,3184,3070.428571
+King,Seattle,Spokane Bridge,Bicycle,4/3/2019,849,851.1428571
+King,Seattle,Burk Gilman,Bicycle,4/4/2019,1174,859.7142857
+King,Seattle,Elliot Bay,Bicycle,4/4/2019,1454,1043.857143
+King,Seattle,Fremont Bridge,Bicycle,4/4/2019,4056,2905
+King,Seattle,Spokane Bridge,Bicycle,4/4/2019,1171,793.1428571
+King,Seattle,Burk Gilman,Bicycle,4/5/2019,440,777.2857143
+King,Seattle,Elliot Bay,Bicycle,4/5/2019,799,948.1428571
+King,Seattle,Fremont Bridge,Bicycle,4/5/2019,2386,2671.857143
+King,Seattle,Spokane Bridge,Bicycle,4/5/2019,557,731.2857143
+King,Seattle,Burk Gilman,Bicycle,4/6/2019,521,728
+King,Seattle,Elliot Bay,Bicycle,4/6/2019,302,907.2857143
+King,Seattle,Fremont Bridge,Bicycle,4/6/2019,711,2512.714286
+King,Seattle,Spokane Bridge,Bicycle,4/6/2019,218,679.8571429
+King,Seattle,Burk Gilman,Bicycle,4/7/2019,999,716.4285714
+King,Seattle,Elliot Bay,Bicycle,4/7/2019,601,876.7142857
+King,Seattle,Fremont Bridge,Bicycle,4/7/2019,1206,2449.142857
+King,Seattle,Spokane Bridge,Bicycle,4/7/2019,285,664.8571429
+King,Seattle,Burk Gilman,Bicycle,4/8/2019,544,602.5714286
+King,Seattle,Elliot Bay,Bicycle,4/8/2019,891,767.4285714
+King,Seattle,Fremont Bridge,Bicycle,4/8/2019,2699,2200.714286
+King,Seattle,Spokane Bridge,Bicycle,4/8/2019,788,582.5714286
+King,Seattle,Burk Gilman,Bicycle,4/9/2019,791,667.7142857
+King,Seattle,Elliot Bay,Bicycle,4/9/2019,1182,809.8571429
+King,Seattle,Fremont Bridge,Bicycle,4/9/2019,3347,2280
+King,Seattle,Spokane Bridge,Bicycle,4/9/2019,891,614.1428571
+King,Seattle,Burk Gilman,Bicycle,4/10/2019,546,642
+King,Seattle,Elliot Bay,Bicycle,4/10/2019,908,806.2857143
+King,Seattle,Fremont Bridge,Bicycle,4/10/2019,2739,2292.285714
+King,Seattle,Spokane Bridge,Bicycle,4/10/2019,744,620.8571429
+King,Seattle,Burk Gilman,Bicycle,4/11/2019,377,615
+King,Seattle,Elliot Bay,Bicycle,4/11/2019,689,786.1428571
+King,Seattle,Fremont Bridge,Bicycle,4/11/2019,2317,2260.714286
+King,Seattle,Spokane Bridge,Bicycle,4/11/2019,595,630.4285714
+King,Seattle,Burk Gilman,Bicycle,4/12/2019,896,684.8571429
+King,Seattle,Elliot Bay,Bicycle,4/12/2019,1096,857.8571429
+King,Seattle,Fremont Bridge,Bicycle,4/12/2019,2941,2412.571429
+King,Seattle,Spokane Bridge,Bicycle,4/12/2019,778,680
+King,Seattle,Burk Gilman,Bicycle,4/13/2019,341,683.2857143
+King,Seattle,Elliot Bay,Bicycle,4/13/2019,277,859.7142857
+King,Seattle,Fremont Bridge,Bicycle,4/13/2019,797,2448.571429
+King,Seattle,Spokane Bridge,Bicycle,4/13/2019,265,704.2857143
+King,Seattle,Burk Gilman,Bicycle,4/14/2019,810,727.8571429
+King,Seattle,Elliot Bay,Bicycle,4/14/2019,460,917.8571429
+King,Seattle,Fremont Bridge,Bicycle,4/14/2019,985,2584.142857
+King,Seattle,Spokane Bridge,Bicycle,4/14/2019,352,749.2857143
+King,Seattle,Burk Gilman,Bicycle,4/15/2019,1033,757.5714286
+King,Seattle,Elliot Bay,Bicycle,4/15/2019,1393,951.4285714
+King,Seattle,Fremont Bridge,Bicycle,4/15/2019,3762,2634.142857
+King,Seattle,Spokane Bridge,Bicycle,4/15/2019,1135,772.4285714
+King,Seattle,Burk Gilman,Bicycle,4/16/2019,780,688.2857143
+King,Seattle,Elliot Bay,Bicycle,4/16/2019,1195,894.5714286
+King,Seattle,Fremont Bridge,Bicycle,4/16/2019,3599,2531.285714
+King,Seattle,Spokane Bridge,Bicycle,4/16/2019,1061,739.4285714
+King,Seattle,Burk Gilman,Bicycle,4/17/2019,858,901.7142857
+King,Seattle,Elliot Bay,Bicycle,4/17/2019,1315,1033.285714
+King,Seattle,Fremont Bridge,Bicycle,4/17/2019,3688,2708.285714
+King,Seattle,Spokane Bridge,Bicycle,4/17/2019,1059,783.8571429
+King,Seattle,Burk Gilman,Bicycle,4/18/2019,585,1012.857143
+King,Seattle,Elliot Bay,Bicycle,4/18/2019,924,1115
+King,Seattle,Fremont Bridge,Bicycle,4/18/2019,2667,2790.428571
+King,Seattle,Spokane Bridge,Bicycle,4/18/2019,757,806.2857143
+King,Seattle,Burk Gilman,Bicycle,4/19/2019,411,943.4285714
+King,Seattle,Elliot Bay,Bicycle,4/19/2019,698,1047.571429
+King,Seattle,Fremont Bridge,Bicycle,4/19/2019,2221,2678
+King,Seattle,Spokane Bridge,Bicycle,4/19/2019,547,766
+King,Seattle,Burk Gilman,Bicycle,4/20/2019,1835,957.4285714
+King,Seattle,Elliot Bay,Bicycle,4/20/2019,1248,1077.285714
+King,Seattle,Fremont Bridge,Bicycle,4/20/2019,2036,2708.428571
+King,Seattle,Spokane Bridge,Bicycle,4/20/2019,576,776.7142857
+King,Seattle,Burk Gilman,Bicycle,4/21/2019,1588,1013.142857
+King,Seattle,Elliot Bay,Bicycle,4/21/2019,1032,1118.285714
+King,Seattle,Fremont Bridge,Bicycle,4/21/2019,1560,2814.571429
+King,Seattle,Spokane Bridge,Bicycle,4/21/2019,509,813.1428571
+King,Seattle,Burk Gilman,Bicycle,4/22/2019,547,1068.714286
+King,Seattle,Elliot Bay,Bicycle,4/22/2019,921,1179.142857
+King,Seattle,Fremont Bridge,Bicycle,4/22/2019,2975,3000.714286
+King,Seattle,Spokane Bridge,Bicycle,4/22/2019,853,871.2857143
+King,Seattle,Burk Gilman,Bicycle,4/23/2019,878,1169
+King,Seattle,Elliot Bay,Bicycle,4/23/2019,1403,1285.428571
+King,Seattle,Fremont Bridge,Bicycle,4/23/2019,3812,3231.857143
+King,Seattle,Spokane Bridge,Bicycle,4/23/2019,1136,948.8571429
+King,Seattle,Burk Gilman,Bicycle,4/24/2019,1248,1086.857143
+King,Seattle,Elliot Bay,Bicycle,4/24/2019,1602,1223.285714
+King,Seattle,Fremont Bridge,Bicycle,4/24/2019,4431,3158
+King,Seattle,Spokane Bridge,Bicycle,4/24/2019,1314,948.1428571
+King,Seattle,Burk Gilman,Bicycle,4/25/2019,974,1170.857143
+King,Seattle,Elliot Bay,Bicycle,4/25/2019,1350,1283.857143
+King,Seattle,Fremont Bridge,Bicycle,4/25/2019,3970,3256.428571
+King,Seattle,Spokane Bridge,Bicycle,4/25/2019,1164,985.5714286
+King,Seattle,Burk Gilman,Bicycle,4/26/2019,1113,1266.857143
+King,Seattle,Elliot Bay,Bicycle,4/26/2019,1442,1390.714286
+King,Seattle,Fremont Bridge,Bicycle,4/26/2019,3839,3476.571429
+King,Seattle,Spokane Bridge,Bicycle,4/26/2019,1090,1044.714286
+King,Seattle,Burk Gilman,Bicycle,4/27/2019,1260,1348.285714
+King,Seattle,Elliot Bay,Bicycle,4/27/2019,813,1455
+King,Seattle,Fremont Bridge,Bicycle,4/27/2019,1519,3636
+King,Seattle,Spokane Bridge,Bicycle,4/27/2019,571,1080.714286
+King,Seattle,Burk Gilman,Bicycle,4/28/2019,2176,1380.142857
+King,Seattle,Elliot Bay,Bicycle,4/28/2019,1456,1494.142857
+King,Seattle,Fremont Bridge,Bicycle,4/28/2019,2249,3726
+King,Seattle,Spokane Bridge,Bicycle,4/28/2019,771,1112.571429
+King,Seattle,Burk Gilman,Bicycle,4/29/2019,1219,1391.714286
+King,Seattle,Elliot Bay,Bicycle,4/29/2019,1669,1501
+King,Seattle,Fremont Bridge,Bicycle,4/29/2019,4516,3782
+King,Seattle,Spokane Bridge,Bicycle,4/29/2019,1267,1127.857143
+King,Seattle,Burk Gilman,Bicycle,4/30/2019,1448,1396
+King,Seattle,Elliot Bay,Bicycle,4/30/2019,1853,1502.857143
+King,Seattle,Fremont Bridge,Bicycle,4/30/2019,4928,3820.714286
+King,Seattle,Spokane Bridge,Bicycle,4/30/2019,1388,1123.428571
+King,Seattle,Burk Gilman,Bicycle,5/1/2019,1471,1556.285714
+King,Seattle,Elliot Bay,Bicycle,5/1/2019,1876,1581.714286
+King,Seattle,Fremont Bridge,Bicycle,5/1/2019,5061,3985.428571
+King,Seattle,Spokane Bridge,Bicycle,5/1/2019,1537,1156.428571
+King,Seattle,Burk Gilman,Bicycle,5/2/2019,1055,1601.857143
+King,Seattle,Elliot Bay,Bicycle,5/2/2019,1398,1591.142857
+King,Seattle,Fremont Bridge,Bicycle,5/2/2019,4362,4030.571429
+King,Seattle,Spokane Bridge,Bicycle,5/2/2019,1271,1166.571429
+King,Seattle,Burk Gilman,Bicycle,5/3/2019,1143,1629.714286
+King,Seattle,Elliot Bay,Bicycle,5/3/2019,1455,1638.714286
+King,Seattle,Fremont Bridge,Bicycle,5/3/2019,4110,4134.857143
+King,Seattle,Spokane Bridge,Bicycle,5/3/2019,1059,1199.428571
+King,Seattle,Burk Gilman,Bicycle,5/4/2019,2382,1656
+King,Seattle,Elliot Bay,Bicycle,5/4/2019,1365,1689.857143
+King,Seattle,Fremont Bridge,Bicycle,5/4/2019,2672,4237.142857
+King,Seattle,Spokane Bridge,Bicycle,5/4/2019,802,1227.428571
+King,Seattle,Burk Gilman,Bicycle,5/5/2019,2495,1673.428571
+King,Seattle,Elliot Bay,Bicycle,5/5/2019,1522,1711.285714
+King,Seattle,Fremont Bridge,Bicycle,5/5/2019,2565,4295.428571
+King,Seattle,Spokane Bridge,Bicycle,5/5/2019,842,1229.428571
+King,Seattle,Burk Gilman,Bicycle,5/6/2019,1414,1758.571429
+King,Seattle,Elliot Bay,Bicycle,5/6/2019,2002,1811.142857
+King,Seattle,Fremont Bridge,Bicycle,5/6/2019,5246,4451
+King,Seattle,Spokane Bridge,Bicycle,5/6/2019,1497,1278.857143
+King,Seattle,Burk Gilman,Bicycle,5/7/2019,1632,1823.571429
+King,Seattle,Elliot Bay,Bicycle,5/7/2019,2211,1884.285714
+King,Seattle,Fremont Bridge,Bicycle,5/7/2019,5644,4596.571429
+King,Seattle,Spokane Bridge,Bicycle,5/7/2019,1584,1334
+King,Seattle,Burk Gilman,Bicycle,5/8/2019,1593,1854.142857
+King,Seattle,Elliot Bay,Bicycle,5/8/2019,2026,1934.857143
+King,Seattle,Fremont Bridge,Bicycle,5/8/2019,5469,4629.857143
+King,Seattle,Spokane Bridge,Bicycle,5/8/2019,1551,1356.571429
+King,Seattle,Burk Gilman,Bicycle,5/9/2019,1651,1741.857143
+King,Seattle,Elliot Bay,Bicycle,5/9/2019,2097,1864.714286
+King,Seattle,Fremont Bridge,Bicycle,5/9/2019,5451,4520.285714
+King,Seattle,Spokane Bridge,Bicycle,5/9/2019,1617,1302
+King,Seattle,Burk Gilman,Bicycle,5/10/2019,1598,1722.285714
+King,Seattle,Elliot Bay,Bicycle,5/10/2019,1967,1821.428571
+King,Seattle,Fremont Bridge,Bicycle,5/10/2019,5129,4444
+King,Seattle,Spokane Bridge,Bicycle,5/10/2019,1445,1284.571429
+King,Seattle,Burk Gilman,Bicycle,5/11/2019,2596,1589.142857
+King,Seattle,Elliot Bay,Bicycle,5/11/2019,1719,1663.571429
+King,Seattle,Fremont Bridge,Bicycle,5/11/2019,2905,4110.285714
+King,Seattle,Spokane Bridge,Bicycle,5/11/2019,960,1197.285714
+King,Seattle,Burk Gilman,Bicycle,5/12/2019,1709,1522.571429
+King,Seattle,Elliot Bay,Bicycle,5/12/2019,1031,1575.142857
+King,Seattle,Fremont Bridge,Bicycle,5/12/2019,1798,3946.142857
+King,Seattle,Spokane Bridge,Bicycle,5/12/2019,460,1153.857143
+King,Seattle,Burk Gilman,Bicycle,5/13/2019,1277,1395.857143
+King,Seattle,Elliot Bay,Bicycle,5/13/2019,1699,1447.428571
+King,Seattle,Fremont Bridge,Bicycle,5/13/2019,4712,3673.714286
+King,Seattle,Spokane Bridge,Bicycle,5/13/2019,1375,1068.571429
+King,Seattle,Burk Gilman,Bicycle,5/14/2019,700,1310.285714
+King,Seattle,Elliot Bay,Bicycle,5/14/2019,1106,1364.857143
+King,Seattle,Fremont Bridge,Bicycle,5/14/2019,3308,3598.571429
+King,Seattle,Spokane Bridge,Bicycle,5/14/2019,973,1036.428571
+King,Seattle,Burk Gilman,Bicycle,5/15/2019,1127,1321.857143
+King,Seattle,Elliot Bay,Bicycle,5/15/2019,1407,1350.857143
+King,Seattle,Fremont Bridge,Bicycle,5/15/2019,4320,3649.714286
+King,Seattle,Spokane Bridge,Bicycle,5/15/2019,1247,1024
+King,Seattle,Burk Gilman,Bicycle,5/16/2019,764,1320.428571
+King,Seattle,Elliot Bay,Bicycle,5/16/2019,1203,1386.714286
+King,Seattle,Fremont Bridge,Bicycle,5/16/2019,3544,3700.142857
+King,Seattle,Spokane Bridge,Bicycle,5/16/2019,1020,1041.571429
+King,Seattle,Burk Gilman,Bicycle,5/17/2019,999,1218
+King,Seattle,Elliot Bay,Bicycle,5/17/2019,1389,1297.142857
+King,Seattle,Fremont Bridge,Bicycle,5/17/2019,4603,3494.857143
+King,Seattle,Spokane Bridge,Bicycle,5/17/2019,1220,992.8571429
+King,Seattle,Burk Gilman,Bicycle,5/18/2019,2677,1266.285714
+King,Seattle,Elliot Bay,Bicycle,5/18/2019,1621,1346
+King,Seattle,Fremont Bridge,Bicycle,5/18/2019,3263,3619.285714
+King,Seattle,Spokane Bridge,Bicycle,5/18/2019,873,1028.142857
+King,Seattle,Burk Gilman,Bicycle,5/19/2019,1699,1351.428571
+King,Seattle,Elliot Bay,Bicycle,5/19/2019,1282,1456.428571
+King,Seattle,Fremont Bridge,Bicycle,5/19/2019,2151,3833
+King,Seattle,Spokane Bridge,Bicycle,5/19/2019,583,1081.714286
+King,Seattle,Burk Gilman,Bicycle,5/20/2019,560,1482.714286
+King,Seattle,Elliot Bay,Bicycle,5/20/2019,1072,1568.285714
+King,Seattle,Fremont Bridge,Bicycle,5/20/2019,3275,4210
+King,Seattle,Spokane Bridge,Bicycle,5/20/2019,1034,1160.571429
+King,Seattle,Burk Gilman,Bicycle,5/21/2019,1038,1456.285714
+King,Seattle,Elliot Bay,Bicycle,5/21/2019,1448,1535.571429
+King,Seattle,Fremont Bridge,Bicycle,5/21/2019,4179,4055.142857
+King,Seattle,Spokane Bridge,Bicycle,5/21/2019,1220,1118.142857
+King,Seattle,Burk Gilman,Bicycle,5/22/2019,1723,1157.142857
+King,Seattle,Elliot Bay,Bicycle,5/22/2019,2180,1365
+King,Seattle,Fremont Bridge,Bicycle,5/22/2019,5816,3737
+King,Seattle,Spokane Bridge,Bicycle,5/22/2019,1622,1028.285714
+King,Seattle,Burk Gilman,Bicycle,5/23/2019,1683,1216.714286
+King,Seattle,Elliot Bay,Bicycle,5/23/2019,1986,1416.571429
+King,Seattle,Fremont Bridge,Bicycle,5/23/2019,6183,3856.285714
+King,Seattle,Spokane Bridge,Bicycle,5/23/2019,1572,1057.571429
+King,Seattle,Burk Gilman,Bicycle,5/24/2019,814,1599.571429
+King,Seattle,Elliot Bay,Bicycle,5/24/2019,1160,1568.714286
+King,Seattle,Fremont Bridge,Bicycle,5/24/2019,3519,3930
+King,Seattle,Spokane Bridge,Bicycle,5/24/2019,923,1064
+King,Seattle,Burk Gilman,Bicycle,5/25/2019,583,1626.714286
+King,Seattle,Elliot Bay,Bicycle,5/25/2019,427,1605.857143
+King,Seattle,Fremont Bridge,Bicycle,5/25/2019,1036,4094
+King,Seattle,Spokane Bridge,Bicycle,5/25/2019,244,1083.428571
+King,Seattle,Burk Gilman,Bicycle,5/26/2019,2116,1589
+King,Seattle,Elliot Bay,Bicycle,5/26/2019,1643,1568.428571
+King,Seattle,Fremont Bridge,Bicycle,5/26/2019,2986,4073.571429
+King,Seattle,Spokane Bridge,Bicycle,5/26/2019,788,1074.857143
+King,Seattle,Burk Gilman,Bicycle,5/27/2019,3240,1558.714286
+King,Seattle,Elliot Bay,Bicycle,5/27/2019,2137,1558.714286
+King,Seattle,Fremont Bridge,Bicycle,5/27/2019,3791,4005.714286
+King,Seattle,Spokane Bridge,Bicycle,5/27/2019,1079,1068.285714
+King,Seattle,Burk Gilman,Bicycle,5/28/2019,1228,1648.857143
+King,Seattle,Elliot Bay,Bicycle,5/28/2019,1708,1658.428571
+King,Seattle,Fremont Bridge,Bicycle,5/28/2019,5327,4262.571429
+King,Seattle,Spokane Bridge,Bicycle,5/28/2019,1356,1107.285714
+King,Seattle,Burk Gilman,Bicycle,5/29/2019,1459,1873.571429
+King,Seattle,Elliot Bay,Bicycle,5/29/2019,1918,1805.714286
+King,Seattle,Fremont Bridge,Bicycle,5/29/2019,5673,4551.571429
+King,Seattle,Spokane Bridge,Bicycle,5/29/2019,1562,1181.714286
+King,Seattle,Burk Gilman,Bicycle,5/30/2019,1471,NA
+King,Seattle,Elliot Bay,Bicycle,5/30/2019,1918,NA
+King,Seattle,Fremont Bridge,Bicycle,5/30/2019,5708,NA
+King,Seattle,Spokane Bridge,Bicycle,5/30/2019,1526,NA
+King,Seattle,Burk Gilman,Bicycle,5/31/2019,1445,NA
+King,Seattle,Elliot Bay,Bicycle,5/31/2019,1858,NA
+King,Seattle,Fremont Bridge,Bicycle,5/31/2019,5317,NA
+King,Seattle,Spokane Bridge,Bicycle,5/31/2019,1196,NA
+King,Seattle,Burk Gilman,Bicycle,6/1/2019,2156,NA
+King,Seattle,Elliot Bay,Bicycle,6/1/2019,1458,NA
+King,Seattle,Fremont Bridge,Bicycle,6/1/2019,3059,NA
+King,Seattle,Spokane Bridge,Bicycle,6/1/2019,765,NA

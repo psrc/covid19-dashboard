@@ -2,6 +2,7 @@
 library(data.table)
 library(lubridate)
 library(shiny)
+library(dplyr)
 
 # Plotting Libraries
 library(ggplot2)
@@ -10,6 +11,7 @@ library(plotly)
 
 # Web scraping
 library(rvest)
+library(RSocrata)
 
 #################################################################################################################
 #################################################################################################################
@@ -17,7 +19,7 @@ library(rvest)
 #################################################################################################################
 #################################################################################################################
 # Local Working Directory
-#wrkdir <-"C:/coding/covid19-dashboard/shiny"
+#wrkdir <-"C:/Users/pbutrina/Documents/GitHub/covid19-dashboard/shiny"
 
 # Shiny Server Working Directory
 wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
@@ -29,6 +31,8 @@ volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 esd_file <- file.path(wrkdir,"data/unemployment_claims.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
+nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
+
   
 #################################################################################################################
 #################################################################################################################
@@ -51,16 +55,17 @@ psrc_colors <- c(
 #################################################################################################################
 #################################################################################################################
 
-create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group, w_factor, w_suff) {
-
+create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group, w_factor, w_suff, w_tit = "") {
+  
   w_chart <- ggplotly(ggplot(data=w_tbl, aes(y=`value`, x=`day`, group=get(w_group), color=factor(get(w_group)),text = paste0(month(`date`),"-",day(`date`),"-",year(`date`)," ",w_title,": ",prettyNum(round(`value`*w_factor, w_dec), big.mark = ","),w_suff)))+
-                          geom_line(size=1.2) +
+                          geom_line(size=1.2) + 
+                          ggtitle(paste(w_tit))+
                           scale_color_manual(values=w_colors)+
                           scale_x_date(labels = date_format("%B")) +
                           scale_y_continuous(labels = w_label) +
                           ylab(w_title)+
                           theme_light() +
-                          theme(legend.title = element_blank(),
+                          theme(
                                axis.text=element_text(size=10),
                                axis.text.x.bottom=element_text(size=10),
                                axis.title.y =element_text(size=10,face="bold"),
@@ -71,6 +76,7 @@ create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group,
                                axis.line = element_blank(),
                                legend.position="bottom")
                        ,tooltip = c("text")) %>% layout(hovermode = "x")
+
 
   return(w_chart)
 }
@@ -137,6 +143,7 @@ setnames(passengers,nms)
 latest_month <- max(month(passengers$date))
 only_latest <- passengers[month(date) %in% latest_month]
 latest_day <- max(day(only_latest$date))
+
 
 min_tsa <- min(passengers$value)
 max_tsa <- max(passengers$value)
@@ -345,23 +352,57 @@ trucks_latest_day <- max(day(trucks_only_latest$day))
 #################################################################################################################
 #################################################################################################################
 nonmotor_data <- setDT(read.csv(nonmotorized_file,stringsAsFactors=FALSE))
+#nonmotor_data <- setDT(nonmotor_data_upd)
 nms <- c("County","City","Location","Type","date","value")
 setnames(nonmotor_data,nms)
 
 # Trim to PSRC Region and cleanup
 nonmotor_data <- nonmotor_data[County %in% c("King","Kitsap","Pierce","Snohomish")]
 nonmotor_data$date <- mdy(nonmotor_data$date)
+
 nonmotor_data$day <- nonmotor_data$date
-cols <- c("date","day","Location","value")
+cols <- c("County","City","Type","date","day","Location","value")
 nonmotor <- nonmotor_data[,..cols]
 nonmotor$year <- year(nonmotor$date)
 nonmotor$value <- gsub("%","",nonmotor$value)
 nonmotor$value <- as.numeric(nonmotor$value)
 nonmotor$value <- nonmotor$value / 100
+nonmotor_wsdot = nonmotor
+nonmotor_wsdot$roll_mean = 0
+nonmotor_wsdot$dataSource = "WSDOT"
+
+#working with SDOT data
+nonmotor_Seattle <- setDT(read.csv(nonmotorized_file_SDOT,stringsAsFactors=FALSE))
+nonmotor_Seattle$date = mdy(nonmotor_Seattle$date)
+nonmotor_Seattle$day = nonmotor_Seattle$date
+nonmotor_Seattle$year <- year(nonmotor_Seattle$date)
+#change 2019 'day' dates to 2020 - this will help to plot 2019 and 2020 bike counts on the same chart
+for (row in 1:nrow(nonmotor_Seattle)){
+  if (nonmotor_Seattle$year[row] == 2019){
+    nonmotor_Seattle$day[row] = nonmotor_Seattle$day[row] %m+% years (1)
+  }
+}
+
+nonmotor_Seattle$value <- as.numeric(nonmotor_Seattle$roll_mean)
+nonmotor_Seattle$dataSource = "SDOT"
+nonmotor_Seattle = na.omit(nonmotor_Seattle)
+nonmotor_Seattle = as.data.frame(nonmotor_Seattle)
+nonmotor_Seattle = as.data.table(nonmotor_Seattle)
+
+nonmotor_SDOT_trail_list <- sort(unique(nonmotor_Seattle$dataSource))
+
+nonmotor = rbind(nonmotor_wsdot,nonmotor_Seattle)
 
 # create list for drop down of count locations
+nonmotor_SDOT_trail_list <- sort(unique(nonmotor_SDOT$Location))
+nonmotor_WSDOT_trail_list <- sort(unique(nonmotor_wsdot$Location))
+
+place_choices = list('SDOT' = nonmotor_SDOT_trail_list,
+                     'WSDOT' = nonmotor_WSDOT_trail_list)
+
+
 nonmotor_count_locations <- sort(unique(nonmotor$Location))
 
 nonmotor_latest_month <- max(month(nonmotor$day))
-nonmotor_only_latest <- nonmotor[month(day) %in% nonmotor_latest_month]
+nonmotor_only_latest <- nonmotor[month(nonmotor$date) %in% nonmotor_latest_month,]
 nonmotor_latest_day <- max(day(nonmotor_only_latest$day))

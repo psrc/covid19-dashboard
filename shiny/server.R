@@ -1,5 +1,6 @@
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
+    
     # headings
     output$airtravel_heading <- renderText({
         paste("Daily Passenger Screenings at our Nation's Airports")
@@ -105,12 +106,17 @@ shinyServer(function(input, output) {
     output$trucks_Latest <- renderText({paste("Latest Data (",trucks_latest_month,"-",trucks_latest_day,"): ", format(round(return_matching_day(w_tbl=trucks[Location %in% input$TruckLocations],w_day=ydm(paste("2020-",trucks_latest_day,"-",trucks_latest_month)),2020),2)*100, nsmall = 0, big.mark = ","),"%")})
 
     # Non-Motorized Data
-    output$chart_nonmotor <- renderPlotly({create_line_chart(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"% of 2019 Daily Non-Motorized Counts",scales::percent, 1, c('#91268F','#F05A28'),"year",100,"%")})
-    output$nonmotor_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-03-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
-    output$nonmotor_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-04-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
-    output$nonmotor_May <- renderText({paste("May 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-05-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
-    output$nonmotor_June <- renderText({paste("June 1st: ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],"2020-06-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
-    output$nonmotor_Latest <- renderText({paste("Latest Data (",nonmotor_latest_month,"-",nonmotor_latest_day,"): ", format(round(return_matching_day(w_tbl=nonmotor[Location %in% input$NonMotorLocations],w_day=ydm(paste("2020-",nonmotor_latest_day,"-",nonmotor_latest_month)),2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    
+    output$chart_nonmotor <- renderPlotly({ if (input$NonMotorLocations %in% nonmotor_SDOT_trail_list ) {
+        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"7-Day Average",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"","Bicycle Counts, 7-day Average")
+    } else { 
+        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"% of 2019 Daily Non-Motorized Counts",scales::percent, 0, c('#91268F','#F05A28'),"year",100,"%")}
+        })
+    output$nonmotor_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-03-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-04-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_May <- renderText({paste("May 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-05-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_June <- renderText({paste("June 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-06-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
+    output$nonmotor_Latest <- renderText({paste("Latest Data (",nonmotor_latest_month,"-",nonmotor_latest_day,"): ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],w_day=ydm(paste("2020-",nonmotor_latest_day,"-",nonmotor_latest_month)),2020),2)*100, nsmall = 0, big.mark = ","),"%")})
     
     # Summary Statistics for Initial Page
     output$screenings_summary <- renderText({paste("Nationwide Airport Screenings: ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,0)-100,"%")})

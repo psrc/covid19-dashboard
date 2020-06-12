@@ -73,7 +73,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                       sidebarPanel(
                         div(img(src="wsdot.png", width = "30%", height = "30%", style = "padding-top: 5px")),
                         hr(),
-                        selectInput("NonMotorLocations","Select the Non-Motorized count location:",nonmotor_count_locations),
+                        selectInput("NonMotorLocations","Select the Non-Motorized count location:",place_choices),
                         hr(),
                         strong("Percentage of 2019 Non-Motorized Counts"),
                         tags$div(class="sidebar_data",textOutput("nonmotor_March")),
