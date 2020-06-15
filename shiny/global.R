@@ -12,6 +12,10 @@ library(plotly)
 # Web scraping
 library(rvest)
 
+# PDF Processing and Cleaning
+library(pdftools)
+library(tidyr)
+
 #################################################################################################################
 #################################################################################################################
 ### Input Files
@@ -28,7 +32,6 @@ ferry_file <- file.path(wrkdir,"data/FerriesTable_data.csv")
 rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
-esd_file <- file.path(wrkdir,"data/unemployment_claims.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
 
@@ -275,9 +278,43 @@ rail_latest_day <- max(day(rail_only_latest$day))
 ### Unemployment Data
 #################################################################################################################
 #################################################################################################################
-unemployment <- setDT(read.csv(esd_file,stringsAsFactors=FALSE))
-unemployment$date <- mdy(unemployment$date)
-unemployment$day <- mdy(unemployment$day)
+esd_url <- "https://esdorchardstorage.blob.core.windows.net/esdwa/Default/ESDWAGOV/newsroom/Statistics/wkly-initial-claims-count-table.pdf"
+
+# Clean up the raw pdf 
+unemployment <- pdf_text(esd_url) %>% readr::read_lines()
+unemployment <-  unemployment[7:58]
+unemployment_claims <- setDT(as.data.frame(unemployment))
+unemployment_claims$unemployment <- gsub("\\s+", " ",unemployment_claims$unemployment)
+unemployment_claims$unemployment <- gsub(",", "",unemployment_claims$unemployment)
+unemployment_claims$unemployment <- trimws(unemployment_claims$unemployment, "l")
+unemployment_claims <- unemployment_claims %>% separate(unemployment, c("v1", "v2","v3", "v4", "v5", "v6", "v7","v8", "v9", "v10"), sep=" ")
+unemployment_claims <- na.omit(unemployment_claims)
+
+# Process the 2019 data into a usable table for plotting
+working <- unemployment_claims[,c(1:6)]
+nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Averge","day")
+setnames(working,nms)
+working$date <- mdy(working$date)
+working$day <- mdy(working$day)
+working$`Percent Change` <- as.character((as.numeric(working$`Percent Change`))/100)
+unemployment_2019 <- melt(working, id.vars=c("date","day"))
+unemployment_2019$value <- as.numeric(unemployment_2019$value)
+
+# Process the 2020 data into a usable table for plotting
+working <- unemployment_claims[,c(6:10)]
+nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Averge")
+setnames(working,nms)
+working$date <- mdy(working$date)
+working$day <- mdy(working$day)
+working$day <- working$date
+working$`Percent Change` <- as.character((as.numeric(working$`Percent Change`))/100)
+unemployment_2020 <- melt(working, id.vars=c("date","day"))
+unemployment_2020$value <- as.numeric(unemployment_2020$value)
+
+# Combine 2019 and 2020
+unemployment <- rbind(unemployment_2019,unemployment_2020)
+unemployment$year <- year(unemployment$date)
+unemployment <- unemployment[variable %in% c("Initial Claims")]
 
 # Current Year
 esd_current <- unemployment[year(date) %in% c(2020)]
