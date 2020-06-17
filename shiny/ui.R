@@ -68,37 +68,6 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                     ) # End of Sidebar of Unemployment
            ),# End of Tab Panel of Unemployment
 
-           tabPanel(icon("walking"),
-                    sidebarLayout(
-                      sidebarPanel(
-                        div(img(src="wsdot.png", width = "30%", height = "30%", style = "padding-top: 5px")),
-                        hr(),
-                        selectInput("NonMotorLocations","Select the Non-Motorized count location:",place_choices),
-                        hr(),
-                        strong("Percentage of 2019 Non-Motorized Counts"),
-                        tags$div(class="sidebar_data",textOutput("nonmotor_March")),
-                        tags$div(class="sidebar_data",textOutput("nonmotor_April")),
-                        tags$div(class="sidebar_data",textOutput("nonmotor_May")),
-                        tags$div(class="sidebar_data",textOutput("nonmotor_June")),
-                        tags$div(class="sidebar_data",textOutput("nonmotor_Latest")),
-                        hr(),
-                        strong("Notes on Non-Motorized Counts:"),
-                        br(),
-                        tags$div(class="sidebar_notes", textOutput("NonMotorBackground")),
-                        br(),
-                        width=3),
-                      mainPanel(
-                        fluidRow(column(4,div(img(src="bike-walk-bus.jpeg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                                 column(4,div(img(src="biking.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                                 column(4,div(img(src="tokul_trestle.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
-                        ),
-                        br(),
-                        fluidRow(column(12,plotlyOutput("chart_nonmotor"))),
-                        fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm")))
-                      ) # End of Main Panel of Non-Motorized Volumes
-                    ) # End of Sidebar of Non-Motorized Volumes
-           ),# End of Tab Panel of Non-Motorized Volumes
-           
             tabPanel(icon("plane-departure"),
             sidebarLayout(
                 sidebarPanel(
@@ -289,7 +258,38 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                  ) # End of Sidebar of Truck Volumes
         ),# End of Tab Panel of Truck Volumes
         
+        tabPanel(icon("walking"),
+                 sidebarLayout(
+                   sidebarPanel(
+                     div(img(src="wsdot.png", width = "30%", height = "30%", style = "padding-top: 5px")),
+                     hr(),
+                     selectInput("NonMotorLocations","Select the Non-Motorized count location:",place_choices),
+                     hr(),
+                     strong("Percentage of 2019 Non-Motorized Counts"),
+                     tags$div(class="sidebar_data",textOutput("nonmotor_March")),
+                     tags$div(class="sidebar_data",textOutput("nonmotor_April")),
+                     tags$div(class="sidebar_data",textOutput("nonmotor_May")),
+                     tags$div(class="sidebar_data",textOutput("nonmotor_June")),
+                     tags$div(class="sidebar_data",textOutput("nonmotor_Latest")),
+                     hr(),
+                     strong("Notes on Non-Motorized Counts:"),
+                     br(),
+                     tags$div(class="sidebar_notes", textOutput("NonMotorBackground")),
+                     br(),
+                     width=3),
+                   mainPanel(
+                     fluidRow(column(4,div(img(src="bike-walk-bus.jpeg", width = "100%", height = "100%", style = "padding-top: 25px"))),
+                              column(4,div(img(src="biking.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
+                              column(4,div(img(src="tokul_trestle.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
+                     ),
+                     br(),
+                     fluidRow(column(12,plotlyOutput("chart_nonmotor"))),
+                     fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm")))
+                   ) # End of Main Panel of Non-Motorized Volumes
+                 ) # End of Sidebar of Non-Motorized Volumes
+        ),# End of Tab Panel of Non-Motorized Volumes
         
+                
         tabPanel(icon("info-circle"),
                  h1("Data Sources"),
                  "The data in this portal comes from a few key sources:",

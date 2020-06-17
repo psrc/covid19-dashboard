@@ -52,7 +52,7 @@ shinyServer(function(input, output) {
     })
     
     # TSA Data
-    output$chart_tsa <- renderPlotly({create_line_chart(passengers,"Daily Passenger Screenings",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"")})
+    output$chart_tsa <- renderPlotly({create_line_chart(passengers,"Daily Passenger Screenings",scales::comma, 0, c('#E3C9E3','#91268F'),"year",1,"")})
     
     output$TSA_March <- renderText({paste("March 1st: ", format(round(return_estimate(passengers,"2019-03-01"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(passengers,"2020-03-01"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(passengers,"2020-03-01")/return_estimate(passengers,"2019-03-01"))*100,1),"%")})
     output$TSA_April <- renderText({paste("April 1st: ", format(round(return_estimate(passengers,"2019-04-01"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(passengers,"2020-04-01"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(passengers,"2020-04-01")/return_estimate(passengers,"2019-04-01"))*100,1),"%")})
@@ -79,11 +79,11 @@ shinyServer(function(input, output) {
     output$ptdef_Latest <- renderText({paste("Pt Defiance (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Point Defiance - Tahlequah"),1), nsmall = 0, big.mark = ","),"%")})
     
     # Rail Data
-    output$chart_rail <- renderPlotly({create_line_chart(rail, "Daily Passengers", scales::comma, 1, c('#91268F','#F05A28'), "year",1,"")})
+    output$chart_rail <- renderPlotly({create_line_chart(rail, "Daily Passengers", scales::comma, 1, c('#FBD6C9','#F05A28'), "year",1,"")})
     output$rail_Latest <- renderText({paste("Amtrak Cascades (",rail_latest_month,"-",rail_latest_day,"): ", format(round(return_estimate(rail,ydm(paste("2019-",rail_latest_day,"-",rail_latest_month))),-1), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month))),-1), nsmall = 0, big.mark = ","), "/", round((return_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)))/return_estimate(rail,ydm(paste("2019-",rail_latest_day,"-",rail_latest_month))))*100,1),"%")})
     
     # Unemployment Data
-    output$chart_unemployment <- renderPlotly({create_line_chart(unemployment,"Initial Claims",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"")})
+    output$chart_unemployment <- renderPlotly({create_line_chart(unemployment,"Initial Claims",scales::comma, 0, c('#E2F1CF','#8CC63E'),"year",1,"")})
     
     output$unemployment_March <- renderText({paste("1st week of March: ", format(round(return_estimate(unemployment,"2019-03-02"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment,"2020-02-29"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment,"2020-02-29")/return_estimate(unemployment,"2019-03-02"))*100,1),"%")})
     output$unemployment_April <- renderText({paste("1st week of April: ", format(round(return_estimate(unemployment,"2019-03-30"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment,"2020-03-28"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment,"2020-03-28")/return_estimate(unemployment,"2019-03-30"))*100,1),"%")})
@@ -91,7 +91,7 @@ shinyServer(function(input, output) {
     output$unemployment_Latest <- renderText({paste("Latest Data (",esd_latest_month_current,"-",esd_latest_day_current,"): ", format(round(return_estimate(unemployment,ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment,ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current))),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment,ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current)))/return_estimate(unemployment,ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))))*100,1),"%")})
 
     # Traffic Data
-    output$chart_volumes <- renderPlotly({create_line_chart(w_tbl=volumes[Location %in% input$CountLocations],"Daily Traffic",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"")})
+    output$chart_volumes <- renderPlotly({create_line_chart(w_tbl=volumes[Location %in% input$CountLocations],"Daily Traffic",scales::comma, 0, c('#BFE9E7','#00A7A0'),"year",1,"")})
     output$volumes_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2019))*100,1),"%")})
     output$volumes_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2019))*100,1),"%")})
     output$volumes_May <- renderText({paste("May 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-05-01",w_year=2019))*100,1),"%")})    
@@ -108,9 +108,9 @@ shinyServer(function(input, output) {
     # Non-Motorized Data
     
     output$chart_nonmotor <- renderPlotly({ if (input$NonMotorLocations %in% nonmotor_SDOT_trail_list ) {
-        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"7-Day Average",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"","Bicycle Counts, 7-day Average")
+        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"7-Day Average",scales::comma, 0, c('#E3C9E3','#91268F'),"year",1,"","Bicycle Counts, 7-day Average")
     } else { 
-        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"% of 2019 Daily Non-Motorized Counts",scales::percent, 0, c('#91268F','#F05A28'),"year",100,"%")}
+        create_line_chart(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"% of 2019 Daily Non-Motorized Counts",scales::percent, 0, c('#91268F'),"year",100,"%")}
         })
     output$nonmotor_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-03-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
     output$nonmotor_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=nonmotor[nonmotor$Location %in% input$NonMotorLocations,],"2020-04-01",2020),2)*100, nsmall = 0, big.mark = ","),"%")})
