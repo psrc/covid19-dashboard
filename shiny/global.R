@@ -29,7 +29,7 @@ wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
 
 transit_file <- file.path(wrkdir,"data/TransitTable_data.csv")
 ferry_file <- file.path(wrkdir,"data/FerriesTable_data.csv")
-rail_file <- file.path(wrkdir,"data/RailTable_crosstab.csv")
+rail_file <- file.path(wrkdir,"data/AmtrakTable_data.csv")
 volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
@@ -76,7 +76,8 @@ create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group,
                                panel.grid.minor = element_line(colour="#BBBDC0",size = 0.25),
                                panel.border = element_blank(),
                                axis.line = element_blank(),
-                               legend.position="bottom")
+                               legend.position="bottom",
+                               legend.title = element_blank())
                        ,tooltip = c("text")) %>% layout(hovermode = "x")
 
 
@@ -256,18 +257,22 @@ ferry_ridership_2019 <- ferry_data[variable %in% psrc_ferry & metric %in% "2019 
 #################################################################################################################
 #################################################################################################################
 rail_data <- setDT(read.csv(rail_file,stringsAsFactors=FALSE))
-cols <- c("Current","Amtrak")
-rail_data <- rail_data[,..cols]
-nms <- c("day","Amtrak")
+nms <- c("Date_2019","Date_2020","Measure","day_of_week","value")
 setnames(rail_data,nms)
-rail_data$day <- mdy(rail_data$day)
 
-# Convert to Long Form for use in graphic creation
-rail <- melt(rail_data,id.vars=c("day"))
-rail$value <- gsub("%","",rail$value)
-rail$value <- as.numeric(rail$value)
-rail$value <- rail$value / 100
-rail$date <- rail$day
+# cleanup
+rail_data$Date_2019 <- gsub(".*, ", "",rail_data$Date_2019)
+rail_data$Date_2020 <- gsub(".*, ", "",rail_data$Date_2020)
+rail_data <- rail_data[Measure %in% c("2019 Ridership"), date := Date_2019]
+rail_data <- rail_data[Measure %in% c("2020 Ridership"), date := Date_2020]
+rail_data$day <- rail_data$Date_2020
+rail_data <- na.omit(rail_data)
+
+cols <- c("date","day","value")
+rail <- rail_data[,..cols]
+rail$date <- mdy(rail$date)
+rail$day <- mdy(rail$day)
+rail$year <- year(rail$date)
 
 rail_latest_month <- max(month(rail$day))
 rail_only_latest <- rail[month(day) %in% rail_latest_month]

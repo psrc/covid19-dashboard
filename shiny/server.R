@@ -79,9 +79,9 @@ shinyServer(function(input, output) {
     output$ptdef_Latest <- renderText({paste("Pt Defiance (",ferry_latest_month,"-",ferry_latest_day,"): ", format(round(return_single_estimate(ferry,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),"Point Defiance - Tahlequah"),1), nsmall = 0, big.mark = ","),"%")})
     
     # Rail Data
-    output$chart_rail <- renderPlotly({create_line_chart(rail, "% of 2019 Daily Passengers", scales::percent, 1, c('#91268F','#F05A28',"#8CC63E","#00A7A0","#76787A","#BBBDC0"), "variable",100,"%")})
-    output$rail_Latest <- renderText({paste("Amtrak Cascades (",rail_latest_month,"-",rail_latest_day,"): ", format(round(return_single_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)),"Amtrak"),1), nsmall = 0, big.mark = ","),"%")})
-
+    output$chart_rail <- renderPlotly({create_line_chart(rail, "Daily Passengers", scales::comma, 1, c('#91268F','#F05A28'), "year",1,"")})
+    output$rail_Latest <- renderText({paste("Amtrak Cascades (",rail_latest_month,"-",rail_latest_day,"): ", format(round(return_estimate(rail,ydm(paste("2019-",rail_latest_day,"-",rail_latest_month))),-1), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month))),-1), nsmall = 0, big.mark = ","), "/", round((return_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)))/return_estimate(rail,ydm(paste("2019-",rail_latest_day,"-",rail_latest_month))))*100,1),"%")})
+    
     # Unemployment Data
     output$chart_unemployment <- renderPlotly({create_line_chart(unemployment,"Initial Claims",scales::comma, 0, c('#91268F','#F05A28'),"year",1,"")})
     
@@ -122,7 +122,7 @@ shinyServer(function(input, output) {
     output$screenings_summary <- renderText({paste("Nationwide Airport Screenings: ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,0)-100,"%")})
     output$unemployment_summary <- renderText({paste("Initial Jobless Claims Statewide: ", round((return_estimate(unemployment,ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current)))/return_estimate(unemployment,ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))))*100,0),"%")})
     output$transit_summary <- renderText({paste("Major Transit Operators Statewide: ", format(round(return_single_estimate(transit_data,ydm(paste("2020-",all_tran_latest_day,"-",all_tran_latest_month)),"Average"),1), nsmall = 0, big.mark = ","),"%")})
-    output$rail_summary <- renderText({paste("Amtrak Cascades: ", format(round(return_single_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)),"Amtrak"),1), nsmall = 0, big.mark = ","),"%")})
+    output$rail_summary <- renderText({paste("Amtrak Cascades: ", round((return_estimate(rail,ydm(paste("2020-",rail_latest_day,"-",rail_latest_month)))/return_estimate(rail,ydm(paste("2019-",rail_latest_day,"-",rail_latest_month))))*100,0)-100,"%")})
     output$ferry_summary <- renderText({paste("Central Puget Sound Ferry Routes: ", format(round((round(return_single_estimate(ferry_ridership_2020,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0) - round(return_single_estimate(ferry_ridership_2019,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0))/ round(return_single_estimate(ferry_ridership_2019,ydm(paste("2020-",ferry_latest_day,"-",ferry_latest_month)),psrc_ferry),0)*100,0), nsmall = 0, big.mark = ","),"%")})
     output$volume_summary <- renderText({paste("Central Puget Sound Highways: ", format(round(((round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2020),-2)-round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019),-2))/round(return_matching_day(w_tbl=volumes[Location %in% count_locations],w_day=ydm(paste("2020-",volumes_latest_day,"-",volumes_latest_month)),w_year=2019),-2))*100,0), nsmall = 0, big.mark = ","),"%")})
     

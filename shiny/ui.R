@@ -208,7 +208,8 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
             
                      ),
                      hr(),
-                     strong("Percentage of 2019 Daily Boardings by Operator"),
+                     strong("Daily Passenger Volumes:"),
+                     strong("(2019 / 2020 / Ratio)"),
                      tags$div(class="sidebar_data",textOutput("rail_Latest")),
                      hr(),
                      strong("Notes on Rail Data:"),
