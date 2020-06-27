@@ -1,5 +1,5 @@
 shinyUI(
-navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = ("padding-bottom: 30px"))),
+navbarPage(title=div(img(src="psrc-logo.png", width = "13%", height = "13%")),
            windowTitle = "COVID-19 Data Dashboard", 
            theme = "styles.css",
 
@@ -25,8 +25,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                         width=3),
                       mainPanel(
                         h1("Economic and Travel Impacts of COVID-19"),
-                        fluidRow(column(6,div(img(src="southlakeunionseattle_0.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                                  column(6,div(img(src="bellevuelakewashington_3.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
+                        fluidRow(column(12,div(img(src="covid-mural.jpg", width = "75%", height = "75%", style = "padding-top: 25px")))
                         ),
                         br(),
                         "Travel in Washington state has declined significantly since mid-March as the citizens of Washington have responded to various COVID-19 related initiatives such as closing schools, restricting gatherings to fewer than 50 people and the Stay Home - Stay Healthy Executive Order on March 25. This dashboard compiles data from numerous sources daily to help summarize travel and economic impacts for the Central Puge Sound region.",
@@ -42,19 +41,24 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
            tabPanel(icon("briefcase"),
                     sidebarLayout(
                       sidebarPanel(
-                        div(img(src="esd.jpg", width = "50%", height = "50%", style = "padding-top: 5px")),
+                        h2("Summary of Unemployment Claims:"),
+                        "(compared to same time period in 2019)",
+                        hr(),
+                        selectInput("ClaimTypes","Select the Data you would like to see:",claim_types),
                         hr(),
                         strong("Weekly Initial Jobless Claims:"),
                         strong("(2019 / 2020 / Ratio)"),
                         tags$div(class="sidebar_data",textOutput("unemployment_March")),
                         tags$div(class="sidebar_data",textOutput("unemployment_April")),
                         tags$div(class="sidebar_data",textOutput("unemployment_May")),
+                        tags$div(class="sidebar_data",textOutput("unemployment_June")),
                         tags$div(class="sidebar_data",textOutput("unemployment_Latest")),
                         hr(),
                         strong("Notes on Initial Jobless Claims:"),
                         br(),
                         tags$div(class="sidebar_notes",textOutput("esdBackground")),
-                        br(),
+                        hr(),
+                        div(img(src="esd.jpg", width = "30%", height = "30%", style = "padding-top: 5px")),
                         width=3),
                       mainPanel(
                         fluidRow(column(4,div(img(src="unemployment_1.jpg", width = "75%", height = "75%", style = "padding-top: 25px"))),
@@ -71,13 +75,15 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
             tabPanel(icon("plane-departure"),
             sidebarLayout(
                 sidebarPanel(
-                    div(img(src="tsa_logo.svg", width = 190, height = 67, style = "padding-top: 5px")),
+                    h2("Summary of Nationwide Airport Screenings:"),
+                    "(compared to same time period in 2019)",
                     hr(),
                     strong("Daily Passenger Screenings:"),
                     strong("(2019 / 2020 / Ratio)"),
                     tags$div(class="sidebar_data",textOutput("TSA_March")),
                     tags$div(class="sidebar_data",textOutput("TSA_April")),
                     tags$div(class="sidebar_data",textOutput("TSA_May")),
+                    tags$div(class="sidebar_data",textOutput("TSA_June")),
                     tags$div(class="sidebar_data",textOutput("TSA_Latest")),
                     hr(),
                     strong("Notes on Screening Data:"),
@@ -85,7 +91,8 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                     tags$div(class="sidebar_notes",textOutput("TSABackground")),
                     br(),
                     tags$div(class="sidebar_notes",textOutput("TSABackground2")),
-                    br(),
+                    hr(),
+                    div(img(src="tsa_logo.svg", width = 190, height = 67, style = "padding-top: 5px")),
                     width=3),
                 mainPanel(
                   fluidRow(column(4,div(img(src="seatacterminal.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
@@ -103,28 +110,28 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
         tabPanel(icon("bus"),
                  sidebarLayout(
                     sidebarPanel(
-                      fluidRow(column(6,div(img(src="community-transit.png", width = "75%", height = "75%", style = "padding-top: 5px"))),
-                               column(6,div(img(src="everett-transit.png", width = "50%", height = "50%", style = "padding-top: 5px")))
-                      ),
-                      fluidRow(column(6,div(img(src="pierce-transit.jpg", width = "50%", height = "50%", style = "padding-top: 25px"))),
-                               column(6,div(img(src="kitsap-transit.jpg", width = "50%", height = "50%", style = "padding-top: 25px")))
-                      ),
-                      fluidRow(column(6,div(img(src="kc-metro.png", width = "50%", height = "50%", style = "padding-top: 25px"))),
-                               column(6,div(img(src="sound-transit.png", width = "50%", height = "50%", style = "padding-top: 25px")))
-                      ),
+                      h2("Summary of Transit Boardings by Operator:"),
+                      "(compared to same time period in 2019)",
+                      hr(),
+                      selectInput("TransitOperators","Select the Transit Agency would like to see data for:",psrc_agencies),
                       hr(),
                       strong("Percentage of 2019 Daily Boardings by Operator"),
-                      tags$div(class="sidebar_data",textOutput("ct_Latest")),
-                      tags$div(class="sidebar_data",textOutput("et_Latest")),
-                      tags$div(class="sidebar_data",textOutput("kcm_Latest")),
-                      tags$div(class="sidebar_data",textOutput("kt_Latest")),
-                      tags$div(class="sidebar_data",textOutput("ktf_Latest")),
-                      tags$div(class="sidebar_data",textOutput("pt_Latest")),
-                      tags$div(class="sidebar_data",textOutput("st_Latest")),
+                      tags$div(class="sidebar_data",textOutput("transit_March")),
+                      tags$div(class="sidebar_data",textOutput("transit_April")),
+                      tags$div(class="sidebar_data",textOutput("transit_May")),
+                      tags$div(class="sidebar_data",textOutput("transit_June")),
                       hr(),
-                      strong("Notes on Tranist Data:"),
+                      strong("Notes on Transit Data:"),
                       tags$div(class="sidebar_notes",textOutput("TransitBackground")),
-                      br(),
+                      hr(),
+                      fluidRow(column(4,div(img(src="everett-transit.png", width = "50%", height = "50%", style = "padding-top: 5px"))),
+                               column(4,div(img(src="kitsap-transit.jpg", width = "35%", height = "35%", style = "padding-top: 5px"))),
+                               column(4,div(img(src="pierce-transit.jpg", width = "35%", height = "35%", style = "padding-top: 5px")))
+                      ),
+                      fluidRow(column(4,div(img(src="community-transit.png", width = "75%", height = "75%", style = "padding-top: 25px"))),
+                               column(4,div(img(src="kc-metro.png", width = "50%", height = "50%", style = "padding-top: 25px"))),
+                               column(4,div(img(src="sound-transit.png", width = "50%", height = "50%", style = "padding-top: 25px")))
+                      ),
                       width=3),
                     mainPanel(
                       fluidRow(column(4,div(img(src="bellevuetransitcenter.jpg", width = "100%", height = "100%", style = "padding-top: 5px"))),
@@ -133,7 +140,8 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                       ),
                       br(),
                       textOutput("TransitSummary"),
-                      fluidRow(column(12,plotlyOutput("chart_transit"))),
+                      fluidRow(column(8,plotlyOutput("chart_transit")),
+                               column(4,leafletOutput("map_transit"))),
                       fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/transit/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/transit/default.htm")))
                     ) #End of Main Panel
                  ) # End of Sidebar Layout for Transit
@@ -159,9 +167,8 @@ navbarPage(title=div(img(src="psrc-logo.png", width = 260, height = 92, style = 
                      br(),
                      width=3),
                    mainPanel(
-                     fluidRow(column(4,div(img(src="rp1.jpg", width = "100%", height = "100%", style = "padding-top: 5px"))),
-                              column(4,div(img(src="ferry_terminal.jpg", width = "100%", height = "100%", style = "padding-top: 5px"))),
-                              column(4,div(img(src="fast_ferry_terminal.jpg", width = "100%", height = "100%", style = "padding-top: 5px")))
+                     fluidRow(column(6,div(img(src="ferries.jpg", width = "60%", height = "60%", style = "padding-top: 5px"))),
+                              column(6,div(img(src="fast_ferry_terminal.jpg", width = "75%", height = "75%", style = "padding-top: 5px")))
                      ),
                      br(),
                      fluidRow(column(12,plotlyOutput("chart_ferry"))),

@@ -16,6 +16,10 @@ library(rvest)
 library(pdftools)
 library(tidyr)
 
+# Spatial Analysis and Map Making
+library(leaflet)
+library(sf)
+
 #################################################################################################################
 #################################################################################################################
 ### Input Files
@@ -34,8 +38,8 @@ volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
+ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
 
-  
 #################################################################################################################
 #################################################################################################################
 ### Custom Colors
@@ -103,6 +107,36 @@ return_matching_day <- function(w_tbl, w_day, w_year) {
   working_estimate <- as.numeric(w_tbl[`day` %in% as.Date(w_day) & `year` %in% c(w_year), sum(`value`)])
   
   return(working_estimate)
+}
+
+find_place_data <- function(plc_shp, wrk_nm, wrk_typ) {
+  temp <- plc_shp
+  temp <- setDT(temp)
+  wrk_coord <- as.numeric(temp[NAME == wrk_nm,get(wrk_typ)])
+  return(wrk_coord)
+}
+
+create_place_map <- function(wrk_shp,wrk_plc) {
+  
+  # Trim for current place
+  current = wrk_shp[wrk_shp$NAME == wrk_plc,]
+  
+  working_map <- leaflet(data=current) %>% 
+    addProviderTiles(providers$CartoDB.Positron) %>%
+    addLayersControl(baseGroups = c("Base Map"),
+                     overlayGroups = c("Transit Service Area"),
+                     options = layersControlOptions(collapsed = FALSE)) %>%
+    addPolygons(fillColor = "76787A",
+              weight = 4,
+              opacity = 1.0,
+              color = "#91268F",
+              dashArray = "4",
+              fillOpacity = 0.0,
+              group = "Transit Service Area")%>%
+    setView(lng=find_place_data(wrk_shp,wrk_plc,"LON"), lat=find_place_data(wrk_shp,wrk_plc,"LAT"), zoom=find_place_data(wrk_shp,wrk_plc,"ZOOM"))
+  
+  return(working_map)
+
 }
 
 #################################################################################################################
@@ -178,7 +212,7 @@ transit_data$value <- transit_data$value / 100
 transit_data$variable <- gsub("Kitsap Transit \\(Excludes Fast Foot Ferry\\)","Kitsap Transit",transit_data$variable)
 transit_data$variable <- gsub("Kitsap Transit - Fast Foot Ferry only","Kitsap Fast Ferry",transit_data$variable)
 
-psrc_agencies <- c("Community Transit","Everett Transit","King County Metro","Kitsap Transit", "Kitsap Fast Ferry", "Pierce Transit", "Sound Transit")
+psrc_agencies <- c("Community Transit","Everett Transit","King County Metro","Kitsap Transit", "Pierce Transit", "Sound Transit")
 transit <- transit_data[variable %in% psrc_agencies]
 
 # Latest Data by Operator
@@ -297,7 +331,7 @@ unemployment_claims <- na.omit(unemployment_claims)
 
 # Process the 2019 data into a usable table for plotting
 working <- unemployment_claims[,c(1:6)]
-nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Averge","day")
+nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Average","day")
 setnames(working,nms)
 working$date <- mdy(working$date)
 working$day <- mdy(working$day)
@@ -307,7 +341,7 @@ unemployment_2019$value <- as.numeric(unemployment_2019$value)
 
 # Process the 2020 data into a usable table for plotting
 working <- unemployment_claims[,c(6:10)]
-nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Averge")
+nms <- c("date","Initial Claims","Weekly Change", "Percent Change", "4 Week Average")
 setnames(working,nms)
 working$date <- mdy(working$date)
 working$day <- mdy(working$day)
@@ -319,7 +353,10 @@ unemployment_2020$value <- as.numeric(unemployment_2020$value)
 # Combine 2019 and 2020
 unemployment <- rbind(unemployment_2019,unemployment_2020)
 unemployment$year <- year(unemployment$date)
-unemployment <- unemployment[variable %in% c("Initial Claims")]
+unemployment <- unemployment[variable %in% c("Initial Claims","Weekly Change", "4 Week Average")]
+
+# create list for drop down
+claim_types <- sort(unique(unemployment$variable))
 
 # Current Year
 esd_current <- unemployment[year(date) %in% c(2020)]
