@@ -1,6 +1,6 @@
 /inputs
 /output
-/shapefiles
+/shiny/data/shapefiles
 /__pycache__
 *.xlsx
 *.csv
