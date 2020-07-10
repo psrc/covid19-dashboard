@@ -403,7 +403,7 @@ volumes_latest_day <- max(day(volumes_only_latest$day))
 #################################################################################################################
 #################################################################################################################
 truck_data <- setDT(read.csv(freight_file,stringsAsFactors=FALSE))
-nms <- c("Highway","County","Location","date","value")
+nms <- c("Highway","County","Location","date","note","value")
 setnames(truck_data,nms)
 
 # Trim to PSRC Region and cleanup
