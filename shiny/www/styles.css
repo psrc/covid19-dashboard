@@ -56,29 +56,23 @@ i {
   font-size: 12pt; 
 }
 
-.nav-tabs {
+nav {
+  font-size: 20pt;
+  background-color: white;
+  text-align: center;
+  width: 50%;
+  margin: auto;
   padding-top: 20px;
-}
-
-.navbar img {
-  padding-right: 10px;
-  padding-bottom: 1px;
+  padding-bottom: 20px;
+  
 }
 
 .navbar {
-  font-size: 20pt;
-  background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
+  background-color: transparent;
 }
 
-.nav {
-  font-size: 20pt;
-  background-color: transparent;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 400px;
+.col-sm-3 {
+  width: 18%;
 }
 
 .fa:hover {color: #91268F;}

@@ -1,7 +1,7 @@
 shinyUI(
-navbarPage(title=div(img(src="psrc-logo.png", width = "13%", height = "13%")),
-           windowTitle = "COVID-19 Data Dashboard", 
-           theme = "styles.css",
+navbarPage(title="",
+          windowTitle = "COVID-19 Data Dashboard", 
+          theme = "styles.css",
 
            tabPanel("Overview",
                     sidebarLayout(
@@ -41,7 +41,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "13%", height = "13%")),
            tabPanel(icon("briefcase"),
                     sidebarLayout(
                       sidebarPanel(
-                        h2("Summary of Unemployment Claims:"),
+                        h2("Unemployment Claims:"),
                         "(compared to same time period in 2019)",
                         hr(),
                         selectInput("ClaimTypes","Select the Data you would like to see:",claim_types),
@@ -75,7 +75,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "13%", height = "13%")),
             tabPanel(icon("plane-departure"),
             sidebarLayout(
                 sidebarPanel(
-                    h2("Summary of Nationwide Airport Screenings:"),
+                    h2("Nationwide Airport Screenings:"),
                     "(compared to same time period in 2019)",
                     hr(),
                     strong("Daily Passenger Screenings:"),
@@ -110,7 +110,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "13%", height = "13%")),
         tabPanel(icon("bus"),
                  sidebarLayout(
                     sidebarPanel(
-                      h2("Summary of Transit Boardings by Operator:"),
+                      h2("Transit Boardings by Operator:"),
                       "(compared to same time period in 2019)",
                       hr(),
                       selectInput("TransitOperators","Select the Transit Agency would like to see data for:",psrc_agencies),
