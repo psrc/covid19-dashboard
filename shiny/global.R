@@ -20,11 +20,8 @@ library(tidyr)
 library(leaflet)
 library(sf)
 
-#################################################################################################################
-#################################################################################################################
-### Input Files
-#################################################################################################################
-#################################################################################################################
+# Input Files -------------------------------------------------------------
+
 # Local Working Directory
 #wrkdir <-"C:/coding/covid19-dashboard/shiny"
 
@@ -39,12 +36,9 @@ freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
 ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
+seatac_file <- file.path(wrkdir,"data/SEA activity measures by week - SEA measures.csv")
 
-#################################################################################################################
-#################################################################################################################
-### Custom Colors
-#################################################################################################################
-#################################################################################################################
+# Custom Colors -----------------------------------------------------------
 
 psrc_colors <- c(
   "CoastRhodo" = "#91268F",
@@ -55,11 +49,7 @@ psrc_colors <- c(
   "LightGrey" = "#BBBDC0"
 )
 
-#################################################################################################################
-#################################################################################################################
-### Functions
-#################################################################################################################
-#################################################################################################################
+# Functions ---------------------------------------------------------------
 
 create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group, w_factor, w_suff, w_tit = "") {
   
@@ -139,11 +129,7 @@ create_place_map <- function(wrk_shp,wrk_plc) {
 
 }
 
-#################################################################################################################
-#################################################################################################################
-### TSA Screening Data (available via webscraping daily)
-#################################################################################################################
-#################################################################################################################
+# TSA Airport Data ------------------------------------------------------------
 
 # Specifying the url for TSA website
 tsa_url <- 'https://www.tsa.gov/coronavirus/passenger-throughput'
@@ -181,9 +167,33 @@ latest_month <- max(month(passengers$date))
 only_latest <- passengers[month(date) %in% latest_month]
 latest_day <- max(day(only_latest$date))
 
-
 min_tsa <- min(passengers$value)
 max_tsa <- max(passengers$value)
+
+
+# Sea-Tac Aiport Data -----------------------------------------------------
+seatac_data <- setDT(read.csv(seatac_file,stringsAsFactors=FALSE))
+seatac_data <- seatac_data[-1,1:3]
+nms <- c("week","2020","2019")
+setnames(seatac_data,nms)
+seatac_data$`2020` <- as.numeric(gsub(",","",seatac_data$`2020`))
+seatac_data$`2019` <- as.numeric(gsub(",","",seatac_data$`2019`))
+seatac_data$`week` <- as.numeric(gsub("Week ","",seatac_data$`week`))
+
+seatac_data$date <- ymd( "2020-01-01" ) + weeks(seatac_data$week - 1)
+seatac <- melt(seatac_data, id.vars=c("date"))
+seatac = seatac[seatac$variable %in% c("2019","2020")]
+seatac$data_date <- paste(month(seatac$date),"/",day(seatac$date),"/",seatac$variable)
+seatac$data_date <- mdy(seatac$data_date)
+seatac$year <- year(seatac$data_date)
+seatac$value <- as.numeric(seatac$value)
+seatac <- seatac[, c('variable') := NULL]
+nms <- c("day","value","date","year")
+setnames(seatac,nms)
+
+sea_latest_month <- max(month(seatac$date))
+sea_only_latest <- seatac[month(date) %in% sea_latest_month]
+sea_latest_day <- max(day(sea_only_latest$date))
 
 #################################################################################################################
 #################################################################################################################

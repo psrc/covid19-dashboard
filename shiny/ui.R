@@ -1,5 +1,5 @@
 shinyUI(
-navbarPage(title="",
+navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", style = "float: right;")),
           windowTitle = "COVID-19 Data Dashboard", 
           theme = "styles.css",
 
@@ -61,9 +61,9 @@ navbarPage(title="",
                         div(img(src="esd.jpg", width = "30%", height = "30%", style = "padding-top: 5px")),
                         width=3),
                       mainPanel(
-                        fluidRow(column(4,div(img(src="unemployment_1.jpg", width = "75%", height = "75%", style = "padding-top: 25px"))),
-                                 column(4,div(img(src="unemployment_2.jpg", width = "85%", height = "85%", style = "padding-top: 25px"))),
-                                 column(4,div(img(src="unemployment_3.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
+                        fluidRow(column(4,div(img(src="unemployment_1.jpg", width = "55%", height = "55%", style = "padding-top: 25px"))),
+                                 column(4,div(img(src="unemployment_2.jpg", width = "60%", height = "60%", style = "padding-top: 25px"))),
+                                 column(4,div(img(src="unemployment_3.jpg", width = "70%", height = "70%", style = "padding-top: 25px")))
                         ),
                         br(),
                         fluidRow(column(12,plotlyOutput("chart_unemployment"))),
@@ -72,41 +72,60 @@ navbarPage(title="",
                     ) # End of Sidebar of Unemployment
            ),# End of Tab Panel of Unemployment
 
-            tabPanel(icon("plane-departure"),
-            sidebarLayout(
-                sidebarPanel(
-                    h2("Nationwide Airport Screenings:"),
-                    "(compared to same time period in 2019)",
-                    hr(),
-                    strong("Daily Passenger Screenings:"),
-                    strong("(2019 / 2020 / Ratio)"),
-                    tags$div(class="sidebar_data",textOutput("TSA_March")),
-                    tags$div(class="sidebar_data",textOutput("TSA_April")),
-                    tags$div(class="sidebar_data",textOutput("TSA_May")),
-                    tags$div(class="sidebar_data",textOutput("TSA_June")),
-                    tags$div(class="sidebar_data",textOutput("TSA_Latest")),
-                    hr(),
-                    strong("Notes on Screening Data:"),
-                    br(),
-                    tags$div(class="sidebar_notes",textOutput("TSABackground")),
-                    br(),
-                    tags$div(class="sidebar_notes",textOutput("TSABackground2")),
-                    hr(),
-                    div(img(src="tsa_logo.svg", width = 190, height = 67, style = "padding-top: 5px")),
-                    width=3),
-                mainPanel(
-                  fluidRow(column(4,div(img(src="seatacterminal.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                           column(4,div(img(src="alaska-paine-field_0.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                           column(4,div(img(src="painefieldterminal_int_big.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
-                  ),
-                  br(),
-                  textOutput("TSASummary"),
-                  fluidRow(column(12,plotlyOutput("chart_tsa"))),
-                  fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.tsa.gov/coronavirus/passenger-throughput", "Source: https://www.tsa.gov/coronavirus/passenger-throughput")))
-           ) # End of Main Panel of Passenger Screening
-          ) # End of Sidebar of Passenger Screening
-        ),# End of Tab Panel of Passenger Screening
-        
+          tabPanel(icon("plane-departure"),
+                   sidebarLayout(
+                     sidebarPanel(
+                       h2("Airport Screenings:"),
+                       "(compared to same time period in 2019)",
+                       hr(),
+                       strong("Sea-Tac Daily Screenings:"),
+                       strong("(2019 / 2020 / Ratio)"),
+                       tags$div(class="sidebar_data",textOutput("sea_March")),
+                       tags$div(class="sidebar_data",textOutput("sea_April")),
+                       tags$div(class="sidebar_data",textOutput("sea_May")),
+                       tags$div(class="sidebar_data",textOutput("sea_June")),
+                       tags$div(class="sidebar_data",textOutput("sea_July")),
+                       tags$div(class="sidebar_data",textOutput("sea_Latest")),
+                       hr(),
+                       strong("National Daily Screenings:"),
+                       strong("(2019 / 2020 / Ratio)"),
+                       tags$div(class="sidebar_data",textOutput("TSA_March")),
+                       tags$div(class="sidebar_data",textOutput("TSA_April")),
+                       tags$div(class="sidebar_data",textOutput("TSA_May")),
+                       tags$div(class="sidebar_data",textOutput("TSA_June")),
+                       tags$div(class="sidebar_data",textOutput("TSA_July")),
+                       tags$div(class="sidebar_data",textOutput("TSA_Latest")),
+                       hr(),
+                       strong("Notes on Screening Data:"),
+                       br(),
+                       tags$div(class="sidebar_notes",textOutput("TSABackground")),
+                       br(),
+                       tags$div(class="sidebar_notes",textOutput("TSABackground2")),
+                       hr(),
+                       fluidRow(column(4,div(img(src="logo-port_0.png", width = "75%", height = "75%", style = "padding-top: 5px"))),
+                                column(4,div(img(src="tsa_logo.svg", width = "75%", height = "75%", style = "padding-top: 5px")))
+                       ),
+                       width=3),
+                     mainPanel(
+                       fluidRow(column(4,div(img(src="seatacterminal.jpg", width = "70%", height = "70%", style = "padding-top: 25px"))),
+                                column(4,div(img(src="alaska-paine-field_0.jpg", width = "70%", height = "70%", style = "padding-top: 25px"))),
+                                column(4,div(img(src="painefieldterminal_int_big.jpg", width = "70%", height = "70%", style = "padding-top: 25px")))
+                       ),
+                       br(),
+                       h2("Sea-Tac Aiport Average Weekday Passenger Screenings"),
+                       "test",
+                       fluidRow(column(12,plotlyOutput("chart_sea"))),
+                       fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.portseattle.org/page/airport-statistics#:~:text=Operated%20by%20the%20Port%20of,of%20air%20cargo%20in%202019.", "Source: https://www.portseattle.org/page/airport-statistics"))),
+                       br(),
+                       h2("Nartional Aiport Average Weekday Passenger Screenings"),
+                       textOutput("TSASummary"),
+                       fluidRow(column(12,plotlyOutput("chart_tsa"))),
+                       fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.tsa.gov/coronavirus/passenger-throughput", "Source: https://www.tsa.gov/coronavirus/passenger-throughput")))
+                       
+                     ) # End of Main Panel of Passenger Screening
+                   ) # End of Sidebar of Passenger Screening
+          ),# End of Tab Panel of Passenger Screening
+          
         tabPanel(icon("bus"),
                  sidebarLayout(
                     sidebarPanel(
@@ -120,6 +139,7 @@ navbarPage(title="",
                       tags$div(class="sidebar_data",textOutput("transit_April")),
                       tags$div(class="sidebar_data",textOutput("transit_May")),
                       tags$div(class="sidebar_data",textOutput("transit_June")),
+                      tags$div(class="sidebar_data",textOutput("transit_July")),
                       hr(),
                       strong("Notes on Transit Data:"),
                       tags$div(class="sidebar_notes",textOutput("TransitBackground")),
@@ -150,9 +170,8 @@ navbarPage(title="",
         tabPanel(icon("ship"),
                  sidebarLayout(
                    sidebarPanel(
-                     fluidRow(column(6,div(img(src="wsf.png", width = "75%", height = "75%", style = "padding-top: 5px"))),
-                              column(6,div(img(src="kitsap-transit.jpg", width = "50%", height = "50%", style = "padding-top: 5px")))
-                              ),
+                     h2("Ferry Boardings by Operator:"),
+                     "(compared to same time period in 2019)",
                      hr(),
                      strong("Percentage of 2019 Daily Boardings by Operator"),
                      tags$div(class="sidebar_data",textOutput("bi_Latest")),
@@ -164,7 +183,10 @@ navbarPage(title="",
                      hr(),
                      strong("Notes on Ferry Data:"),
                      tags$div(class="sidebar_notes",textOutput("FerryBackground")),
-                     br(),
+                     hr(),
+                     fluidRow(column(4,div(img(src="wsf.png", width = "40%", height = "40%", style = "padding-top: 5px"))),
+                              column(4,div(img(src="kitsap-transit.jpg", width = "35%", height = "35%", style = "padding-top: 5px")))
+                     ),
                      width=3),
                    mainPanel(
                      fluidRow(column(6,div(img(src="ferries.jpg", width = "60%", height = "60%", style = "padding-top: 5px"))),
@@ -294,20 +316,7 @@ navbarPage(title="",
                      fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/act/default.htm")))
                    ) # End of Main Panel of Non-Motorized Volumes
                  ) # End of Sidebar of Non-Motorized Volumes
-        ),# End of Tab Panel of Non-Motorized Volumes
-        
-                
-        tabPanel(icon("info-circle"),
-                 h1("Data Sources"),
-                 "The data in this portal comes from a few key sources:",
-                 hr(),
-                 h2("Initial Unemployment Claims "),
-                 "from ESD",
-                 br(),
-                 h2("Airport Passenger Screenings:"),
-                 "from TSA",
-                 br()
-        )# End of Tab Panel of Information        
+        )# End of Tab Panel of Non-Motorized Volumes
                 
   ) # End of NavBar Page
 ) # End of Shiny App
