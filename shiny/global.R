@@ -39,7 +39,8 @@ nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.cs
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
 ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
 seatac_file <- file.path(wrkdir,"data/SEA activity measures by week - SEA measures.csv")
-unemployment_demographics <- file.path(wrkdir,"data/Continued-Claims-Published.xlsx")
+unemployment_demographics_file <- file.path(wrkdir,"data/Continued-Claims-Published.xlsx")
+labor_force_file <- file.path(wrkdir,"data/labor-force-demographics.csv")
 
 # Custom Colors -----------------------------------------------------------
 
@@ -53,7 +54,9 @@ psrc_colors <- c(
   "King County" = "#AD5CAB",
   "Kitsap County" = "#F4835E",
   "Pierce County" = "#A9D46E",
-  "Snohomish County" = "#40BDB8"
+  "Snohomish County" = "#40BDB8",
+  "Share" = "#AD5CAB",
+  "Continued Claims" = "#40BDB8"
 )
 
 # Functions ---------------------------------------------------------------
@@ -85,30 +88,51 @@ create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group,
   return(w_chart)
 }
 
-create_bar_chart <- function(w_tbl, w_group, w_title, w_type, w_dec) {
+create_bar_chart <- function(w_tbl, w_group, w_title, w_type, w_dec, w_flip, w_scale, w_fact, w_suff) {
 
-  w_chart <- ggplotly(ggplot(data=w_tbl, aes(fill=`variable`, y=`value`, x=reorder(get(w_group),value), text = paste0("<b>", w_title , " by ", w_group, ": ","</b>",prettyNum(round(`value`, w_dec), big.mark = ",")))) + 
+  w_chart <- ggplot(data=w_tbl, aes(fill=`variable`, y=`value`, x=reorder(get(w_group),value), text = paste0("<b>", w_title , " by ", w_group, ": ","</b>",prettyNum(round(`value`*w_fact, w_dec), big.mark = ","),w_suff))) + 
                         geom_bar(position=w_type, stat="identity") +
-                        coord_flip() +
                         scale_fill_manual(values= psrc_colors) +
-                        scale_y_continuous(labels = scales::comma)+
-                        ylab(paste0("Total ", w_title))+
-                        theme_light() +
-                        theme(legend.title = element_blank(),
-                              axis.text=element_text(size=10),
-                              axis.text.x.bottom=element_text(size=10),
-                              axis.title.y = element_blank(),
-                              axis.title.x = element_text(size=10,face="bold"),
-                              panel.grid.major.y = element_blank(),
-                              panel.grid.minor.y = element_blank(),
-                              panel.grid.major.x = element_line(colour="#BBBDC0",size = 0.25),
-                              panel.border = element_blank(),
-                              axis.line = element_blank())
-                      ,tooltip = c("text"))
+                        ylab(paste0(w_title))+
+                        xlab(paste0(w_title))+
+                        scale_y_continuous(labels = w_scale)
   
-  return(w_chart)
+  if (w_flip == "yes") {
+    w_chart <- w_chart + 
+      coord_flip() +
+      theme_light() +
+      theme(legend.title = element_blank(),
+            axis.text=element_text(size=10),
+            axis.text.x.bottom=element_text(size=10),
+            axis.title.y = element_blank(),
+            axis.title.x = element_text(size=10,face="bold"),
+            panel.grid.major.y = element_blank(),
+            panel.grid.minor.y = element_blank(),
+            panel.grid.major.x = element_line(colour="#BBBDC0",size = 0.25),
+            panel.border = element_blank(),
+            axis.line = element_blank())
+      
+  } else {
+    w_chart <- w_chart + 
+      scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) +
+      theme_light() +
+      theme(legend.title = element_blank(),
+            axis.text=element_text(size=10),
+            axis.text.x.bottom=element_text(size=10),
+            axis.title.y = element_blank(),
+            axis.title.x = element_text(size=10,face="bold"),
+            panel.grid.major.y = element_line(colour="#BBBDC0",size = 0.25),
+            panel.grid.minor.y = element_blank(),
+            panel.grid.major.x = element_blank(),
+            panel.border = element_blank(),
+            axis.line = element_blank())
+  }
+  
+  f_chart <- ggplotly(w_chart,tooltip = c("text") )
+      
+  return(f_chart)
 }
-  
+
 return_estimate <- function(w_tbl, w_date) {
 
   working_estimate <- as.numeric(w_tbl[`date` %in% as.Date(w_date), sum(`value`)])
@@ -406,10 +430,9 @@ esd_latest_month_prior <- max(month(esd_prior$date))
 esd_only_latest_prior <- esd_prior[month(date) %in% esd_latest_month_prior]
 esd_latest_day_prior <- max(day(esd_only_latest_prior$date))
 
-
 # Continuing Unemployment by Industry -----------------------------------------
 
-claim_industries <- setDT(read_excel(unemployment_demographics, sheet="NAICS2", skip = 5))
+claim_industries <- setDT(read_excel(unemployment_demographics_file, sheet="NAICS2", skip = 5))
 cols_to_keep <- c("Industry","King County","Kitsap County","Pierce County","Snohomish County")
 claim_industries <- claim_industries[,..cols_to_keep]
 claim_industries <- claim_industries[!(Industry %in% c("Mining","Utilities","Unknown","Not disclosed","Total, All Industries"))]
@@ -421,6 +444,46 @@ claim_industries$`Snohomish County` <- as.numeric(claim_industries$`Snohomish Co
 industries <- melt(claim_industries, id.vars=c("Industry"))
 industries$variable <- factor(industries$variable, levels = c("Kitsap County","Snohomish County", "Pierce County", "King County"))
 industries <- industries[order(variable),]
+
+
+# Continuing Unemployment by Race ----------------------------------------
+
+# Unemployment by Race
+claim_race <- setDT(read_excel(unemployment_demographics_file, sheet="Claimants by race and ethnicity", skip = 5))
+cols_to_keep <- c("Race/Ethnicity of Claimant","King County","Kitsap County","Pierce County","Snohomish County")
+claim_race <- claim_race[1:9,..cols_to_keep]
+
+claim_race <- claim_race[`Race/Ethnicity of Claimant` %in% c("African American","American Indian","Asian","Pacific Islander","Caucasian","Two or More Races","Latino/Hispanic of any race")]
+claim_race$`King County` <- as.numeric(claim_race$`King County`)
+claim_race$`Kitsap County` <- as.numeric(claim_race$`Kitsap County`)
+claim_race$`Pierce County` <- as.numeric(claim_race$`Pierce County`)
+claim_race$`Snohomish County` <- as.numeric(claim_race$`Snohomish County`)
+claim_race$Claims <- claim_race$`King County` + claim_race$`Kitsap County` + claim_race$`Pierce County` +claim_race$`Snohomish County`
+
+regional_claim_race <- claim_race[,c("Race/Ethnicity of Claimant","Claims")]
+nms <- c("Race","Continued Claims")
+setnames(regional_claim_race,nms)
+regional_claim_race$Race <- gsub("African American","Black or African American Alone",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("Caucasian","White Alone",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("American Indian","American Indian or Alaska Native Alone",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("Asian","Asian Alone",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("Pacific Islander","Native Hawaiian or Other Pacific Islander Alone",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("Two or More Races","Two or More Race Groups",regional_claim_race$Race)
+regional_claim_race$Race <- gsub("Latino/Hispanic of any race","Hispanic or Latinx (of any race)",regional_claim_race$Race)
+
+# Labor Force by Race
+regional_labor_force <- setDT(read.csv(labor_force_file,stringsAsFactors=FALSE))
+nms <- c("Race","Workers","Quarter")
+setnames(regional_labor_force,nms)
+regional_labor_force <- regional_labor_force[,c("Race","Workers")]
+regional_labor_force$`Workers` <- gsub(",","",regional_labor_force$`Workers`)
+regional_labor_force$`Workers` <- as.numeric(regional_labor_force$`Workers`)
+
+# Join Claims with Total Labor Force and Calculate Shares of Unemployment
+regional_claim_race <- merge(regional_claim_race,regional_labor_force,by="Race")
+regional_claim_race$Share <- regional_claim_race$`Continued Claims` / regional_claim_race$Workers
+
+race <- melt(regional_claim_race, id.vars=c("Race"))
 
 # Traffic Volume Data -----------------------------------------------------
 

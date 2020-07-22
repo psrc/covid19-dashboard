@@ -71,10 +71,18 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                         fluidRow(column(12,plotlyOutput("chart_unemployment"))),
                         fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/newsroom/unemployment-statistics", "Source: https://esd.wa.gov/newsroom/unemployment-statistics"))),
                         br(),
+                        h2("Continuing Unemployment Claims by Race"),
+                        "test",
+                        fluidRow(column(6,plotlyOutput("chart_unemployment_race_total")),
+                                 column(6,plotlyOutput("chart_unemployment_race_share"))
+                        ),
+                        fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/labormarketinfo/unemployment-insurance-data", "https://esd.wa.gov/labormarketinfo/unemployment-insurance-data"))),
+                        br(),
                         h2("Continuing Unemployment Claims by Industry"),
                         "test",
                         fluidRow(column(12,plotlyOutput("chart_unemployment_industry"))),
                         fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/labormarketinfo/unemployment-insurance-data", "https://esd.wa.gov/labormarketinfo/unemployment-insurance-data")))
+                        
                         
                       ) # End of Main Panel of Unemployment
                     ) # End of Sidebar of Unemployment
