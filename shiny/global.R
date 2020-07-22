@@ -3,6 +3,8 @@ library(data.table)
 library(lubridate)
 library(shiny)
 library(dplyr)
+library(readxl)
+library(stringr)
 
 # Plotting Libraries
 library(ggplot2)
@@ -37,6 +39,7 @@ nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.cs
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
 ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
 seatac_file <- file.path(wrkdir,"data/SEA activity measures by week - SEA measures.csv")
+unemployment_demographics <- file.path(wrkdir,"data/Continued-Claims-Published.xlsx")
 
 # Custom Colors -----------------------------------------------------------
 
@@ -46,7 +49,11 @@ psrc_colors <- c(
   "DouglasFirShoot" = "#8CC63E",    
   "FerryWake" = "#00A7A0",
   "DarkGrey" = "#76787A",    
-  "LightGrey" = "#BBBDC0"
+  "LightGrey" = "#BBBDC0",
+  "King County" = "#AD5CAB",
+  "Kitsap County" = "#F4835E",
+  "Pierce County" = "#A9D46E",
+  "Snohomish County" = "#40BDB8"
 )
 
 # Functions ---------------------------------------------------------------
@@ -78,6 +85,30 @@ create_line_chart <- function(w_tbl, w_title, w_label, w_dec, w_colors, w_group,
   return(w_chart)
 }
 
+create_bar_chart <- function(w_tbl, w_group, w_title, w_type, w_dec) {
+
+  w_chart <- ggplotly(ggplot(data=w_tbl, aes(fill=`variable`, y=`value`, x=reorder(get(w_group),value), text = paste0("<b>", w_title , " by ", w_group, ": ","</b>",prettyNum(round(`value`, w_dec), big.mark = ",")))) + 
+                        geom_bar(position=w_type, stat="identity") +
+                        coord_flip() +
+                        scale_fill_manual(values= psrc_colors) +
+                        scale_y_continuous(labels = scales::comma)+
+                        ylab(paste0("Total ", w_title))+
+                        theme_light() +
+                        theme(legend.title = element_blank(),
+                              axis.text=element_text(size=10),
+                              axis.text.x.bottom=element_text(size=10),
+                              axis.title.y = element_blank(),
+                              axis.title.x = element_text(size=10,face="bold"),
+                              panel.grid.major.y = element_blank(),
+                              panel.grid.minor.y = element_blank(),
+                              panel.grid.major.x = element_line(colour="#BBBDC0",size = 0.25),
+                              panel.border = element_blank(),
+                              axis.line = element_blank())
+                      ,tooltip = c("text"))
+  
+  return(w_chart)
+}
+  
 return_estimate <- function(w_tbl, w_date) {
 
   working_estimate <- as.numeric(w_tbl[`date` %in% as.Date(w_date), sum(`value`)])
@@ -167,9 +198,9 @@ latest_month <- max(month(passengers$date))
 only_latest <- passengers[month(date) %in% latest_month]
 latest_day <- max(day(only_latest$date))
 
-min_tsa <- min(passengers$value)
-max_tsa <- max(passengers$value)
-
+passengers_2020 = passengers[passengers$year %in% c(2020)]
+min_tsa <- min(passengers_2020$value)
+max_tsa <- max(passengers_2020$value)
 
 # Sea-Tac Aiport Data -----------------------------------------------------
 seatac_data <- setDT(read.csv(seatac_file,stringsAsFactors=FALSE))
@@ -195,11 +226,12 @@ sea_latest_month <- max(month(seatac$date))
 sea_only_latest <- seatac[month(date) %in% sea_latest_month]
 sea_latest_day <- max(day(sea_only_latest$date))
 
-#################################################################################################################
-#################################################################################################################
-### Transit Data
-#################################################################################################################
-#################################################################################################################
+seatac_2020 = seatac[seatac$year %in% c(2020)]
+min_sea <- min(seatac_2020$value)
+max_sea <- max(seatac_2020$value)
+
+# Transit Data ------------------------------------------------------------
+
 transit_data <- setDT(read.csv(transit_file,stringsAsFactors=FALSE))
 nms <- c("day","variable","value","agency_id")
 setnames(transit_data,nms)
@@ -274,11 +306,9 @@ all_tran_latest_month <- max(month(working$day))
 all_tran_only_latest <- working[month(day) %in% all_tran_latest_month]
 all_tran_latest_day <- max(day(all_tran_only_latest$day))
 
-#################################################################################################################
-#################################################################################################################
-### Ferry Data
-#################################################################################################################
-#################################################################################################################
+
+# Ferry Data --------------------------------------------------------------
+
 ferry_data <- setDT(read.csv(ferry_file,stringsAsFactors=FALSE))
 nms <- c("day","variable","metric","value")
 setnames(ferry_data,nms)
@@ -295,11 +325,9 @@ ferry_latest_day <- max(day(ferry_only_latest$day))
 ferry_ridership_2020 <- ferry_data[variable %in% psrc_ferry & metric %in% "2020 Ridership"]
 ferry_ridership_2019 <- ferry_data[variable %in% psrc_ferry & metric %in% "2019     Ridership"]
 
-#################################################################################################################
-#################################################################################################################
-### Rail Data
-#################################################################################################################
-#################################################################################################################
+
+# Rail Data ---------------------------------------------------------------
+
 rail_data <- setDT(read.csv(rail_file,stringsAsFactors=FALSE))
 nms <- c("Date_2019","Date_2020","Measure","day_of_week","value")
 setnames(rail_data,nms)
@@ -322,11 +350,9 @@ rail_latest_month <- max(month(rail$day))
 rail_only_latest <- rail[month(day) %in% rail_latest_month]
 rail_latest_day <- max(day(rail_only_latest$day))
 
-#################################################################################################################
-#################################################################################################################
-### Unemployment Data
-#################################################################################################################
-#################################################################################################################
+
+# Unemployment Data -------------------------------------------------------
+
 esd_url <- "https://esdorchardstorage.blob.core.windows.net/esdwa/Default/ESDWAGOV/newsroom/Statistics/wkly-initial-claims-count-table.pdf"
 
 # Clean up the raw pdf 
@@ -380,11 +406,24 @@ esd_latest_month_prior <- max(month(esd_prior$date))
 esd_only_latest_prior <- esd_prior[month(date) %in% esd_latest_month_prior]
 esd_latest_day_prior <- max(day(esd_only_latest_prior$date))
 
-#################################################################################################################
-#################################################################################################################
-### Traffic Volume Data
-#################################################################################################################
-#################################################################################################################
+
+# Continuing Unemployment by Industry -----------------------------------------
+
+claim_industries <- setDT(read_excel(unemployment_demographics, sheet="NAICS2", skip = 5))
+cols_to_keep <- c("Industry","King County","Kitsap County","Pierce County","Snohomish County")
+claim_industries <- claim_industries[,..cols_to_keep]
+claim_industries <- claim_industries[!(Industry %in% c("Mining","Utilities","Unknown","Not disclosed","Total, All Industries"))]
+claim_industries$`King County` <- as.numeric(claim_industries$`King County`)
+claim_industries$`Kitsap County` <- as.numeric(claim_industries$`Kitsap County`)
+claim_industries$`Pierce County` <- as.numeric(claim_industries$`Pierce County`)
+claim_industries$`Snohomish County` <- as.numeric(claim_industries$`Snohomish County`)
+
+industries <- melt(claim_industries, id.vars=c("Industry"))
+industries$variable <- factor(industries$variable, levels = c("Kitsap County","Snohomish County", "Pierce County", "King County"))
+industries <- industries[order(variable),]
+
+# Traffic Volume Data -----------------------------------------------------
+
 volume_data <- setDT(read.csv(volume_file,stringsAsFactors=FALSE))
 nms <- c("Highway","County","Location","Date_2019","Date_2020","Measure","Day_of_Week","value","value_2019")
 setnames(volume_data,nms)
@@ -407,11 +446,9 @@ volumes_latest_month <- max(month(volumes$day))
 volumes_only_latest <- volumes[month(day) %in% volumes_latest_month]
 volumes_latest_day <- max(day(volumes_only_latest$day))
 
-#################################################################################################################
-#################################################################################################################
-### Truck Volume Data
-#################################################################################################################
-#################################################################################################################
+
+# Truck Volume Data -------------------------------------------------------
+
 truck_data <- setDT(read.csv(freight_file,stringsAsFactors=FALSE))
 nms <- c("Highway","County","Location","date","note","value")
 setnames(truck_data,nms)
@@ -434,11 +471,9 @@ trucks_latest_month <- max(month(trucks$day))
 trucks_only_latest <- trucks[month(day) %in% trucks_latest_month]
 trucks_latest_day <- max(day(trucks_only_latest$day))
 
-#################################################################################################################
-#################################################################################################################
-### Nonmotorized Data
-#################################################################################################################
-#################################################################################################################
+
+# Non-Motorized Data ------------------------------------------------------
+
 nonmotor_data <- setDT(read.csv(nonmotorized_file,stringsAsFactors=FALSE))
 #nonmotor_data <- setDT(nonmotor_data_upd)
 nms <- c("County","City","Location","Type","date","value")

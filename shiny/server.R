@@ -10,9 +10,18 @@ shinyServer(function(input, output) {
         paste("Daily passenger screenings by the Transportation Security Adminstration have ranged from a maximum of ", format(round(max_tsa,-2), nsmall = 0, big.mark = ",")," to a minimum of ",format(round(min_tsa,-2), nsmall = 0, big.mark = ","), " since March 1st. At it's lowest point on April 14th, daily passenger screenings in 2020 were only ", round((return_estimate(passengers,"2020-04-14")/return_estimate(passengers,"2019-04-14"))*100,1),"% of the total passenger screenings from 2019. Passenger volumes at our nation's airports have been gradually increasing since late April and as of ",latest_month,"-",latest_day," passsenger screenings were ", round((return_estimate(passengers,ydm(paste("2020-",latest_day,"-",latest_month)))/return_estimate(passengers,ydm(paste("2019-",latest_day,"-",latest_month))))*100,1),"% of 2019 screenings.")
     })
     
+    output$SEASummary <- renderText({
+        paste("Daily passenger screenings by the Transportation Security Adminstration at Sea-Tac International Airport have ranged from a maximum of ", format(round(max_sea,-2), nsmall = 0, big.mark = ",")," to a minimum of ",format(round(min_sea,-2), nsmall = 0, big.mark = ","), " since the first week of January. At it's lowest point in the middle of April, daily passenger screenings in 2020 were ", round((return_estimate(seatac,"2020-04-15")/return_estimate(seatac,"2019-04-15"))*100,1),"% of the total passenger screenings from 2019. Passenger volumes at Sea-Tac International Airport have been gradually increasing since late April and as of ",sea_latest_month,"-",sea_latest_day," passsenger screenings were ", round((return_estimate(seatac,ydm(paste("2020-",sea_latest_day,"-",sea_latest_month)))/return_estimate(seatac,ydm(paste("2019-",sea_latest_day,"-",sea_latest_month))))*100,1),"% of 2019 screenings.")
+    })
+    
     output$TSABackground <- renderText({
         paste("TSA understands that the novel coronavirus (COVID-19) continues to weigh heavily on the minds of travelers and the general public. They have established a webpage to provide resources and information to assist passengers who find they must travel during this challenging time. For the latest press releases and statements related to COVID-19, please visit their website at https://www.tsa.gov/coronavirus.")
     })
+    
+    output$SEABackground <- renderText({
+        paste("The Port of Seattle has been responding to the outbreak of 2019 Novel Coronavirus (COVID-19) since late January after public health officials confirmed the first case of the virus in the United States in Washington state. Since then the Port implemented protocols to maintain the health, safety, and well-being of our employees, travelers, and community members who use Port facilities while maintaining the essential functions of the Port. The Port of Seattle supports efforts to limit the spread of COVID-19 while maintaining essential operations. Summary data for airport operations are released weekly on Tuesday.")
+    })
+    
     
     output$TSABackground2 <- renderText({
         paste("To help provide relevant information about the impact of COVID-19 on air travel, the TSA provides daily updates at 9am EDT of passenger screenings from the previous day with a comparison to to same weekday in 2019.")
@@ -126,6 +135,8 @@ shinyServer(function(input, output) {
     output$unemployment_May <- renderText({paste("1st week of May: ", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],"2019-04-27"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],"2020-05-02"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment[variable %in% c("Initial Claims")],"2020-05-02")/return_estimate(unemployment[variable %in% c("Initial Claims")],"2019-04-27"))*100,0),"%")})
     output$unemployment_June <- renderText({paste("1st week of June: ", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],"2019-06-01"),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],"2020-05-30"),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment[variable %in% c("Initial Claims")],"2020-05-30")/return_estimate(unemployment[variable %in% c("Initial Claims")],"2019-06-01"))*100,0),"%")})
     output$unemployment_Latest <- renderText({paste("Latest Data (",esd_latest_month_current,"-",esd_latest_day_current,"): ", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))),-2), nsmall = 0, big.mark = ","), "/", format(round(return_estimate(unemployment[variable %in% c("Initial Claims")],ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current))),-2), nsmall = 0, big.mark = ","), "/", round((return_estimate(unemployment[variable %in% c("Initial Claims")],ydm(paste("2020-",esd_latest_day_current,"-",esd_latest_month_current)))/return_estimate(unemployment[variable %in% c("Initial Claims")],ydm(paste("2019-",esd_latest_day_prior,"-",esd_latest_month_prior))))*100,0),"%")})
+
+    output$chart_unemployment_industry <- renderPlotly({create_bar_chart(industries,"Industry" ,"Continuing Claims", "stack", 0)})
 
     # Traffic Data
     output$chart_volumes <- renderPlotly({create_line_chart(w_tbl=volumes[Location %in% input$CountLocations],"Daily Traffic",scales::comma, 0, c('#BFE9E7','#00A7A0'),"year",1,"")})
