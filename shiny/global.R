@@ -37,10 +37,13 @@ volume_file <- file.path(wrkdir,"data/VolumeNumTableCountLocation_data.csv")
 freight_file <- file.path(wrkdir,"data/Freight_Table_data.csv")
 nonmotorized_file <- file.path(wrkdir,"data/TableCounterLocaBikePedCount_data.csv")
 nonmotorized_file_SDOT <- file.path(wrkdir,"data/TableCounterLocaBikePedCountSDOT_data.csv")
-ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
 seatac_file <- file.path(wrkdir,"data/SEA activity measures by week - SEA measures.csv")
 unemployment_demographics_file <- file.path(wrkdir,"data/Continued-Claims-Published.xlsx")
 labor_force_file <- file.path(wrkdir,"data/labor-force-demographics.csv")
+
+ptba_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_ptba_wgs84.shp")
+transit_routes_shapefile <- file.path(wrkdir,"data/shapefiles/psrc_transit_2017_wgs84.shp")
+wsdot_count_file <- file.path(wrkdir,"data/shapefiles/wsdot_highway_counts_wgs84.shp")
 
 # Custom Colors -----------------------------------------------------------
 
@@ -182,6 +185,59 @@ create_place_map <- function(wrk_shp,wrk_plc) {
   
   return(working_map)
 
+}
+
+create_count_location_map <- function(wrk_shp,wrk_plc) {
+  
+  # Trim for current place
+  current = wrk_shp[wrk_shp$LOCATION == wrk_plc,]
+  
+  working_map <- leaflet() %>% 
+    addProviderTiles(providers$CartoDB.Positron) %>%
+    addLayersControl(baseGroups = c("Base Map"),
+                     overlayGroups = c("Count Location"),
+                     options = layersControlOptions(collapsed = FALSE)) %>%
+    addCircles(data=current,
+               weight = 4, 
+               radius = 48,
+               fill = TRUE,
+               opacity = 1,
+               popup = ~LOCATION,
+               color = "#F05A28",
+               group = "Count Location")
+  
+  return(working_map)
+  
+}
+
+create_transit_map <- function(plc_shp,rte_shp,wrk_plc) {
+  
+  # Trim for current place
+  current_place = plc_shp[plc_shp$NAME == wrk_plc,]
+  current_routes = rte_shp[rte_shp$OPERATOR == wrk_plc,]
+  
+  working_map <- leaflet() %>% 
+    addProviderTiles(providers$CartoDB.Positron) %>%
+    addLayersControl(baseGroups = c("Base Map"),
+                     overlayGroups = c("Transit Service Area", "Transit Routes"),
+                     options = layersControlOptions(collapsed = FALSE)) %>%
+    addPolygons(data=current_place,
+                fillColor = "76787A",
+                weight = 4,
+                opacity = 1.0,
+                color = "#91268F",
+                dashArray = "4",
+                fillOpacity = 0.0,
+                group = "Transit Service Area")%>%
+    addPolylines(data = current_routes,
+                 color = "#F05A28",
+                 weight = 1,
+                 fillColor = "#F05A28",
+                 group = "Transit Routes") %>%
+    setView(lng=find_place_data(plc_shp,wrk_plc,"LON"), lat=find_place_data(plc_shp,wrk_plc,"LAT"), zoom=find_place_data(plc_shp,wrk_plc,"ZOOM"))
+  
+  return(working_map)
+  
 }
 
 # TSA Airport Data ------------------------------------------------------------

@@ -92,7 +92,7 @@ shinyServer(function(input, output) {
 
     # Transit Data
     output$chart_transit <- renderPlotly({create_line_chart(w_tbl=transit[variable %in% input$TransitOperators], "% of 2019 Daily Boardings", scales::percent, 1, c('#F05A28'), "variable",100,"%")})
-    output$map_transit <- renderLeaflet({create_place_map(st_read(ptba_shapefile),input$TransitOperators)})
+    output$map_transit <- renderLeaflet({create_transit_map(st_read(ptba_shapefile),st_read(transit_routes_shapefile),input$TransitOperators)})
     
     output$transit_March <- renderText({paste("March 1st: ", format(round(return_estimate(transit[variable %in% input$TransitOperators],"2020-03-01")*100,0), nsmall = 0, big.mark = ","),"%")})
     output$transit_April <- renderText({paste("April 1st: ", format(round(return_estimate(transit[variable %in% input$TransitOperators],"2020-04-01")*100,0), nsmall = 0, big.mark = ","), "%")})
@@ -141,6 +141,8 @@ shinyServer(function(input, output) {
     output$chart_unemployment_race_total <- renderPlotly({create_bar_chart(race[race$variable == "Continued Claims"],"Race" ,"Total Continuing Claims", "stack", 0, "no", scales::comma,1,"")})
     
     # Traffic Data
+    output$map_volume_locations <- renderLeaflet({create_count_location_map(st_read(wsdot_count_file), input$CountLocations)})
+    
     output$chart_volumes <- renderPlotly({create_line_chart(w_tbl=volumes[Location %in% input$CountLocations],"Daily Traffic",scales::comma, 0, c('#BFE9E7','#00A7A0'),"year",1,"")})
     output$volumes_March <- renderText({paste("March 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-03-01",w_year=2019))*100,1),"%")})
     output$volumes_April <- renderText({paste("April 1st: ", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2019),-2), nsmall = 0, big.mark = ","), "/", format(round(return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2020),-2), nsmall = 0, big.mark = ","), "/", round((return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2020)/return_matching_day(w_tbl=volumes[Location %in% input$CountLocations],w_day="2020-04-01",w_year=2019))*100,1),"%")})

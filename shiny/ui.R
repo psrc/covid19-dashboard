@@ -67,19 +67,16 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                         ),
                         br(),
                         h2("Initial Unemployment Claims"),
-                        "test",
                         fluidRow(column(12,plotlyOutput("chart_unemployment"))),
                         fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/newsroom/unemployment-statistics", "Source: https://esd.wa.gov/newsroom/unemployment-statistics"))),
                         br(),
                         h2("Continuing Unemployment Claims by Race"),
-                        "test",
                         fluidRow(column(6,plotlyOutput("chart_unemployment_race_total")),
                                  column(6,plotlyOutput("chart_unemployment_race_share"))
                         ),
                         fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/labormarketinfo/unemployment-insurance-data", "https://esd.wa.gov/labormarketinfo/unemployment-insurance-data"))),
                         br(),
                         h2("Continuing Unemployment Claims by Industry"),
-                        "test",
                         fluidRow(column(12,plotlyOutput("chart_unemployment_industry"))),
                         fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://esd.wa.gov/labormarketinfo/unemployment-insurance-data", "https://esd.wa.gov/labormarketinfo/unemployment-insurance-data")))
                         
@@ -132,12 +129,12 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                                 column(4,div(img(src="painefieldterminal_int_big.jpg", width = "70%", height = "70%", style = "padding-top: 25px")))
                        ),
                        br(),
-                       h2("Sea-Tac International Aiport Average Weekday Passenger Screenings"),
+                       h2("Sea-Tac International Airport Average Weekday Passenger Screenings"),
                        textOutput("SEASummary"),
                        fluidRow(column(12,plotlyOutput("chart_sea"))),
                        fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.portseattle.org/page/airport-statistics#:~:text=Operated%20by%20the%20Port%20of,of%20air%20cargo%20in%202019.", "Source: https://www.portseattle.org/page/airport-statistics"))),
                        br(),
-                       h2("National Aiport Average Weekday Passenger Screenings"),
+                       h2("National Airport Average Weekday Passenger Screenings"),
                        textOutput("TSASummary"),
                        fluidRow(column(12,plotlyOutput("chart_tsa"))),
                        fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.tsa.gov/coronavirus/passenger-throughput", "Source: https://www.tsa.gov/coronavirus/passenger-throughput")))
@@ -152,7 +149,7 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                       h2("Transit Boardings by Operator:"),
                       "(compared to same time period in 2019)",
                       hr(),
-                      selectInput("TransitOperators","Select the Transit Agency would like to see data for:",psrc_agencies),
+                      selectInput("TransitOperators","Please select a Transit Agency:",psrc_agencies),
                       hr(),
                       strong("Percentage of 2019 Daily Boardings by Operator"),
                       tags$div(class="sidebar_data",textOutput("transit_March")),
@@ -225,7 +222,6 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                    sidebarPanel(
                      h2("Passenger Rail Boardings:"),
                      "(compared to same time period in 2019)",
-
                      hr(),
                      strong("Daily Passenger Volumes:"),
                      strong("(2019 / 2020 / Ratio)"),
@@ -252,7 +248,8 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
         tabPanel(icon("car"),
                  sidebarLayout(
                    sidebarPanel(
-                     div(img(src="wsdot.png", width = "30%", height = "30%", style = "padding-top: 5px")),
+                     h2("Daily Highway Volumes:"),
+                     "(compared to same time period in 2019)",
                      hr(),
                      selectInput("CountLocations","Select the count location:",count_locations),
                      hr(),
@@ -267,14 +264,16 @@ navbarPage(title=div(img(src="psrc-logo.png", width = "20%", height = "20%", sty
                      br(),
                      tags$div(class="sidebar_notes",textOutput("VolumeBackground")),
                      br(),
+                     div(img(src="wsdot.png", width = "15%", height = "15%", style = "padding-top: 5px")),
                      width=3),
                    mainPanel(
-                     fluidRow(column(4,div(img(src="i-90mercerisland_1.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                              column(4,div(img(src="access-ramp_0.jpg", width = "100%", height = "100%", style = "padding-top: 25px"))),
-                              column(4,div(img(src="bremertonmanettebridge.jpg", width = "100%", height = "100%", style = "padding-top: 25px")))
+                     fluidRow(column(4,div(img(src="i-90mercerisland_1.jpg", width = "75%", height = "75%", style = "padding-top: 25px"))),
+                              column(4,div(img(src="access-ramp_0.jpg", width = "75%", height = "75%", style = "padding-top: 25px"))),
+                              column(4,div(img(src="bremertonmanettebridge.jpg", width = "75%", height = "75%", style = "padding-top: 25px")))
                      ),
                      br(),
-                     fluidRow(column(12,plotlyOutput("chart_volumes"))),
+                     fluidRow(column(8,plotlyOutput("chart_volumes")),
+                              column(4,leafletOutput("map_volume_locations"))),
                      fluidRow(br(),column(width = 12, tags$a(class = "source_url", href="https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/highway/default.htm", "Source: https://www.wsdot.wa.gov/about/covid-19-transportation-report/dashboard/highway/default.htm")))
                    ) # End of Main Panel of Traffic Volumes
                  ) # End of Sidebar of Traffic Volumes
