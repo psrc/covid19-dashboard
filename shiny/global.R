@@ -258,7 +258,7 @@ tsa_list <- tsa_list[lapply(tsa_list,length)>0]
 # Read HTML text into a data.table and minor cleanup
 passengers <- as.data.frame(tsa_list,stringsAsFactors=FALSE)
 passengers <- setDT(as.data.frame(t(passengers)))
-nms <- c("date","2020","2019")
+nms <- c("date","2020","2019", "")
 setnames(passengers,nms)
 passengers$`2020` <- gsub(",","",passengers$`2020`)
 passengers$`2019` <- gsub(",","",passengers$`2019`)
