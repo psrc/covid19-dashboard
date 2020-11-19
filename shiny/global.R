@@ -25,7 +25,7 @@ library(sf)
 # Input Files -------------------------------------------------------------
 
 # Local Working Directory
-#wrkdir <-"C:/coding/covid19-dashboard/shiny"
+# wrkdir <-"C:/coding/covid19-dashboard/shiny"
 
 # Shiny Server Working Directory
 wrkdir <- "/home/shiny/apps/covid19-dashboard/shiny"
@@ -258,8 +258,10 @@ tsa_list <- tsa_list[lapply(tsa_list,length)>0]
 # Read HTML text into a data.table and minor cleanup
 passengers <- as.data.frame(tsa_list,stringsAsFactors=FALSE)
 passengers <- setDT(as.data.frame(t(passengers)))
-nms <- c("date","2020","2019")
+nms <- c("date","2020","2019","")
+final_nms <- c("date","2020","2019")
 setnames(passengers,nms)
+passengers <- passengers[,..final_nms]
 passengers$`2020` <- gsub(",","",passengers$`2020`)
 passengers$`2019` <- gsub(",","",passengers$`2019`)
 
@@ -313,8 +315,10 @@ max_sea <- max(seatac_2020$value)
 # Transit Data ------------------------------------------------------------
 
 transit_data <- setDT(read.csv(transit_file,stringsAsFactors=FALSE))
-nms <- c("day","variable","value","agency_id")
+nms <- c("day","variable","note", "value","agency_id")
 setnames(transit_data,nms)
+final_nms <- c("day","variable","value")
+transit_data <- transit_data[,..final_nms]
 
 # Clean up data
 transit_data$day <- gsub("Sun, ","",transit_data$day)
@@ -390,8 +394,10 @@ all_tran_latest_day <- max(day(all_tran_only_latest$day))
 # Ferry Data --------------------------------------------------------------
 
 ferry_data <- setDT(read.csv(ferry_file,stringsAsFactors=FALSE))
-nms <- c("day","variable","metric","value")
+nms <- c("day","v1","variable","metric","v2","value")
 setnames(ferry_data,nms)
+final_nms <- c("day","variable","metric","value")
+ferry_data <- ferry_data[,..final_nms]
 ferry_data$day <- mdy(ferry_data$day)
 ferry_data$date <- ferry_data$day
 
@@ -571,6 +577,7 @@ volumes_latest_day <- max(day(volumes_only_latest$day))
 truck_data <- setDT(read.csv(freight_file,stringsAsFactors=FALSE))
 nms <- c("Highway","County","Location","date","note","value")
 setnames(truck_data,nms)
+truck_data$Location <- gsub("I-405 Bellevue","I-405 at Bellevue",truck_data$Location)
 
 # Trim to PSRC Region and cleanup
 truck_data <- truck_data[County %in% c("King","Kitsap","Pierce","Snohomish")]
@@ -594,7 +601,6 @@ trucks_latest_day <- max(day(trucks_only_latest$day))
 # Non-Motorized Data ------------------------------------------------------
 
 nonmotor_data <- setDT(read.csv(nonmotorized_file,stringsAsFactors=FALSE))
-#nonmotor_data <- setDT(nonmotor_data_upd)
 nms <- c("County","City","Location","Type","date","value")
 setnames(nonmotor_data,nms)
 
@@ -612,6 +618,9 @@ nonmotor$value <- nonmotor$value / 100
 nonmotor_wsdot = nonmotor
 nonmotor_wsdot$roll_mean = 0
 nonmotor_wsdot$dataSource = "WSDOT"
+
+wsdot_bad_data_locations <- c("Burke-Gilman Trail","Cedar River Trail E/O 154th PL SE", "East Lake Sammamish Trail Location 2 Issaquah", "Issaquah-Preston Trail")
+nonmotor_wsdot <- nonmotor_wsdot[!(Location %in% wsdot_bad_data_locations)]
 
 #working with SDOT data
 nonmotor_Seattle <- setDT(read.csv(nonmotorized_file_SDOT,stringsAsFactors=FALSE))
