@@ -240,24 +240,37 @@ create_transit_map <- function(plc_shp,rte_shp,wrk_plc) {
   
 }
 
+read_url_table <- function(working_url) {
+  
+  # Reading the HTML code from the website and storing in a datatable
+  current_webpage <- read_html(working_url)
+  current_html <- html_nodes(current_webpage,'tr')
+  current_text <- html_text(current_html)
+  
+  # Cleanup the list for reading into a data.table
+  current_list <- strsplit(current_text, "\n")
+  current_list <- current_list[c(-1)]
+  current_list <- current_list[lapply(current_list,length)>0]
+  
+  return(current_list)
+  
+}
+
 # TSA Airport Data ------------------------------------------------------------
 
-# Specifying the url for TSA website
-tsa_url <- 'https://www.tsa.gov/coronavirus/passenger-throughput'
+# Specifying the urls for TSA website
+tsa_url_pg1 <- 'https://www.tsa.gov/coronavirus/passenger-throughput'
+tsa_url_pg2 <- 'https://www.tsa.gov/coronavirus/passenger-throughput?page=1'
 
-# Reading the HTML code from the website and storing in a datatable
-tsa_stats_webpage <- read_html(tsa_url)
-tsa_stats_html <- html_nodes(tsa_stats_webpage,'tr')
-tsa_stats_text <- html_text(tsa_stats_html)
-
-# Cleanup the list for reading into a data.table
-tsa_list <- strsplit(tsa_stats_text, "\n")
-tsa_list <- tsa_list[c(-1)]
-tsa_list <- tsa_list[lapply(tsa_list,length)>0]
-
-# Read HTML text into a data.table and minor cleanup
-passengers <- as.data.frame(tsa_list,stringsAsFactors=FALSE)
+# Read HTML text into a data.table, one for each page of table
+passengers <- as.data.frame(read_url_table(tsa_url_pg1),stringsAsFactors=FALSE)
 passengers <- setDT(as.data.frame(t(passengers)))
+
+passengers_2 <- as.data.frame(read_url_table(tsa_url_pg2),stringsAsFactors=FALSE)
+passengers_2 <- setDT(as.data.frame(t(passengers_2)))
+
+# Append the pages together and cleanup
+passengers <- rbind(passengers,passengers_2)
 nms <- c("date","2020","2019","")
 final_nms <- c("date","2020","2019")
 setnames(passengers,nms)
